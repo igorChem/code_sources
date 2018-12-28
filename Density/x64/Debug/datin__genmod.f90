@@ -1,0 +1,7 @@
+        !COMPILER-GENERATED INTERFACE MODULE: Tue Mar 27 23:54:08 2018
+        MODULE DATIN__genmod
+          INTERFACE 
+            SUBROUTINE DATIN
+            END SUBROUTINE DATIN
+          END INTERFACE 
+        END MODULE DATIN__genmod

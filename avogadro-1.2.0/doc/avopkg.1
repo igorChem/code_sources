@@ -1,0 +1,55 @@
+.Dd March 15, 2010
+.Os "Avopkg" 1.0
+.Dt avopkg 1 URM
+.Sh NAME
+.Nm avopkg
+.Nd "Avogadro Package Manager"
+.Sh SYNOPSIS
+.Nm
+.Op Fl info | Fl query | Fl pack | Fl f
+.Ar filename
+.br
+.Nm
+.Fl wizard Op package_name
+.Sh DESCRIPTION
+Avopkg is a command-line tool for easy packaging and installation
+of Avogadro plugins on Unix platforms
+.Sh OPTIONS
+.Bl -tag -width flag
+.It Fl pack Ar manifest
+Create package using manifest as package description file
+.It Ar filename
+Install plugin from chosen package "filename"
+.It Fl -f Ar filename
+Force installation of plugin, disregarding OS/CPU architecture, possible file overwrites, etc.
+.It Fl -wizard Op package_name
+Interactively create manifest for new package. Specifying package_name disables some 
+interactivity of the wizard (e.g., for use in scripts).
+.It Fl -info Op filename
+Show information about package in file "filename"
+.It Fl -query Op package_name
+Show information about installed package "package_name"
+.El
+.Sh ERROR CODES
+.Bl -tag -width flag
+.It 1
+Specified file is not a plugin
+.It 2
+Manifest is missing in package
+.It 3
+Trying to install Python plugin on Avogadro compiled without Python
+.It 4
+OS mismatch
+.It 5
+CPU architecture mismatch
+.It 6
+Package overwrites existing file
+.It 255
+Incorrect usage
+.El
+.Sh SEE ALSO
+.Xr avogadro 1 .
+For more information about Avogadro, see 
+\%<\fBhttp://avogadro.cc/\fR>
+.Sh AUTHOR
+Konstantin Tokarev

@@ -1,0 +1,821 @@
+#!/bin/sh
+
+#  Avogadro Package Manager v 1.1
+#  Copyright (C) 2010 Konstantin Tokarev
+#
+#  For more information about Avogadro, see
+#  <http://avogadro.cc/>
+#
+#  Permission to use, copy, modify, distribute, and sell this software and its
+#  documentation for any purpose is hereby granted without fee, provided that
+#  the above copyright notice appear in all copies and that both that
+#  copyright notice and this permission notice appear in supporting
+#  documentation.
+#
+#  The above copyright notice and this permission notice shall be included in
+#  all copies or substantial portions of the Software.
+#
+#  Avopkg is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY
+#  OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+# -----    Configured on Avogadro build     ----- #
+  PREFIX="@USER_PREFIX@"
+  LIB_DIR="lib@LIB_SUFFIX@"
+  SHARE_DIR="@SHARE_INSTALL_PREFIX@"
+  PLUGIN_DIR="avogadro@Plugin_Version@"
+  PYTHON_ENABLED="@ENABLE_PYTHON@"
+  IS_UNIX="@UNIX@"
+  IS_MAC="@APPLE@"
+  SYSTEM_NAME="@CMAKE_SYSTEM_NAME@"
+  SIZEOF_VOID_P="@CMAKE_SIZEOF_VOID_P@"
+  ABI_VERSION="1.1"
+# ----- End of configured on Avogadro build ----- #
+
+# My name
+WHOAMI="`basename \"$0\"`" # "avopkg" by default
+VERSION_INFO="Avopkg 1.1"
+
+# Settings
+PACK_CMD="tar czf"
+EXTRACT_CMD="tar xzf"
+EXTRACT_ONE_CMD="tar xzf"
+PKG_EXT="avo"
+MANIFEST_EXT="mf"
+# Package integrity verification
+ENABLE_HASH=1
+CHECKSUMS_FILE=md5sums
+HASH_CMD=md5sum  # Alternatives: md4sum, sha1sum, shaXXXsum
+                 # All use -c key for check
+
+# Paths
+GLOBAL_NATIVE_PLUGIN_PATH="$PREFIX/$LIB_DIR/$PLUGIN_DIR"
+GLOBAL_PYTHON_PLUGIN_PATH="$PREFIX/share/libavogadro"
+if test "$IS_MAC" = 1
+then
+    USER_NATIVE_PLUGIN_PATH="$HOME/Library/Application Support/$PLUGIN_DIR/Plugins"
+    USER_PYTHON_PLUGIN_PATH="$HOME/Library/Application Support/Avogadro"
+    DB_FILE="$HOME/Library/Application Support/Avogadro/plugindb"
+else
+    USER_NATIVE_PLUGIN_PATH="$HOME/.$PLUGIN_DIR/plugins"
+    USER_PYTHON_PLUGIN_PATH="$HOME/.avogadro"
+    DB_FILE="$HOME/.$PLUGIN_DIR/plugindb"
+fi
+
+# Helper functions
+
+# /**
+#  * Tries to use given path for temporary files storage
+#  * Sets TMP_PATH variable on success
+#  * @param $1 path to try 
+#  */
+tmpPath()
+{
+    if test "x$1" != "x"
+    then
+        mkdir -p "$1/$WHOAMI-$USER"
+        echo 0 > "$1/$WHOAMI-$USER/test"
+        if test -f "$1/$WHOAMI-$USER/test"
+        then
+            TMP_PATH="$1/$WHOAMI-$USER"
+            rm "$1/$WHOAMI-$USER/test"
+        else
+            TMP_PATH=""
+        fi
+    else
+        # Empty path is not valid
+        TMP_PATH=""
+    fi
+}
+
+# /**
+#  * Returns value of variable from package configuration
+#  * @param $1 package description file name
+#  * @param $2 variable name
+#  * @returns variable value (may NOT contain spaces!)
+#  */
+getVar()
+{
+    #extract last field of string using ' ' as delimiter
+    echo `cat $1 | grep $2 | awk '{print $NF}'`
+}
+
+# /**
+#  * Returns value of multi-string variable from package configuration
+#  * @param $1 package description file name
+#  * @param $2 variable name
+#  * @returns variable value (may contain spaces!)
+#  */
+getMultiVar()
+{
+    #extract last field of string using ':' as delimiter
+    echo `cat $1 | grep $2 | awk -F':' '{print $NF}'`
+}
+
+# /**
+#  * Returns value of boolean variable from package configuration
+#  * @param $1 package description file name
+#  * @param $2 variable name
+#  * @returns 0 if string $2 was found in file $1
+#  */
+getBoolVar()
+{    
+    echo test x`cat $1 | grep $2` != x
+}
+
+# /**
+#  * Asks user for string input and returns default is input is empty 
+#  * @param $1 default value
+#  * @returns string typed by user or default value (may contain spaces!)
+#  */
+readString()
+{
+    read string
+    if test "x$string" = "x"
+    then
+        string=$1
+    fi
+    echo "$string"
+}
+
+# /**
+#  * Prints all available parameters of script
+#  */
+printUsage()
+{
+   echo "Usage:"
+   echo " $WHOAMI filename                Install package"
+   echo " $WHOAMI -f filename             Force installation"
+   echo " $WHOAMI -pack manifest          Create new package"
+   echo " $WHOAMI -wizard [package_name]  Interactively create new package manifest"
+   echo " $WHOAMI -info filename          Show information about package in filename"
+   echo " $WHOAMI -query [package_name]   Show information about installed package"
+   echo "Type 'man $WHOAMI' for more details"
+}
+
+# /**
+#  * Remove all our temporary files
+#  */
+cleanupTmp()
+{
+    rm -rf "$TMP_PATH"/*
+}
+
+# /**
+#  * Tests OS capabilities
+#  */
+testSystem()
+{
+    temp1="$TMP_PATH/temp1"
+    temp2="$TMP_PATH/temp2"
+    temp3="$TMP_PATH/temp3"
+    
+    echo '[xxx] 2' > "$temp1"
+    echo '...' >> "$temp1"
+    echo '...' >> "$temp1"
+    cat -s "$temp1" > "$temp2"
+    if ! test -f "$temp2" -a $? = 0
+    then
+        echo "Error! System doesn't have cat -s"
+        cleanupTmp
+        exit 100
+    fi
+    cat "$temp1" | grep -A 2 "\[xxx\]" | grep -v "\[xxx\]" > "$temp3"
+    if ! test -f "$temp3" -a $? = 0
+    then
+        echo "Error! System doesn't have proper grep"
+        cleanupTmp
+        exit 100
+    fi
+    N=`cat "$temp1" | grep "\[xxx\]" | awk '{print $NF}'`
+    if test $? != 0
+    then
+        echo "Error! System doesn't have proper awk"
+        cleanupTmp
+        exit 100
+    fi
+    N=`cat "$temp1" | grep "\[" | awk '{print $1}' | sed -e 's/\[//' | sed -e 's/\]//'`
+    if test "$N" != "xxx" -o $? != 0
+    then
+        echo "Error! System doesn't have proper sed"
+        cleanupTmp
+        exit 100
+    fi    
+}
+
+# /**
+#  * Copies list of pre-installed plugin files to user directory
+#  */
+initDB()
+{
+    if ! test -f "$DB_FILE"
+    then
+        if ! test -d `dirname "$DB_FILE"`
+        then
+            mkdir -p `dirname "$DB_FILE"`
+        fi
+#        cp "$PREFIX/$SHARE_DIR/libavogadro/plugins" "$DB_FILE"
+        echo "## This file is maintained by $WHOAMI. Please, don't edit it" > "$DB_FILE"
+        testSystem
+    fi    
+}
+
+# /**
+#  * Removes double empty lines
+#  */
+cleanupDB()
+{
+    cat -s "$DB_FILE" > "$DB_FILE~"
+    mv "$DB_FILE~" "$DB_FILE"
+}
+
+################################################################
+#                     Main script                              #
+################################################################
+
+echo $VERSION_INFO
+
+# Find directory for temporary files (stored in $TMP_PATH)
+# 1. Check $TMPDIR variable
+# 2. If it fails, try to use /tmp
+# 3. If /tmp fails, try .
+# 4. If . fails, try $HOME
+# 4. If all else fails, use fire^W^W exit
+tmpPath "$TMPDIR"
+if test "x$TMP_PATH" = "x"
+then
+    tmpPath /tmp
+    if test "x$TMP_PATH" = "x"
+    then
+        tmpPath .
+        if test "x$TMP_PATH" = "x"
+        then
+            tmpPath "$HOME"
+            if test "x$TMP_PATH" = "x"
+            then
+                echo "Can't find any directory for temporary files"
+                echo "Please, specify its path in environment variable TMPDIR"
+                exit 127
+            fi  # $HOME failed
+        fi  # . failed
+    fi  # /tmp failed
+fi  # $TMPDIR failed
+
+initDB
+
+# Running without args is senseless
+if test "x$1" = "x"
+then
+    printUsage
+    exit 255
+fi
+
+if test "$1" = "-test"
+then
+               ########## Run tests ##########
+    testSystem
+    exit 0
+fi
+
+if test "$1" = "-wizard"
+then
+            ########## Create manifest ##########
+
+    echo "This wizard will help you to create description file for new package"
+    echo "Default values of answers will be shown in []"
+    echo -n "    Press ENTER to continue"
+    read buffer
+    echo
+
+    # Check if we are given package name
+    batch_mode=0
+    if test "x$2" != "x"
+    then
+        package="$2"
+        manifest=$package.$MANIFEST_EXT
+        batch_mode=1
+    else
+        default_package="`basename $PWD`"
+        echo -n "0. Name of package (try to avoid spaces) [$default_package]:"
+        package=$(readString "$default_package")
+
+        # Check if manifest already exists
+        manifest=$package.$MANIFEST_EXT
+        if test -f $manifest
+        then
+            echo -n "File $manifest already exisits. Overwrite(y/n)? [n]"
+            result=$(readString "n")
+            if test $result != y
+            then
+                cleanupTmp
+                exit 0
+            fi
+        fi
+    fi
+
+    echo -n "1. Full name of your plugin [$package]:"
+    name=$(readString "$package")
+
+    echo -n "2. Author's name []:"
+    author=$(readString "")
+
+    echo -n "" > $manifest # Clean old manifest
+    echo "Name: $name" >> $manifest
+    echo "Author: $author" >> $manifest
+    echo "Package: $package" >> $manifest
+
+    echo -n "3. Is it a Python plugin (y/n)? [n]"
+    python=$(readString "n")
+    if test "$python" = "y"
+    then
+        echo "Python" >> $manifest
+
+        echo -n "4. List of files to distribute [`ls *.py`]:"
+        files=$(readString "`ls *.py`")
+
+        echo "5. Choose a category for your Python plugin from list:"
+        echo "* engineScripts\n* extensionScripts\n* toolScripts"
+        category=$(readString "")
+    else
+        echo -n "4. List of files to distribute [`ls *.so`]:"
+        files=$(readString "`ls *.so`")
+
+        echo "5. Choose a category for your plugin from list:"
+        echo "* colors\n* engines\n* extensions\n* tools"
+        echo "* contrib\n* you may add new if no other is suitable"
+        echo -n "Category [contrib]:"
+        category=$(readString "contrib")
+    fi
+
+    echo -n "6. Type version number (unsigned integer) [1]:"
+    version=$(readString "1")
+
+    echo "Version: $version" >> $manifest
+    echo "Files: $files" >> $manifest
+    echo "Category: $category" >> $manifest
+
+    # In make chain don't ask anything else
+    if test $batch_mode = 1
+    then
+      exit 0
+    fi
+    
+    # Ready to build
+    echo "Manifest $manifest was successfully created"
+    echo -n "Build package $package.$PKG_EXT(y/n)? [y]"
+    build=$(readString "y")
+    if test "$build" = "y"
+    then
+        echo
+        # Recursive call
+        "$0" -pack $manifest
+        # On success ask for installation
+        if test $?
+        then
+            echo
+            echo -n "Install package $package.$PKG_EXT(y/n)? [y]"
+            install=$(readString "y")
+            if test "$install" = "y"
+            then
+                echo
+                # Recursive call
+                "$0" $package.$PKG_EXT
+            else
+                echo "Done!"
+            fi
+        fi
+    else
+        echo "Done!"
+    fi
+    exit 0
+fi
+
+if test "$1" = "-info"
+then
+        ########## Show package metadata ##########
+
+    # $2 is package file
+    if test "x$2" = "x"
+    then
+        printUsage
+        exit 255
+    fi
+
+    if test -f $2
+    then
+        package=`basename $2 .$PKG_EXT` #package name
+    else
+        printUsage
+        exit 255
+    fi
+    
+    # Unpack manifest to temporary dir
+    oldpwd="$PWD"
+    cd "$TMP_PATH"
+    manifest=$package.$MANIFEST_EXT
+    $EXTRACT_ONE_CMD "$oldpwd/$2" $package/$manifest
+    if ! test $? = 0
+    then
+        echo "$1 is not an Avogadro plugin package!"
+        cleanupTmp
+        exit 1
+    fi
+    
+    cd $package
+    echo "Avogadro plugin \"$(getMultiVar $manifest Name)\""
+    if ! $(getBoolVar $manifest Python)
+    then
+      if test $(getVar $manifest SizeofVoidP) = 4
+      then
+        echo "  for $(getVar $manifest System) 32-bit"
+      fi
+      if test $(getVar $manifest SizeofVoidP) = 8
+      then
+        echo "  for $(getVar $manifest System) 64-bit"
+      fi
+    else
+      echo "  OS-independent (Python)"
+    fi
+    echo "  by $(getMultiVar $manifest Author)"
+    echo "  Provided files:"
+    for file in $(getMultiVar $manifest Files)
+    do
+        echo "    $file"
+    done
+    echo "  will be installed to '$(getVar $manifest Category)' directory"
+    
+    # Clean up
+    cd "$oldpwd"
+    cleanupTmp
+
+    exit 0  
+fi
+
+if test "$1" = "-list"
+then
+         ########## Show package list ##########
+    echo "Installed plugins:"
+    cat "$DB_FILE" | grep "\[" | awk '{print $1}' | sed -e 's/\[//' | sed -e 's/\]//'
+    exit 0
+fi
+
+if test "$1" = "-query"
+then
+     ####### Show package metadata from registry #######
+    N=`cat "$DB_FILE" | grep "\[$2\]" | awk '{print $NF}'`
+    if test "x$N" = "x"
+    then
+        echo "Package $2 is not installed"
+        exit 7
+    fi
+    cat "$DB_FILE" | grep -A $N "\[$2\]" | grep -v "\[$2\]"
+    exit 0
+fi
+
+if test "$1" = "-remove"
+then
+            ########## Remove package ##########    
+    # Get manifest of package
+    temp="$TMP_PATH/temp"
+    "$0" -query $2 > "$temp"
+    if ! test $? = 0
+    then
+        echo "Package $2 is not installed"
+        rm "$temp"
+        exit 7
+    fi
+
+    echo "Uninstalling package $2..."
+        
+    # Iterate over them, removing :package label from line endings
+    for file in `cat "$temp" | grep ":$2" |  sed -e "s/:$2//"`
+    do
+        echo "Removing $file"
+        rm "$file"
+        if test $? != 0
+        then
+            echo "Can't remove files!"
+            rm "$temp"
+            exit 8
+        fi
+    done
+    rm "$temp"
+    echo "Cleaning db..."
+    
+    # Read file, delete record from [package] up to the emty line (^$),
+    # write to temporary file
+    sed -n -e "/\[$2\]/,/^\$/d;p" "$DB_FILE" > "$DB_FILE~"
+    
+    # Replace old db with temporary file
+    mv "$DB_FILE~" "$DB_FILE"
+    cleanupDB
+    
+    echo "Done!"
+    exit 0
+fi
+
+if test "$1" = "-pack"
+then
+            ########## Build package ##########
+
+    if test "x$2" = "x"
+    then
+        printUsage
+        exit 255
+    fi
+
+    if test -f $2
+    then
+        echo "Building package for $(getMultiVar $2 Name) ..."
+    else
+        printUsage
+        exit 255
+    fi
+
+    package=$(getVar $2 Package)
+    files="$(getMultiVar $2 Files)"
+    rm -rf .tmp
+    mkdir -p .tmp/$package
+    cp $2 .tmp/$package/$package.$MANIFEST_EXT
+    
+    if ! $(getBoolVar $2 Python)
+    then
+        # Add OS & CPU architecture information to manifest 
+        # (if not already specified)
+        if test x$(getVar $2 System) = x
+        then
+            echo "System: $SYSTEM_NAME" >> .tmp/$package/$package.$MANIFEST_EXT
+        fi
+        if test x$(getVar $2 SizeofVoidP) = x
+        then
+            echo "SizeofVoidP: $SIZEOF_VOID_P" >> .tmp/$package/$package.$MANIFEST_EXT
+        fi
+        if test x$(getVar $2 AbiVersion) = x
+        then
+            echo "AbiVersion: $ABI_VERSION" >> .tmp/$package/$package.$MANIFEST_EXT
+        fi
+    fi
+
+    # Add version = 1 if missing
+    if test x$(getVar $2 Version) = x
+    then
+        echo "Version: 1" >> .tmp/$package/$package.$MANIFEST_EXT
+    fi
+
+    # Write checksums
+    if test $ENABLE_HASH = 1
+    then
+        for file in $files
+        do
+            $HASH_CMD $file >> .tmp/$package/$CHECKSUMS_FILE 2>/dev/null
+        done
+    fi
+
+    # Copy installable content
+    cp -t .tmp/$package $files # Will fail if some file is missing
+
+    cd .tmp
+    $PACK_CMD ../$package.$PKG_EXT $package
+    cd ..
+    rm -rf .tmp
+
+    echo "Done!"
+    exit 0
+else
+            ########## Install package ########## 
+
+    # Check -f (ignore OS and arch)
+    if test "$1" = "-f"
+    then
+        force=1
+        filename=$2
+    else
+        force=0
+        filename=$1
+    fi
+
+    if test -f $filename
+    then
+        package=`basename $filename .$PKG_EXT`
+        echo Unpacking $filename...           
+    else
+        printUsage
+        exit 255
+    fi
+
+    # Create temporary dir and unpack content
+    #rm -rf .tmp
+    #mkdir .tmp
+    oldpwd="$PWD"
+    cd "$TMP_PATH"
+    $EXTRACT_CMD "$oldpwd/$filename"
+    if ! test $? = 0
+    then
+        echo "$1 is not an Avogadro plugin package!"
+        echo "Installation failed."
+        cleanupTmp
+        exit 1
+    fi
+
+    # Check manifest
+    cd $package
+    manifest=$package.$MANIFEST_EXT
+    if ! test -f $manifest
+    then
+        echo "Manifest $manifest is missing in package!"
+        echo "Installation failed."
+        cleanupTmp
+        exit 2
+    fi
+
+    files=$(getMultiVar $manifest Files)
+    category=$(getVar $manifest Category)
+    reinstall=0 # 1- reinstall, 2- upgrade to newer
+
+    # Check integrity of installable content
+    if test $ENABLE_HASH = 1
+    then
+        if ! test -f $CHECKSUMS_FILE
+        then
+            echo "WARNING! Cannot verify package integrity:"
+            echo "  $CHECKSUMS_FILE is missing in the package"
+            echo "Will proceed anyway..."
+        elif test -z `which $HASH_CMD`
+        then
+            echo "WARNING! Cannot verify package integrity:"
+            echo "  $HASH_CMD is not properly installed in your system"
+            echo "Will proceed anyway..."
+        else
+            "$HASH_CMD" -c $CHECKSUMS_FILE
+            if test $? != 0
+            then
+                echo "Package is corrupted!"
+                echo "Installation failed."
+                cleanupTmp
+                exit 9
+            fi
+        fi
+    fi
+
+    # Check for possible overwrites
+    for file in $files
+    do
+        if test `cat "$DB_FILE" | grep -c "$category/$file"` != 0
+        then
+            # File already exists in some package, figure out in what
+            installed_package=`cat "$DB_FILE" | grep "$category/$file" | awk -F':' '{print $NF}'`
+
+            # If package was previously installed, every file will be
+            # overwritten. But we want to warn once
+            if test $reinstall = 0
+            then
+                if test $installed_package = $package
+                then
+                    # Check version
+                    N=`cat "$DB_FILE" | grep "\[$installed_package\]" | awk '{print $NF}'`
+                    cat "$DB_FILE" | grep -C $N "\[$installed_package\]" \
+                        | grep -v "\[$2\]" > .mf
+                    if test $(getVar $manifest Version) -gt $(getVar .mf Version)
+                    then
+                        echo "Upgrading package $package..."
+                        "$0" -remove $package > /dev/null
+                        reinstall=2
+                    else
+                        echo "WARNING! Package $package is already installed."               
+                        reinstall=1
+                    fi
+                else
+                    echo "WARNING! File $file is already installed in package $installed_package."
+                fi # test $installed_package = $package
+
+                # -f key forces installation
+                if test $force = 0 -a $reinstall != 2
+                then
+                    echo "Use -f to owerwrite it."
+                    cleanupTmp
+                    exit 6
+                else
+                    echo "Overwriting it since -f is given."
+                    if test $reinstall = 1
+                    then
+                        echo "Reinstalling package $package..."
+                        "$0" -remove $package
+                    fi
+                fi
+            fi # test $reinstall = 0
+        fi # test `cat "$DB_FILE" | grep -c "$category/$file"` != 0
+    done # for file in $files
+    
+    # Find out where to install package
+    if ($(getBoolVar $manifest Python))
+    then
+        #Check Python support in Avogadro
+        if test $PYTHON_ENABLED = "OFF"
+        then
+            echo "Plugin $package needs Python, but Avogadro was compiled"
+            echo "without Python support. To install and use this plugin, you need to change CMake"
+            echo "option ENABLE_PYTHON to ON value, resolve dependencies and re-compile Avogadro"
+            echo
+            echo "Installation failed."
+            cleanupTmp
+            exit 3
+        fi
+
+        echo -n Installing Python plugin $package
+        if test $USER = root
+        then
+            echo " for all users..."
+            dest="$GLOBAL_PYTHON_PLUGIN_PATH/$category"
+        else
+            echo " for user $USER"
+            dest="$USER_PYTHON_PLUGIN_PATH/$category"
+        fi
+    else
+        if test $force = 0
+        then
+            # Verify OS
+            if test $(getVar $manifest System) != $SYSTEM_NAME
+            then
+                echo "This plugin was built for $(getVar $manifest System)"
+                echo "Can't install it on $SYSTEM_NAME"
+                cleanupTmp
+                exit 4
+            fi
+
+            # Verify CPU architecture
+            arch=$(getVar $manifest SizeofVoidP)
+            if test $arch != $SIZEOF_VOID_P
+            then
+                echo "CPU architecture doesn't match"
+                if test $SIZEOF_VOID_P = 4
+                then
+                    echo "Arch of avogadro: x86"
+                fi
+                if test $SIZEOF_VOID_P = 8
+                then
+                    echo "Arch of avogadro: x86_64"
+                fi
+                if test $arch = 4
+                then
+                    echo "Arch of plugin: x86"
+                fi
+                if test $arch = 8
+                then
+                    echo "Arch of plugin: x86_64"
+                fi
+                cleanupTmp
+                exit 5
+            fi
+
+            # Verify ABI version
+            abi=$(getVar $manifest AbiVersion)
+            if test $abi != $ABI_VERSION
+            then
+                echo "ABI version doesn't match"
+                echo "Required ABI version: $ABI_VERSION"
+                echo "ABI version of plugin: $abi"
+                echo "Installation failed"
+                cleanupTmp
+                exit 10
+            fi
+        fi
+
+        echo -n Installing plugin $package
+        if test $USER = root
+        then
+            echo " for all users..."
+            dest="$GLOBAL_NATIVE_PLUGIN_PATH/$category"
+        else
+            echo " for user $USER"
+            dest="$USER_NATIVE_PLUGIN_PATH/$category"
+        fi
+    fi
+
+    # Copy files
+    if ! test -d "$dest"
+    then
+        echo Creating directory $dest...
+        mkdir -p "$dest"
+    fi
+    echo "Copying files to $dest..."
+    cp -t "$dest" $files
+
+    # Register plugin
+    echo >> "$DB_FILE"
+    echo -n "[$package] " >> "$DB_FILE"
+    cat $manifest | grep -v "Package:" | grep -v "System:" | grep -v \
+        "SizeofVoidP:" | grep -v "Files:" > .temp
+    for file in $files
+    do
+        echo "$dest/$file" :$package >> .temp
+    done
+    cat .temp | grep -c "" >> "$DB_FILE"
+    cat .temp >> "$DB_FILE"
+    cleanupDB
+
+    # Clean up
+    cd "$oldpwd"
+    cleanupTmp
+
+    echo "Done!"
+    exit 0
+fi

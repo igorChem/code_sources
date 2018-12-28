@@ -1,0 +1,4 @@
+#cc      xdrvr.c         -g -c      -O1 -I/usr/openwin/share/include -o xdrvr.o
+#---------------------------------------------------------
+f77 -g *.o -L/usr/openwin/lib -lX11 -o density.exe
+#---------------------------------------------------------

@@ -1,0 +1,646 @@
+Building Molecule File Reader plugins
+abinitplugin.c
+   Creating library ../compile/lib_WIN32/molfile/abinitplugin.lib and object ../compile/lib_WIN32/molfile/abinitplugin.exp
+avsplugin.C
+   Creating library ../compile/lib_WIN32/molfile/avsplugin.lib and object ../compile/lib_WIN32/molfile/avsplugin.exp
+babelplugin.c
+   Creating library ../compile/lib_WIN32/molfile/babelplugin.lib and object ../compile/lib_WIN32/molfile/babelplugin.exp
+basissetplugin.c
+   Creating library ../compile/lib_WIN32/molfile/basissetplugin.lib and object ../compile/lib_WIN32/molfile/basissetplugin.exp
+bgfplugin.C
+   Creating library ../compile/lib_WIN32/molfile/bgfplugin.lib and object ../compile/lib_WIN32/molfile/bgfplugin.exp
+binposplugin.c
+   Creating library ../compile/lib_WIN32/molfile/binposplugin.lib and object ../compile/lib_WIN32/molfile/binposplugin.exp
+biomoccaplugin.C
+   Creating library ../compile/lib_WIN32/molfile/biomoccaplugin.lib and object ../compile/lib_WIN32/molfile/biomoccaplugin.exp
+brixplugin.C
+   Creating library ../compile/lib_WIN32/molfile/brixplugin.lib and object ../compile/lib_WIN32/molfile/brixplugin.exp
+carplugin.c
+   Creating library ../compile/lib_WIN32/molfile/carplugin.lib and object ../compile/lib_WIN32/molfile/carplugin.exp
+ccp4plugin.C
+   Creating library ../compile/lib_WIN32/molfile/ccp4plugin.lib and object ../compile/lib_WIN32/molfile/ccp4plugin.exp
+corplugin.c
+   Creating library ../compile/lib_WIN32/molfile/corplugin.lib and object ../compile/lib_WIN32/molfile/corplugin.exp
+cpmdplugin.c
+   Creating library ../compile/lib_WIN32/molfile/cpmdplugin.lib and object ../compile/lib_WIN32/molfile/cpmdplugin.exp
+crdplugin.c
+   Creating library ../compile/lib_WIN32/molfile/crdplugin.lib and object ../compile/lib_WIN32/molfile/crdplugin.exp
+cubeplugin.C
+   Creating library ../compile/lib_WIN32/molfile/cubeplugin.lib and object ../compile/lib_WIN32/molfile/cubeplugin.exp
+dcdplugin.c
+   Creating library ../compile/lib_WIN32/molfile/dcdplugin.lib and object ../compile/lib_WIN32/molfile/dcdplugin.exp
+dlpolyplugin.c
+   Creating library ../compile/lib_WIN32/molfile/dlpolyplugin.lib and object ../compile/lib_WIN32/molfile/dlpolyplugin.exp
+dsn6plugin.C
+   Creating library ../compile/lib_WIN32/molfile/dsn6plugin.lib and object ../compile/lib_WIN32/molfile/dsn6plugin.exp
+dxplugin.C
+   Creating library ../compile/lib_WIN32/molfile/dxplugin.lib and object ../compile/lib_WIN32/molfile/dxplugin.exp
+edmplugin.C
+   Creating library ../compile/lib_WIN32/molfile/edmplugin.lib and object ../compile/lib_WIN32/molfile/edmplugin.exp
+fs4plugin.C
+   Creating library ../compile/lib_WIN32/molfile/fs4plugin.lib and object ../compile/lib_WIN32/molfile/fs4plugin.exp
+gamessplugin.c
+   Creating library ../compile/lib_WIN32/molfile/gamessplugin.lib and object ../compile/lib_WIN32/molfile/gamessplugin.exp
+graspplugin.C
+   Creating library ../compile/lib_WIN32/molfile/graspplugin.lib and object ../compile/lib_WIN32/molfile/graspplugin.exp
+grdplugin.C
+   Creating library ../compile/lib_WIN32/molfile/grdplugin.lib and object ../compile/lib_WIN32/molfile/grdplugin.exp
+gridplugin.C
+   Creating library ../compile/lib_WIN32/molfile/gridplugin.lib and object ../compile/lib_WIN32/molfile/gridplugin.exp
+gromacsplugin.C
+   Creating library ../compile/lib_WIN32/molfile/gromacsplugin.lib and object ../compile/lib_WIN32/molfile/gromacsplugin.exp
+jsplugin.c
+src/jsplugin.c(389) : warning C4761: integral size mismatch in argument; conversion supplied
+src/jsplugin.c(223) : warning C4716: 'js_blockio_check_and_set' : must return a value
+   Creating library ../compile/lib_WIN32/molfile/jsplugin.lib and object ../compile/lib_WIN32/molfile/jsplugin.exp
+lammpsplugin.c
+   Creating library ../compile/lib_WIN32/molfile/lammpsplugin.lib and object ../compile/lib_WIN32/molfile/lammpsplugin.exp
+mapplugin.C
+   Creating library ../compile/lib_WIN32/molfile/mapplugin.lib and object ../compile/lib_WIN32/molfile/mapplugin.exp
+mdfplugin.C
+   Creating library ../compile/lib_WIN32/molfile/mdfplugin.lib and object ../compile/lib_WIN32/molfile/mdfplugin.exp
+mol2plugin.C
+   Creating library ../compile/lib_WIN32/molfile/mol2plugin.lib and object ../compile/lib_WIN32/molfile/mol2plugin.exp
+moldenplugin.c
+   Creating library ../compile/lib_WIN32/molfile/moldenplugin.lib and object ../compile/lib_WIN32/molfile/moldenplugin.exp
+molemeshplugin.C
+   Creating library ../compile/lib_WIN32/molfile/molemeshplugin.lib and object ../compile/lib_WIN32/molfile/molemeshplugin.exp
+msmsplugin.C
+   Creating library ../compile/lib_WIN32/molfile/msmsplugin.lib and object ../compile/lib_WIN32/molfile/msmsplugin.exp
+namdbinplugin.c
+   Creating library ../compile/lib_WIN32/molfile/namdbinplugin.lib and object ../compile/lib_WIN32/molfile/namdbinplugin.exp
+offplugin.C
+   Creating library ../compile/lib_WIN32/molfile/offplugin.lib and object ../compile/lib_WIN32/molfile/offplugin.exp
+parm7plugin.C
+   Creating library ../compile/lib_WIN32/molfile/parm7plugin.lib and object ../compile/lib_WIN32/molfile/parm7plugin.exp
+parmplugin.C
+   Creating library ../compile/lib_WIN32/molfile/parmplugin.lib and object ../compile/lib_WIN32/molfile/parmplugin.exp
+pbeqplugin.C
+   Creating library ../compile/lib_WIN32/molfile/pbeqplugin.lib and object ../compile/lib_WIN32/molfile/pbeqplugin.exp
+pdbplugin.c
+   Creating library ../compile/lib_WIN32/molfile/pdbplugin.lib and object ../compile/lib_WIN32/molfile/pdbplugin.exp
+pdbxplugin.C
+   Creating library ../compile/lib_WIN32/molfile/pdbxplugin.lib and object ../compile/lib_WIN32/molfile/pdbxplugin.exp
+phiplugin.C
+   Creating library ../compile/lib_WIN32/molfile/phiplugin.lib and object ../compile/lib_WIN32/molfile/phiplugin.exp
+pltplugin.C
+   Creating library ../compile/lib_WIN32/molfile/pltplugin.lib and object ../compile/lib_WIN32/molfile/pltplugin.exp
+plyplugin.C
+   Creating library ../compile/lib_WIN32/molfile/plyplugin.lib and object ../compile/lib_WIN32/molfile/plyplugin.exp
+pqrplugin.c
+   Creating library ../compile/lib_WIN32/molfile/pqrplugin.lib and object ../compile/lib_WIN32/molfile/pqrplugin.exp
+psfplugin.c
+   Creating library ../compile/lib_WIN32/molfile/psfplugin.lib and object ../compile/lib_WIN32/molfile/psfplugin.exp
+raster3dplugin.C
+   Creating library ../compile/lib_WIN32/molfile/raster3dplugin.lib and object ../compile/lib_WIN32/molfile/raster3dplugin.exp
+rst7plugin.c
+   Creating library ../compile/lib_WIN32/molfile/rst7plugin.lib and object ../compile/lib_WIN32/molfile/rst7plugin.exp
+situsplugin.C
+   Creating library ../compile/lib_WIN32/molfile/situsplugin.lib and object ../compile/lib_WIN32/molfile/situsplugin.exp
+spiderplugin.C
+   Creating library ../compile/lib_WIN32/molfile/spiderplugin.lib and object ../compile/lib_WIN32/molfile/spiderplugin.exp
+stlplugin.C
+   Creating library ../compile/lib_WIN32/molfile/stlplugin.lib and object ../compile/lib_WIN32/molfile/stlplugin.exp
+tinkerplugin.c
+   Creating library ../compile/lib_WIN32/molfile/tinkerplugin.lib and object ../compile/lib_WIN32/molfile/tinkerplugin.exp
+uhbdplugin.C
+   Creating library ../compile/lib_WIN32/molfile/uhbdplugin.lib and object ../compile/lib_WIN32/molfile/uhbdplugin.exp
+vaspchgcarplugin.c
+   Creating library ../compile/lib_WIN32/molfile/vaspchgcarplugin.lib and object ../compile/lib_WIN32/molfile/vaspchgcarplugin.exp
+vaspoutcarplugin.c
+   Creating library ../compile/lib_WIN32/molfile/vaspoutcarplugin.lib and object ../compile/lib_WIN32/molfile/vaspoutcarplugin.exp
+vaspparchgplugin.c
+   Creating library ../compile/lib_WIN32/molfile/vaspparchgplugin.lib and object ../compile/lib_WIN32/molfile/vaspparchgplugin.exp
+vaspposcarplugin.c
+   Creating library ../compile/lib_WIN32/molfile/vaspposcarplugin.lib and object ../compile/lib_WIN32/molfile/vaspposcarplugin.exp
+vasp5xdatcarplugin.c
+   Creating library ../compile/lib_WIN32/molfile/vasp5xdatcarplugin.lib and object ../compile/lib_WIN32/molfile/vasp5xdatcarplugin.exp
+vaspxdatcarplugin.c
+   Creating library ../compile/lib_WIN32/molfile/vaspxdatcarplugin.lib and object ../compile/lib_WIN32/molfile/vaspxdatcarplugin.exp
+vaspxmlplugin.c
+   Creating library ../compile/lib_WIN32/molfile/vaspxmlplugin.lib and object ../compile/lib_WIN32/molfile/vaspxmlplugin.exp
+vtkplugin.C
+   Creating library ../compile/lib_WIN32/molfile/vtkplugin.lib and object ../compile/lib_WIN32/molfile/vtkplugin.exp
+xbgfplugin.C
+   Creating library ../compile/lib_WIN32/molfile/xbgfplugin.lib and object ../compile/lib_WIN32/molfile/xbgfplugin.exp
+xsfplugin.C
+   Creating library ../compile/lib_WIN32/molfile/xsfplugin.lib and object ../compile/lib_WIN32/molfile/xsfplugin.exp
+xyzplugin.c
+   Creating library ../compile/lib_WIN32/molfile/xyzplugin.lib and object ../compile/lib_WIN32/molfile/xyzplugin.exp
+dtrplugin.cxx
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(547) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(71) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(67) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::operator <<(bool)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(113) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(106) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::operator <<(int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(125) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(121) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::operator <<(unsigned int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(234) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(229) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::put(char)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(247) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(242) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::write(const char *,int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(234) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(229) : while compiling class-template member function 'class std::basic_ostream<unsigned short,struct std::char_traits<unsigned short> > &__thiscall std::basic_ostream<unsigned short,struct std::char_traits<unsigned short> >::put(unsigned short)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(72) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(68) : while compiling class-template member function 'class std::basic_istream<char,struct std::char_traits<char> > &__thiscall std::basic_istream<char,struct std::char_traits<char> >::operator >>(bool &)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(108) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(103) : while compiling class-template member function 'class std::basic_istream<char,struct std::char_traits<char> > &__thiscall std::basic_istream<char,struct std::char_traits<char> >::operator >>(int &)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(122) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(118) : while compiling class-template member function 'class std::basic_istream<char,struct std::char_traits<char> > &__thiscall std::basic_istream<char,struct std::char_traits<char> >::operator >>(unsigned int &)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(336) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(332) : while compiling class-template member function 'class std::basic_istream<char,struct std::char_traits<char> > &__thiscall std::basic_istream<char,struct std::char_traits<char> >::read(char *,int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(46) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(41) : while compiling class-template member function 'bool __thiscall std::basic_istream<char,struct std::char_traits<char> >::ipfx(bool)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(218) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(211) : while compiling class-template member function 'int __thiscall std::basic_istream<char,struct std::char_traits<char> >::get(void)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(46) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(41) : while compiling class-template member function 'bool __thiscall std::basic_istream<unsigned short,struct std::char_traits<unsigned short> >::ipfx(bool)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(525) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(521) : while compiling class-template member function 'void __thiscall std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::_Copy(unsigned int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(296) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        src/dtrplugin.cxx(768) : see reference to function template instantiation 'class std::basic_ostream<char,struct std::char_traits<char> > &__cdecl std::operator <<(class std::basic_ostream<char,struct std::char_traits<char> > &,const char *)' being compiled
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(325) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        src/dtrplugin.cxx(2092) : see reference to function template instantiation 'class std::basic_ostream<char,struct std::char_traits<char> > &__cdecl std::operator <<(class std::basic_ostream<char,struct std::char_traits<char> > &,char)' being compiled
+   Creating library ../compile/lib_WIN32/molfile/dtrplugin.lib and object ../compile/lib_WIN32/molfile/dtrplugin.exp
+maeffplugin.cxx
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(547) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(113) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(106) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::operator <<(int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(125) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(121) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::operator <<(unsigned int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(161) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(157) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::operator <<(float)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(173) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(169) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::operator <<(double)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(234) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(229) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::put(char)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(234) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(229) : while compiling class-template member function 'class std::basic_ostream<unsigned short,struct std::char_traits<unsigned short> > &__thiscall std::basic_ostream<unsigned short,struct std::char_traits<unsigned short> >::put(unsigned short)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(218) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(211) : while compiling class-template member function 'int __thiscall std::basic_istream<char,struct std::char_traits<char> >::get(void)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(46) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(41) : while compiling class-template member function 'bool __thiscall std::basic_istream<char,struct std::char_traits<char> >::ipfx(bool)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(46) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(41) : while compiling class-template member function 'bool __thiscall std::basic_istream<unsigned short,struct std::char_traits<unsigned short> >::ipfx(bool)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(525) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(521) : while compiling class-template member function 'void __thiscall std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::_Copy(unsigned int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(296) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        src/maeffplugin.cxx(389) : see reference to function template instantiation 'class std::basic_ostream<char,struct std::char_traits<char> > &__cdecl std::operator <<(class std::basic_ostream<char,struct std::char_traits<char> > &,const char *)' being compiled
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(325) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        src/maeffplugin.cxx(1410) : see reference to function template instantiation 'class std::basic_ostream<char,struct std::char_traits<char> > &__cdecl std::operator <<(class std::basic_ostream<char,struct std::char_traits<char> > &,char)' being compiled
+   Creating library ../compile/lib_WIN32/molfile/maeffplugin.lib and object ../compile/lib_WIN32/molfile/maeffplugin.exp
+vtfplugin.c
+   Creating library ../compile/lib_WIN32/molfile/vtfplugin.lib and object ../compile/lib_WIN32/molfile/vtfplugin.exp
+webpdbplugin.c
+   Creating library ../compile/lib_WIN32/molfile/webpdbplugin.lib and object ../compile/lib_WIN32/molfile/webpdbplugin.exp
+abinitplugin.c
+avsplugin.C
+babelplugin.c
+basissetplugin.c
+bgfplugin.C
+binposplugin.c
+biomoccaplugin.C
+brixplugin.C
+carplugin.c
+ccp4plugin.C
+corplugin.c
+cpmdplugin.c
+crdplugin.c
+cubeplugin.C
+dcdplugin.c
+dlpolyplugin.c
+dsn6plugin.C
+dxplugin.C
+edmplugin.C
+fs4plugin.C
+gamessplugin.c
+graspplugin.C
+grdplugin.C
+gridplugin.C
+gromacsplugin.C
+jsplugin.c
+src/jsplugin.c(389) : warning C4761: integral size mismatch in argument; conversion supplied
+src/jsplugin.c(223) : warning C4716: 'js_blockio_check_and_set' : must return a value
+lammpsplugin.c
+mapplugin.C
+mdfplugin.C
+mol2plugin.C
+moldenplugin.c
+molemeshplugin.C
+msmsplugin.C
+namdbinplugin.c
+offplugin.C
+parm7plugin.C
+parmplugin.C
+pbeqplugin.C
+pdbplugin.c
+pdbxplugin.C
+phiplugin.C
+pltplugin.C
+plyplugin.C
+pqrplugin.c
+psfplugin.c
+raster3dplugin.C
+rst7plugin.c
+situsplugin.C
+spiderplugin.C
+stlplugin.C
+tinkerplugin.c
+uhbdplugin.C
+vaspchgcarplugin.c
+vaspoutcarplugin.c
+vaspparchgplugin.c
+vaspposcarplugin.c
+vasp5xdatcarplugin.c
+vaspxdatcarplugin.c
+vaspxmlplugin.c
+vtkplugin.C
+xbgfplugin.C
+xsfplugin.C
+xyzplugin.c
+dtrplugin.cxx
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(547) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(71) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(67) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::operator <<(bool)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(113) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(106) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::operator <<(int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(125) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(121) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::operator <<(unsigned int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(234) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(229) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::put(char)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(247) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(242) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::write(const char *,int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(234) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(229) : while compiling class-template member function 'class std::basic_ostream<unsigned short,struct std::char_traits<unsigned short> > &__thiscall std::basic_ostream<unsigned short,struct std::char_traits<unsigned short> >::put(unsigned short)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(72) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(68) : while compiling class-template member function 'class std::basic_istream<char,struct std::char_traits<char> > &__thiscall std::basic_istream<char,struct std::char_traits<char> >::operator >>(bool &)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(108) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(103) : while compiling class-template member function 'class std::basic_istream<char,struct std::char_traits<char> > &__thiscall std::basic_istream<char,struct std::char_traits<char> >::operator >>(int &)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(122) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(118) : while compiling class-template member function 'class std::basic_istream<char,struct std::char_traits<char> > &__thiscall std::basic_istream<char,struct std::char_traits<char> >::operator >>(unsigned int &)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(336) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(332) : while compiling class-template member function 'class std::basic_istream<char,struct std::char_traits<char> > &__thiscall std::basic_istream<char,struct std::char_traits<char> >::read(char *,int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(46) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(41) : while compiling class-template member function 'bool __thiscall std::basic_istream<char,struct std::char_traits<char> >::ipfx(bool)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(218) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(211) : while compiling class-template member function 'int __thiscall std::basic_istream<char,struct std::char_traits<char> >::get(void)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(46) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(41) : while compiling class-template member function 'bool __thiscall std::basic_istream<unsigned short,struct std::char_traits<unsigned short> >::ipfx(bool)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(525) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(521) : while compiling class-template member function 'void __thiscall std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::_Copy(unsigned int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(296) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        src/dtrplugin.cxx(768) : see reference to function template instantiation 'class std::basic_ostream<char,struct std::char_traits<char> > &__cdecl std::operator <<(class std::basic_ostream<char,struct std::char_traits<char> > &,const char *)' being compiled
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(325) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        src/dtrplugin.cxx(2092) : see reference to function template instantiation 'class std::basic_ostream<char,struct std::char_traits<char> > &__cdecl std::operator <<(class std::basic_ostream<char,struct std::char_traits<char> > &,char)' being compiled
+maeffplugin.cxx
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(547) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(113) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(106) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::operator <<(int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(125) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(121) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::operator <<(unsigned int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(161) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(157) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::operator <<(float)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(173) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(169) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::operator <<(double)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(234) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(229) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::put(char)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(234) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(229) : while compiling class-template member function 'class std::basic_ostream<unsigned short,struct std::char_traits<unsigned short> > &__thiscall std::basic_ostream<unsigned short,struct std::char_traits<unsigned short> >::put(unsigned short)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(218) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(211) : while compiling class-template member function 'int __thiscall std::basic_istream<char,struct std::char_traits<char> >::get(void)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(46) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(41) : while compiling class-template member function 'bool __thiscall std::basic_istream<char,struct std::char_traits<char> >::ipfx(bool)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(46) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(41) : while compiling class-template member function 'bool __thiscall std::basic_istream<unsigned short,struct std::char_traits<unsigned short> >::ipfx(bool)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(525) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(521) : while compiling class-template member function 'void __thiscall std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::_Copy(unsigned int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(296) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        src/maeffplugin.cxx(389) : see reference to function template instantiation 'class std::basic_ostream<char,struct std::char_traits<char> > &__cdecl std::operator <<(class std::basic_ostream<char,struct std::char_traits<char> > &,const char *)' being compiled
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(325) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        src/maeffplugin.cxx(1410) : see reference to function template instantiation 'class std::basic_ostream<char,struct std::char_traits<char> > &__cdecl std::operator <<(class std::basic_ostream<char,struct std::char_traits<char> > &,char)' being compiled
+vtfplugin.c
+webpdbplugin.c
+psfatom.C
+psfcheck.C
+psfreslist.C
+psfres.C
+psftype.C
+psftypelist.C
+psfbond.C
+psfatomlist.C
+psfcheck_wrap.C
+   Creating library ../compile/lib_WIN32/tcl/autopsf1.6/psfcheck.lib and object ../compile/lib_WIN32/tcl/autopsf1.6/psfcheck.exp
+newmat1.C
+newmat2.C
+newmat3.C
+newmat4.C
+newmat5.C
+newmat6.C
+newmat7.C
+newmat8.C
+newmat9.C
+newmatex.C
+bandmat.C
+submat.C
+myexcept.C
+cholesky.C
+evalue.C
+fft.C
+hholder.C
+jacobi.C
+newfft.C
+sort.C
+svd.C
+newmatrm.C
+Command line warning D4002 : ignoring unknown option '-g'
+hesstrans.C
+Command line warning D4002 : ignoring unknown option '-g'
+tcl_hesstrans.C
+   Creating library ../compile/lib_WIN32/tcl/hesstrans1.0/hesstrans.lib and object ../compile/lib_WIN32/tcl/hesstrans1.0/hesstrans.exp
+libalchemify.c
+alchemify_tcl_wrap.c
+alchemify_tcl.c
+   Creating library ../compile/lib_WIN32/tcl/mutator1.5/libalchemify.lib and object ../compile/lib_WIN32/tcl/mutator1.5/libalchemify.exp
+pmepot.c
+gridcharges.c
+recipspace.c
+dxfile.c
+pub3dfft.c
+tcl_pmepot.c
+   Creating library ../compile/lib_WIN32/tcl/pmepot1.0/libpmepot.lib and object ../compile/lib_WIN32/tcl/pmepot1.0/libpmepot.exp
+charmm_file.c
+charmm_parse_topo_defs.c
+extract_alias.c
+hash.c
+hasharray.c
+memarena.c
+pdb_file.c
+pdb_file_extract.c
+psf_file.c
+psf_file_extract.c
+stringhash.c
+topo_defs.c
+topo_mol.c
+topo_mol_output.c
+topo_mol_pluginio.c
+tcl_psfgen.c
+   Creating library ../compile/lib_WIN32/tcl/psfgen1.6/libpsfgen.lib and object ../compile/lib_WIN32/tcl/psfgen1.6/libpsfgen.exp
+kiss_fft.c
+tcl_fftcmds.c
+   Creating library ../compile/lib_WIN32/tcl/signalproc1.1/fftcmds.lib and object ../compile/lib_WIN32/tcl/signalproc1.1/fftcmds.exp
+sgsmooth.C
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(525) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(521) : while compiling class-template member function 'void __thiscall std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::_Copy(unsigned int)'
+tcl_sgsmooth.c
+   Creating library ../compile/lib_WIN32/tcl/signalproc1.1/sgsmooth.lib and object ../compile/lib_WIN32/tcl/signalproc1.1/sgsmooth.exp
+specden.c
+tcl_specden.c
+   Creating library ../compile/lib_WIN32/tcl/signalproc1.1/specden.lib and object ../compile/lib_WIN32/tcl/signalproc1.1/specden.exp
+tcl_libbiokit_wrap.cpp
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(525) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(521) : while compiling class-template member function 'void __thiscall std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::_Copy(unsigned int)'
+tcl_libbiokit.cpp
+alignedSequence.cpp
+alignedStructure.cpp
+alphabet.cpp
+alphabetBuilder.cpp
+aminoAcidQR.cpp
+Atom.cpp
+AtomList.cpp
+binaryQR.cpp
+Contact.cpp
+ContactList.cpp
+ContactTools.cpp
+coordinate3D.cpp
+fastaReader.cpp
+fastaWriter.cpp
+PointerList.cpp
+PIDTools.cpp
+qTools.cpp
+Residue.cpp
+rnaQR.cpp
+sequence.cpp
+sequenceAlignment.cpp
+structureAlignment.cpp
+sequenceQR.cpp
+ShortIntList.cpp
+structure.cpp
+symbol.cpp
+symbolList.cpp
+typeConvert.cpp
+   Creating library ../compile/lib_WIN32/tcl/libbiokit1.1/tcl_libbiokit.lib and object ../compile/lib_WIN32/tcl/libbiokit1.1/tcl_libbiokit.exp
+Building Molecule File Reader plugins
+Microsoft (R) Library Manager Version 6.00.8168
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+Main.cpp
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(547) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(113) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(106) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::operator <<(int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(234) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(229) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::put(char)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(234) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(229) : while compiling class-template member function 'class std::basic_ostream<unsigned short,struct std::char_traits<unsigned short> > &__thiscall std::basic_ostream<unsigned short,struct std::char_traits<unsigned short> >::put(unsigned short)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(46) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(41) : while compiling class-template member function 'bool __thiscall std::basic_istream<char,struct std::char_traits<char> >::ipfx(bool)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(46) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(41) : while compiling class-template member function 'bool __thiscall std::basic_istream<unsigned short,struct std::char_traits<unsigned short> >::ipfx(bool)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(525) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(521) : while compiling class-template member function 'void __thiscall std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::_Copy(unsigned int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(296) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        src/Main.cpp(56) : see reference to function template instantiation 'class std::basic_ostream<char,struct std::char_traits<char> > &__cdecl std::operator <<(class std::basic_ostream<char,struct std::char_traits<char> > &,const char *)' being compiled
+Parser.cpp
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(547) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(234) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(229) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::put(char)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(234) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(229) : while compiling class-template member function 'class std::basic_ostream<unsigned short,struct std::char_traits<unsigned short> > &__thiscall std::basic_ostream<unsigned short,struct std::char_traits<unsigned short> >::put(unsigned short)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(46) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(41) : while compiling class-template member function 'bool __thiscall std::basic_istream<char,struct std::char_traits<char> >::ipfx(bool)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(46) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(41) : while compiling class-template member function 'bool __thiscall std::basic_istream<unsigned short,struct std::char_traits<unsigned short> >::ipfx(bool)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(525) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(521) : while compiling class-template member function 'void __thiscall std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::_Copy(unsigned int)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(108) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(103) : while compiling class-template member function 'class std::basic_istream<char,struct std::char_traits<char> > &__thiscall std::basic_istream<char,struct std::char_traits<char> >::operator >>(int &)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(152) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(148) : while compiling class-template member function 'class std::basic_istream<char,struct std::char_traits<char> > &__thiscall std::basic_istream<char,struct std::char_traits<char> >::operator >>(float &)'
+Worker.cpp
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(547) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(234) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(229) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::put(char)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(234) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(229) : while compiling class-template member function 'class std::basic_ostream<unsigned short,struct std::char_traits<unsigned short> > &__thiscall std::basic_ostream<unsigned short,struct std::char_traits<unsigned short> >::put(unsigned short)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(46) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(41) : while compiling class-template member function 'bool __thiscall std::basic_istream<char,struct std::char_traits<char> >::ipfx(bool)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(46) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(41) : while compiling class-template member function 'bool __thiscall std::basic_istream<unsigned short,struct std::char_traits<unsigned short> >::ipfx(bool)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(525) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(521) : while compiling class-template member function 'void __thiscall std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::_Copy(unsigned int)'
+Atom.cpp
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(547) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(234) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(229) : while compiling class-template member function 'class std::basic_ostream<char,struct std::char_traits<char> > &__thiscall std::basic_ostream<char,struct std::char_traits<char> >::put(char)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(234) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ostream(229) : while compiling class-template member function 'class std::basic_ostream<unsigned short,struct std::char_traits<unsigned short> > &__thiscall std::basic_ostream<unsigned short,struct std::char_traits<unsigned short> >::put(unsigned short)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(46) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(41) : while compiling class-template member function 'bool __thiscall std::basic_istream<char,struct std::char_traits<char> >::ipfx(bool)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(46) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\istream(41) : while compiling class-template member function 'bool __thiscall std::basic_istream<unsigned short,struct std::char_traits<unsigned short> >::ipfx(bool)'
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(525) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify -GX
+        C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\xstring(521) : while compiling class-template member function 'void __thiscall std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::_Copy(unsigned int)'
+Microsoft (R) Incremental Linker Version 6.00.8168
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+analyze.c
+fpair.c
+fpair_sub.c
+multiple.c
+nrutil.c
+pair_type.c
+pattern.c
+ps-xy.c
+ps-xy-sub.c
+rnaview.c
+rnaxml-new.c
+statistics.c
+vrml.c
+xml2ps.c
+Microsoft (R) Incremental Linker Version 6.00.8168
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+volmap.C
+binary_ops.C
+convolutions.C
+unary_ops.C
+voxels.C
+ops.C
+vec.C
+hash.C
+getplugins.C
+molfile.C
+params.C
+main.C
+Microsoft (R) Incremental Linker Version 6.00.8168
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+alnscore.c
+amenu.c
+src/amenu.c(165) : warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'void (__cdecl *)(int )'
+src/amenu.c(235) : warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'void (__cdecl *)(int )'
+src/amenu.c(329) : warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'void (__cdecl *)(int )'
+src/amenu.c(419) : warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'void (__cdecl *)(int )'
+src/amenu.c(573) : warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'void (__cdecl *)(int )'
+src/amenu.c(656) : warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'void (__cdecl *)(int )'
+src/amenu.c(728) : warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'void (__cdecl *)(int )'
+src/amenu.c(852) : warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'void (__cdecl *)(int )'
+src/amenu.c(996) : warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'void (__cdecl *)(int )'
+src/amenu.c(1104) : warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'void (__cdecl *)(int )'
+calcgapcoeff.c
+calcprf1.c
+calcprf2.c
+calctree.c
+clustalw.c
+gcgcheck.c
+interface.c
+malign.c
+pairalign.c
+prfalign.c
+random.c
+readmat.c
+sequence.c
+showpair.c
+trees.c
+util.c
+Microsoft (R) Incremental Linker Version 6.00.8168
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+percid.cpp
+pdbReader.cpp
+structureAlignmentReader.cpp
+structureQR.cpp
+rmsdTools.cpp
+Microsoft (R) Incremental Linker Version 6.00.8168
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+Q.cpp
+Microsoft (R) Incremental Linker Version 6.00.8168
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+qPair.cpp
+Microsoft (R) Incremental Linker Version 6.00.8168
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+rmsd.cpp
+Microsoft (R) Incremental Linker Version 6.00.8168
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+seqqr.cpp
+Microsoft (R) Incremental Linker Version 6.00.8168
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+structqr.cpp
+Microsoft (R) Incremental Linker Version 6.00.8168
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+upgmaclu.c
+Microsoft (R) Incremental Linker Version 6.00.8168
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+a3to1.c
+aliseq.c
+ccprobcalc.c
+closefile.c
+count_domain.c
+display_align.c
+dosort.c
+src/dosort.c(85) : warning C4113: 'int (__cdecl *)()' differs in parameter lists from 'int (__cdecl *)(const void *,const void *)'
+get_clust.c
+getdomain.c
+getdsspsum.c
+getfile.c
+getks.c
+getsec.c
+gjnoc.c
+gjutil.c
+idist.c
+igetca.c
+igetcadssp.c
+ltou.c
+makeafile.c
+matfit.c
+matinv.c
+matmult.c
+murzin_P.c
+newoutput.c
+openfile.c
+pairfit.c
+pairpath.c
+pairwise.c
+printmat.c
+printmat2.c
+probcalc.c
+probplot.c
+qkfit.c
+readtree.c
+reval.c
+revmatmult.c
+rossmann.c
+roughfit.c
+scan.c
+sec_content.c
+slow_scan.c
+src/slow_scan.c(216) : warning C4700: local variable 'ddomain' used without having been initialized
+stamp.c
+stampgetpars.c
+sw7ccs.c
+swstruc.c
+testfile.c
+treefit.c
+treepath.c
+treewise.c
+update.c
+utol.c
+Microsoft (R) Incremental Linker Version 6.00.8168
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+

@@ -1,0 +1,39 @@
+#!/bin/csh
+
+##
+## Script for building plugins on all supported platforms
+##
+#setenv DATE `date +%Y-%m-%d-%T`
+setenv DATE `date +%m%d-%H%M%S`
+
+##
+## BioCoRE logging (eventually, need other changes first)
+##
+#setenv BUILDNUM `cat /Projects/vmd/vmd/vmdbuild.number`;
+#setenv LOGRUN  'biolog -f -p vmd -k "VMD plugins build $BUILDNUM, BUILD SUMMARY" -s "VMD build $BUILDNUM, BUILD SUMMARY"'
+#setenv LOGGING 'biolog -f -p vmd -k "VMD plugins build $BUILDNUM, Platform: $1"  -s "VMD build $BUILDNUM, Platform: $1"'
+
+setenv unixdir `pwd` 
+
+##
+## Check for builds on remote hosted supercomputers, etc.
+##
+switch ( `hostname` )
+  ## TCBG development machines 
+  case casablanca*:
+  case moline*:
+    echo "Using build settings for TB network..."
+    setenv TCLINC -I/Projects/vmd/vmd/lib/tcl/include
+    setenv TCLLIB -L/Projects/vmd/vmd/lib/tcl
+
+    ssh -x sydney "cd $unixdir; gmake ANDROIDARMV7A TCLINC=$TCLINC TCLLIB=$TCLLIB/lib_ANDROIDARMV7A >& log.ANDROIDARMV7A.$DATE " < /dev/null &
+
+    echo "Waiting for all plugin make jobs to complete..."
+    wait;
+    echo ""
+    echo "Plugin builds done..."
+    breaksw;
+endsw
+
+
+

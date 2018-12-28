@@ -1,0 +1,186 @@
+Building Molecule File Reader plugins
+"src/abinitplugin.c", line 708: warning: statement not reached
+"src/ply.c", line 146: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 157: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 159: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 199: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 259: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 260: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 263: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 300: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 301: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 314: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 627: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 640: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 647: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 650: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 652: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 654: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 661: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 663: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 665: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 667: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 669: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 683: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 691: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 732: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 793: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 795: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1065: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1076: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1083: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1174: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1176: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1442: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1492: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1574: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1615: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1637: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1709: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 2255: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 2262: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 2320: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 2322: Warning: String literal converted to char* in formal argument s2 in call to equal_strings(char*, char*).
+"src/ply.c", line 2328: Warning: String literal converted to char* in formal argument s2 in call to equal_strings(char*, char*).
+"src/ply.c", line 2345: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 2515: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2537: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2577: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2801: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2802: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2815: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2849: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2850: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2865: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2923: Warning: String literal converted to char* in initialization.
+"src/ply.c", line 2924: Warning: String literal converted to char* in initialization.
+"src/ply.c", line 2925: Warning: String literal converted to char* in initialization.
+"src/ply.c", line 2926: Warning: String literal converted to char* in initialization.
+"src/ply.c", line 2927: Warning: String literal converted to char* in initialization.
+"src/ply.c", line 2928: Warning: String literal converted to char* in initialization.
+"src/ply.c", line 2929: Warning: String literal converted to char* in initialization.
+"src/ply.c", line 2960: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2962: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 3074: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 3075: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 3126: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 3132: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/plyplugin.C", line 47: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 48: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 49: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 50: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 51: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 52: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 53: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 54: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 55: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 59: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 61: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 121: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+"src/plyplugin.C", line 137: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+"src/plyplugin.C", line 141: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+"src/plyplugin.C", line 145: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+"src/plyplugin.C", line 149: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+"src/plyplugin.C", line 153: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+"src/plyplugin.C", line 157: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+"src/plyplugin.C", line 175: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+"src/plyplugin.C", line 187: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+"src/plyplugin.C", line 190: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+86 Warning(s) detected.
+"src/abinitplugin.c", line 708: warning: statement not reached
+"src/ply.c", line 146: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 157: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 159: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 199: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 259: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 260: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 263: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 300: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 301: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 314: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 627: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 640: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 647: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 650: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 652: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 654: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 661: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 663: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 665: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 667: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 669: Warning: String literal converted to char* in formal argument 2 in call to equal_strings(char*, char*).
+"src/ply.c", line 683: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 691: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 732: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 793: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 795: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1065: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1076: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1083: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1174: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1176: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1442: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1492: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1574: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1615: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1637: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 1709: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 2255: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 2262: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 2320: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 2322: Warning: String literal converted to char* in formal argument s2 in call to equal_strings(char*, char*).
+"src/ply.c", line 2328: Warning: String literal converted to char* in formal argument s2 in call to equal_strings(char*, char*).
+"src/ply.c", line 2345: Warning: String literal converted to char* in formal argument 3 in call to my_alloc(int, int, char*).
+"src/ply.c", line 2515: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2537: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2577: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2801: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2802: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2815: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2849: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2850: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2865: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2923: Warning: String literal converted to char* in initialization.
+"src/ply.c", line 2924: Warning: String literal converted to char* in initialization.
+"src/ply.c", line 2925: Warning: String literal converted to char* in initialization.
+"src/ply.c", line 2926: Warning: String literal converted to char* in initialization.
+"src/ply.c", line 2927: Warning: String literal converted to char* in initialization.
+"src/ply.c", line 2928: Warning: String literal converted to char* in initialization.
+"src/ply.c", line 2929: Warning: String literal converted to char* in initialization.
+"src/ply.c", line 2960: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 2962: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 3074: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 3075: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 3126: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/ply.c", line 3132: Warning: String literal converted to char* in formal argument fname in call to my_alloc(int, int, char*).
+"src/plyplugin.C", line 47: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 48: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 49: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 50: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 51: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 52: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 53: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 54: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 55: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 59: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 61: Warning: String literal converted to char* in initialization.
+"src/plyplugin.C", line 121: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+"src/plyplugin.C", line 137: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+"src/plyplugin.C", line 141: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+"src/plyplugin.C", line 145: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+"src/plyplugin.C", line 149: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+"src/plyplugin.C", line 153: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+"src/plyplugin.C", line 157: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+"src/plyplugin.C", line 175: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+"src/plyplugin.C", line 187: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+"src/plyplugin.C", line 190: Warning: String literal converted to char* in formal argument s1 in call to equal_strings(char*, char*).
+86 Warning(s) detected.
+"src/psftype.C", line 71: Warning: index hides PsfType::index.
+1 Warning(s) detected.
+"src/tcl_hesstrans.C", line 426: Warning (Anachronism): Formal argument proc of type extern "C" int(*)(void*,Tcl_Interp*,int,Tcl_Obj*const*) in call to Tcl_CreateObjCommand(Tcl_Interp*, const char*, extern "C" int(*)(void*,Tcl_Interp*,int,Tcl_Obj*const*), void*, extern "C" void(*)(void*)) is being passed int(*)(void*,Tcl_Interp*,int,Tcl_Obj*const*).
+"src/tcl_hesstrans.C", line 429: Warning (Anachronism): Formal argument proc of type extern "C" int(*)(void*,Tcl_Interp*,int,Tcl_Obj*const*) in call to Tcl_CreateObjCommand(Tcl_Interp*, const char*, extern "C" int(*)(void*,Tcl_Interp*,int,Tcl_Obj*const*), void*, extern "C" void(*)(void*)) is being passed int(*)(void*,Tcl_Interp*,int,Tcl_Obj*const*).
+2 Warning(s) detected.
+"src/xml2ps.c", line 2270: warning: implicit function declaration: get_BDIR
+"src/ops.C", line 58: Warning: String literal converted to char* in initialization.
+"src/ops.C", line 65: Warning: String literal converted to char* in initialization.
+2 Warning(s) detected.

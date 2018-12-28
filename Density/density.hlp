@@ -1,0 +1,382 @@
+1 DENSITY
+ DENSITY is a graphics package designed for use with MOPAC, the MNDO -
+MINDO/3 semi-empirical package. It is involked by the command 
+"DENSITY" followed by one argument. If the argument is omitted, the 
+user will be prompted. DENSITY generates datafiles suitable for
+subsequent processing, for example, printing the file on a tiger
+printer or generating a plot using DRAW (written by Capt. Donn Storch)
+
+2 KEYS
+
+ The operation of DENSITY is controlled by keywords. They can be in 
+any order, and should be separated by at least one space. 
+The key-words for debugging DENSITY can be found in DEBUG
+3 ADD
+
+ Key-word format:    ADD    (line 3 of data-file)
+
+ When two pictures are to be added together to form a single picture,
+ADD must be used. For example, a user might want to add or subtract
+two M.O.s to see the effect. Thus if M.O. 2 and M.O. 3 were to be
+added together, the data for such a calculation could be
+
+               FORMALDEHYDE
+               CENTER=2 LINE=(0,0,1) EDGE=2 PSI=2 ADD
+               CENTER=2 LINE=(0,0,1) EDGE=2 PSI=3 
+
+ See also PHASE
+3 AXIS
+
+ Key-word format:    AXIS=n.nnn     (line 3 of data-file)
+
+ By default a square plot is drawn. If the user wants to show the
+three-dimensional nature of the contour map the facility exists to
+tilt the plot so that a foreshortened and rotated plot is drawn.
+ Of course, the degree of tilt depends very much on the system,
+there is no facility in DENSITY to eliminate "hidden lines", so
+the tilt should not be so great that hidden lines would show.
+ The range of n.nn in  AXIS=n.nn is 1.0 to 0.0. 1.0 would give
+a square plot, as if the user was viewing the plot from directly
+overhead looking straight down, 0.0 gives a view of the plot as if the
+user was looking at it from the horizon, looking horizontally.
+ Clearly, AXIS=1.0 would not show the relief, if GRID was 
+used only a perfectly square grid would be seen, a better choice would
+be AXIS=0.6. Conversely, AXIS=0.0 would show the contours as
+straight lines (as they would be being viewed edge-on).
+3 BONDS
+
+ Key-word format:    BONDS    (line 3 of data-file)
+
+ Not to be used in conjunction with HOMO, LUMO, PSI=, or OCCUPANCY.
+ BONDS calculates the average atomic orbital occupancy of each atom, 
+and subtracts that number from the density matrix. The result is a plot
+whose average value is zero, and shows where the electrons have 
+come from and gone to when the bonds are formed. 
+3 CENTER
+
+ Key-word format:    CENTER=nn  or
+                     CENTER=(n.nn,n.nn,n.nn)    (line 3 of data-file)
+
+ This key-word is essential, it defines the center of the plot 
+Two formats are provided to define the center:
+(a) an atom number can be used, and (b) an absolute cartesian 
+coordinate can be specified.
+ Irrespective of which option is used, the center of the plot will be
+converted internally into absolute cartesian coordinates.
+4 Atomic
+ Format: CENTER=n  The location of atom n is defined as the
+center of the plot. Thus if atom n has cartesian coordinates 
+(x=0.5, y=1.4, z=-0.8) then the center of the plot is 
+(x=0.5, y=1.4, z=-0.8). Dummy atoms are not counted, so if
+any dummy atoms were used in the definition of the geometry, 
+they must be removed when considering the atom number. In other 
+words, only a real atom can be used to define a point in the molecule.
+4 Absolute
+ Format: CENTER=(n.nn,n.nn,n.nn) The location of the center of 
+the plot is defined as being (n.nn,n.nn,n.nn). Of course, before
+such a center can be defined, the user must know the cartesian 
+coordinates of the atoms in the molecule.
+3 DEBUG
+
+ Key-word format:    DEBUG    (line 1 of data-file)
+
+  This key-word is intended for programmers' use when debugging
+the program. 
+3 DMAT
+
+ Key-word format:    DMAT    (line 1 of data-file)
+
+  In the MANUAL mode, when DMAT is specified, the electronic 
+structure is supplied as a lower-half triangle at the end of 
+the MANUAL data, (q.v.).
+3 EDGE
+
+ Key-word format:    EDGE=nn    (line 3 of data-file)
+
+ This key word is entered as EDGE=n.nn
+ The length of one side of the graph-plot is defined as being n.nn 
+Angstroms.
+3 FINE
+
+ Key-word format:    FINE    (line 3 of data-file)
+
+ Normally between 10 and 25 contours are plotted. In order to increase
+this number FINE can be used, in which case 40 to 100 contours
+will be generated.
+3 GRID
+
+ Key-word format:    GRID    (line 3 of data-file)
+
+ GRID can be used to enhance the legibility of a plot. It draws
+a regular mesh of lines across the plot, with the same relief as the
+countours. GRID should only be used with an AXIS which is not 1.0.
+3 HOMO
+
+ Key-word format:    HOMO    (line 3 of data-file)
+
+ For closed-shell systems with non-degenerate highest occupied molecular
+orbitals, the key-word HOMO can be used to produce an intensity
+map of the highest occupied molecular orbital. For other systems, the
+key-word PSI= should be used.
+3 LINE
+
+ Key-word format:    LINE=nn or
+                     LINE=(n.nn,n.nn,n.nn)    (line 3 of data-file)
+
+This key-word is essential, it defines a vector perpendicular 
+to the plane of the plot. Two formats are provided to define 
+the axis perpendicular to the plane of the plot, these formats 
+use radically different concepts, so users are cautioned to 
+verify that they understand both definitions, and the distinction 
+between them.
+(a) an atom number can be used, and (b) an absolute cartesian coordinate 
+can be specified.
+ Irrespective of which option is used, the axis of the plot will be
+converted internally into a unit vector in cartesian coordinates.
+4 Atomic
+ Format: LINE=n  The axis of the plot is defined by the vector 
+drawn from atom n to the defined center of the plot.
+Thus if atom n has cartesian coordinates (x=0.5, y=1.4, z=0.2) 
+and the center of the plot is at point (x=0.5, y=1.4, z=-0.8) 
+then the axis of the plot is (0.0, 0.0, 1.0). Dummy atoms are 
+not counted, so if any dummy atoms were used in the definition 
+of the geometry, they must be removed when considering the atom 
+number. In other words, only a real atom can be used to define 
+the axis of the graph.
+4 Absolute
+ Format: LINE=(n.nn,n.nn,n.nn) The axis of a line perpendicular to the
+plane of the plot is (n.nn,n.nn,n.nn). This axis need not be normalized,
+but must be finite, that is the only axis not allowed is (0,0,0)
+3 LUMO
+
+ Key-word format:    LUMO    (line 3 of data-file)
+
+ For closed-shell systems with non-degenerate lowest unoccupied molecular
+orbitals, the key-word LUMO can be used to produce an intensity
+map of the lowest unoccupied molecular orbital. For other systems, the
+key-word PSI= should be used.
+3 MANUAL
+
+ Key-word format:    MANUAL    (line 1 of data-file)
+
+ If necessary, the electron density program can be used without first
+generating a MOPAC type file. This is useful when testing ideas or
+debugging the program. MANUAL then allows the user to input all the
+data needed directly off the data-file. The data must follow after
+the title line, that is after line 2. There are severe limitations
+on what pictures can be generated, for example the key-word
+OCCUPANCY cannot be used as the information necessary is not
+available. Similarly, if M.O. was used, then the key-words PSI=,
+HOMO and LUMO would all give the same result. These limitations 
+are due to the absence of data.
+ If MANUAL is specified then either M.O. or DMAT MUST also
+be present.
+4 Data
+ 1 Number of atoms, orbitals, electrons (NATOMS, NORBS, NELECS). 
+ 2 Cartesian coordinates for each atom, real, in order x, y, z.
+   There will be NATOMS of these.
+ 3 Labels for all atoms. For example, all carbon atoms might be 
+   labeled "1", hydrogen atoms "2", etc. There will be NATOMS of 
+   these numbers. The numbers must be 1 to NUNI, NUNI being the 
+   number of unique atom-types in the molecule. 
+ 4 Atomic Numbers (Z) for all unique atoms. There are NUNI of these 
+   numbers. If atom of type 1 is a carbon atom, then the corresponding 
+   atomic number would be 6. 
+ 5 Principal Quantum numbers. (PQN) There are NUNI of these numbers.
+ 6 Number of orbitals for all unique atoms. (NORBS) 
+   There are NUNI of these numbers.    
+ 7 Orbital exponents for all unique atoms, three numbers per atom 
+   (one each for s, p, and d orbital exponents), if p or d absent, 
+   these can be left blank.
+ 8 If M.O. specified, then the eigenvector coefficients. There are 
+   NORBS of these. Otherwise, if DMAT specified, then the lower-half 
+   of the density matrix, is read in. There would be 
+   (NORBS*(NORBS+1))/2 of these numbers.
+4 FORMATS
+ 1     NATOMS, NORBS, NELECS:  One line, free format, integer.
+ 2     Cartesian coordinates one atom per line, real, in order x, y, z.
+       Free format.  There will be NATOMS of these.
+ 3     Labels:   Integer.
+ 4     Atomic Numbers (Z): Free format, Integer.
+ 5     Principal Quantum numbers. (PQN):   Free format, Integer
+ 6     NORBS: Free format, Integer.
+ 7     Exponents: fixed format, 3F10, three numbers per atom 
+ 8     Molecular orbital or density matrix: free format.
+4 Exponents       
+ The atomic orbital basis set used consists of Slater-type 
+orbitals of type Y(l,m)(theta.phi)*N*r**(n-1)*exp(-alpha*r). 
+The exponent of an orbital determines its size, the larger 
+the exponent the smaller the orbital. In the list that follows, 
+the MNDO exponents are in atomic units (the normal units here).
+of 
+
+     Compound     Unique atom    Exponents line would read
+     Methane         1        1.78       1.78           (1=Carbon)
+                     2        1.30                      (2=Hydrogen)
+     Thiomethanol    1        1.78       1.78           (1=Carbon)
+                     2        1.3                       (2=Hydrogen)
+                     3        2.4        2.1        1.0 (3=Sulphur)
+4 HCOOH
+  Full Example of Manual Data for Formic Acid
+
+Line  1:      MANUAL       M.O.                   (Key-words
+Line  2:      FORMIC ACID                         (Title
+Line  3:      5  14 18                            (NATOMS, NORBS, NELECS
+Line  4:   0.0000    0.0000    0.0000             (Cartesian coordinates
+Line  5:   1.2270    0.0000    0.0000
+Line  6:   1.9164    1.1676    0.0000
+Line  7:   1.3973    1.9625    0.0000
+Line  8:   1.8882   -0.8836    0.0000
+Line  9:    1 2 1 3 3                             (Labels
+Line 10:    8 6 1                                 (Atomic Numbers
+Line 11:    2 2 1                                 (Princ. Quant. Nos.
+Line 12:    4 4 1                                 (Orbitals per atom
+Line 13:   2.699905  2.699905                     (Exponents
+Line 14:   1.787537  1.787537  
+Line 15:   1.331967                    (below: eigenvector coefficients
+Line 16:   -0.1616  0.4769  -0.0514   0.0000  -0.0628  -0.3488  -0.0032  
+Line 17:    0.0000  0.2634   0.6282  -0.0893   0.0000  -0.2925  -0.2457  
+Line 18:    CENTER=2 LINE=(0,0,1) EDGE=4          (Rest of data
+4 PQN
+ Principal quantum numbers for the first 10 elements of the periodic
+table are 1,2,2,2,2,2,2,2,2,2. By default, ns, np, and (n-1)d will
+be used, except if n=3, in which case ns, np, and nd will be used
+
+               Principal Quantum Numbers line would read
+     Compound  Unique atom:   1  2  3          (1=  2=  3=)
+
+     Methane                  2  1               C   H
+     Formic Acid              1  2  2            H   C   O
+     Thiomethanol             1  2  3            H   C   S
+4 NORBS
+NORBS = The number of atomic orbitals per atom. This number must be one
+of the set 1, 4, or 9. 
+
+   Number of orbitals per atom               Basis Set
+
+             1                 s
+             4                 s, px, py, pz
+             9                 s, px, py, pz,d(x2-y2),dxz,dz2,dyz,dxy
+
+                 Number of Orbitals line would read
+     Compound   Unique atom:  1  2  3     ( 1=    2=    3=  )
+     Methane                  4  1           C     H
+     Formic Acid              1  4  4        H     C     O
+     Thiomethanol             1  4  9        H     C     S
+4 NUNI
+   Compound         Atom Labels        NUNI Line would read
+  Methane         C: 1,   H: 2          2   1 2 2 2 2         CH4
+  Formic Acid     H: 1,   C: 2,  O: 3   3   1 2 3 3 1         HCOOH
+  Thiomethanol    C: 1,   H: 2,  S: 3   3   1 2 2 2 3 2       CH3SH
+4 Z
+ The atomic numbers are used only in the output to make the results
+ more legible.
+
+                Atomic Numbers line would read    
+
+     Compound   Unique atom:  1  2  3               (1=   2=   3=)
+     Methane                  6  1                    C    H
+     Formic Acid              1  6  8                 H    C    O
+     Thiomethanol             6  1 16                 C    H    S
+
+3 MO (M.O.)
+
+ Key-word format:    M.O.    (line 1 of data-file)
+
+  In MANUAL mode, the electronic structure information is supplied as
+as molecular orbital. The alternative is to supply a density matrix
+via DMAT (q.v). See MANUAL for further information.
+3 MULT
+
+ Key-word format:    MULT=n.nn    (line 3 of data-file)
+
+ There is a default scale for the relief of a plot, when viewed as 
+a 3-D structure. If this default is not suitable, say the plot is too 
+flat, then MULT=n.nn can be used to change the vertical scale. 
+MULT=1.0 will do nothing, MULT=2.0 will increase the vertical relief.
+3 OCCUPANCY
+
+ Key-word format:    OCCUPANCY    (line 3 of data-file)
+
+ When the user wants to explicitly define an electronic configuration
+for a system, OCCUPANCY is used. This key-word requires the explicit
+occupancy of the M.O.s to be defined on the next line, in I1 format.
+For example, to define methane with one electron in each of the three
+triply-degenerate levels, the lines
+
+Line 1: CENTER=1 LINE=(0.0, 0.0, 1.0) OCCUPANCY EDGE=2.0 
+Line 2:2111
+
+could be used. Similarly, if an excited ethoxy radical were to 
+be specified, the following definition could be used:
+
+Line 1:  CENTER=(0.7,0.0,0.0) LINE=(0.0, 0.0, 1.0) OCCUPANCY EDGE=2.0 
+Line 2:22222201
+
+3 PHASE
+
+ Key-word format:    PHASE or
+                     PHASE=n.nn    (line 3 of data-file)
+
+ Two formats for this are possible. If PHASE is specified, the
+data being added to the plot is multiplied by -1, i.e. negated. 
+If PHASE=n.nnnn is used, the data are multiplied by n.nnnn. 
+For example, to form the normalized M.O. of formaldehyde resulting 
+from equal and opposite amounts of the second and third M.O.s, 
+i.e. 0.7071(M.O.2 - M.O.3), the following data could be used.
+
+Line 1:
+Line 2:   FORMALDEHYDE
+Line 3: CENTER=2 LINE=(0,0,1) EDGE=1 PSI=2 PHASE=0.7071 ADD
+Line 4: CENTER=2 LINE=(0,0,1) EDGE=1 PSI=3 PHASE=-0.7071
+Line 5:
+
+ Note that the first phase is positive, it is not the plot that is 
+reversed, only the data going in to the plot, so that the data 
+arising from line 4 are to be multiplied by -0.7071 before being 
+added to the plot.
+3 PSI
+
+ Key-word format:    PSI=nn   (line 3 of data-file)
+
+
+ A specified molecular orbital is to be plotted. Note that degenerate
+M.O.s cannot be unambiguously represented, as they are ill-defined
+by a random unitary transform. To plot degenerate M.O.s the user should
+be prepared to use PHASE and ADD.
+3 TIGER
+
+ Key-word format:    TIGER  (line 1 of data-file)
+
+ If TIGER is specified, an output file suitable for direct printing
+on a Paper Tiger printer will be generated.
+2  COMMAND
+   The command to submit a DENSITY job to the flash queue is of form
+
+   DENSITY [<filename>]
+
+Where:	<filename> is the name of the INPUT file. A data file with 
+                   the name <filename>.GRA must exist.
+
+2 DATA
+ The layout of data for a DENSITY job is
+
+      <First line of key words>  
+      <Title line>   
+      [<Manual data, if MANUAL specified on first line>]
+      <Second line of key words>  
+      [<Further lines of key words, if more than one picture specified>]
+
+2 TECHNICAL
+
+    DENSITY reads one or two files, these are:
+
+ <Filename>.GRA   user-written data file. (Obligatory) Channel 5
+ <Filename>.GPT   MOPAC-written GRAPH file. (Optional, involked by 
+                  GRAPH) Channel 11
+
+    DENSITY can write two or three files, these are:
+
+ <Filename>.OUT  Main results file, always output. Channel 6
+ <Filename>.TEC  Data file for DRAW program or other graphics
+                 program.

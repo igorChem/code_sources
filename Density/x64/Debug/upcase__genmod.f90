@@ -1,0 +1,8 @@
+        !COMPILER-GENERATED INTERFACE MODULE: Tue Mar 27 23:54:11 2018
+        MODULE UPCASE__genmod
+          INTERFACE 
+            SUBROUTINE UPCASE(KEYWRD)
+              CHARACTER(LEN=80) :: KEYWRD
+            END SUBROUTINE UPCASE
+          END INTERFACE 
+        END MODULE UPCASE__genmod

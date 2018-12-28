@@ -1,0 +1,185 @@
+<!--#set var="TITLE" value="AlaScan Plugin, Version 1.0"-->
+<!--#include virtual="/Research/vmd/include/header-vmd.shtml"-->
+
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>AlaScan.html</title></head><body>
+<div style="text-align: justify;"><big style="color: rgb(153, 153, 153);"><span style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;"></span></big>
+<table style="text-align: left; width: 100%;" border="0" cellpadding="0" cellspacing="10">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 800px;">
+      <div style="text-align: justify;"><big style="color: rgb(153, 153, 153);"><span style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;"></span></big><span style="font-family: Helvetica,Arial,sans-serif;">AlaScan is a
+tool to automate the different steps involved in in-silico alanine scanning
+calculations within the framework of free-energy perturbation (FEP), as implemented in the
+molecular dynamics program NAMD. </span><span style="font-family: Helvetica,Arial,sans-serif;"></span><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;"><br>
+      <br>
+<br><br>
+Implementation</span>.
+The AlaScan plugin can be utilized to prepare various input files
+required
+to perform FEP calculations, specifically point mutations, wherein a
+residue is transformed into alanine. In addition, the plugin offers a
+convenient
+environment for the analysis of the completed free-energy calculations
+and
+assessment of their convergence.</span><br>
+      <br>
+      <br>
+      <br>
+      </span><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">Ease of use.</span></span></span> <span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-family: Helvetica,Arial,sans-serif;">AlaScan
+has been designed for minimalist human intervention and knowledge of
+the theoretical underpinnings. Once the set of amino acids that will
+undergo mutation is selected, all the necessary files are generated
+seamlessly. Following completion of the FEP calculations, the end-user
+can visualize at a glance, by means of a color gradient, the favorable mutations, and assess the
+reliability of the diiferent simulations.</span></span><br>
+      <span style="font-family: Helvetica,Arial,sans-serif;">
+      <span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;"><br>
+      <br>
+<br>
+Preparing the input files for the FEP calculations</span>.
+The "<span style="font-family: Courier New,Courier,monospace;">Setup FEP input files</span>"
+section of the AlaScan plugin can be utilized
+to prepare the set of input files required for FEP calculations (See
+Figure 1). In-silico alanine scanning experiments can be performed on
+either
+protein-ligand (and possibly protein-protein) complexes (referred to as
+<span style="font-family: Courier New,Courier,monospace;">Host-Guest</span>), or isolated
+proteins (referred to as <span style="font-family: Courier New,Courier,monospace;">Host</span>).
+In the former instance, alanine scanning is aimed at predicting changes
+in the binding free energy upon mutation, while in the latter instance,
+it is
+employed to identify thermostabilizing mutations. By default, the
+AlaScan plugin considers the segment wherein alanine mutations occur as
+the host. AlaScan requires as inputs a PSF, a PDB and an XSC file for
+the protein of interest in order to prepare (i) the hybrid structure
+with the suitable dual-topology, and (ii) the FEP configuration files
+compliant with NAMD. After loading the relevant input files, the
+AlaScan plugin provides a new graphical window to select the amino
+acids
+for in-silico alanine scanning experiments (see Figure 2). <br><br>The
+plugin provides a number of options to upload the force-field-parameter and
+hybrid-topology files (see Figure 3). Once the necessary parameters are set up, the
+plugin performs a series of actions in the following order:</span></span><br>
+      <ol style="list-style-type: lower-roman;font-family: Helvetica,Arial,sans-serif;">
+        <li><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-family: Helvetica,Arial,sans-serif;">A directory is created within the current path by adding the "<span style="font-family: Courier New,Courier,monospace;">-FEP</span>" suffix to the PDB file name,</span></span></li>
+        <li><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-family: Helvetica,Arial,sans-serif;">A subdirectory is created for each mutation with a unique syntax,
+starting with the residue id and the three-letter residue codes, e.g.,
+"<span style="font-family: Courier New,Courier,monospace;">27-LEU2ALA</span>",</span></span></li>
+        <li><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-family: Helvetica,Arial,sans-serif;">In the case of a host-guest complex, two
+subdirectories, "<span style="font-family: Courier New,Courier,monospace;">Host</span>" and "<span style="font-family: Courier New,Courier,monospace;">Host-Guest</span>", are created for each
+mutation in the host and host-guest systems,</span></span></li>
+        <li><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-family: Helvetica,Arial,sans-serif;">The hybrid PDB
+structure and the corresponding topology files for the molecular assemblies
+are generated for each residue selected for alanine mutation,</span></span></li>
+        <li><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-family: Helvetica,Arial,sans-serif;">A NAMD configuration file for preliminary equilibration, as well as for the FEP
+forward and the backward transformations is spawned in designated
+subdirectories for each residue.</span></span></li>
+      </ol>
+      <span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-family: Helvetica,Arial,sans-serif;">In order to launch the
+thermalization and the FEP calculations using NAMD, a simple script can be
+written to access each directory in an organized fashion.<br><br>
+<br></span><br>
+
+      <span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">Analysis of the FEP calculations. </span>The
+"<span style="font-family: Courier New,Courier,monospace;">Analyze FEP output</span>" section of the AlaScan plugin has been designed to automate the analysis of the FEP calculations, i.e., to analyze
+globally multiple alanine mutations carried out on a biological object
+(see Figure 4). This section requires the native PDB and PSF files of
+the molecular assembly as an input. The physical location of the
+directory containing the output of the different in-silico alanine
+scanning experiments ought to be provided to access sequentially each
+free-energy calculation, e.g., the directory created in the above step (i)&nbsp; corresponds to the input of "<span style="font-family: Courier New,Courier,monospace;">Path to read FEP outfiles</span>". The AlaScan plugin invokes another VMD plugin, namely ParseFEP,
+which has been designed for the post-hoc analysis of FEP calculations
+performed with NAMD.<br><br>After
+analyzing the forward and
+backward transformations, a GUI displays the list of amino acids
+present in the native protein (see Figure 4). The amino acids involved
+in the in-silico alanine-scanning experiments are shown using a
+single-letter
+code, e.g., W2A, to denote the mutation of a tryptophan into alanine.
+The
+GUI also displays the estimated free-energy changes in the presence and
+in the absence of the host environment in thermostability
+investigations, i.e., with an isolated protein. In the case of
+host-guest complexes, the free-energy differences in the presence and
+in the absence of the guest are reported, together with the relative
+binding free energy calculated from each alanine substitution.
+Appraisal of the convergence is provided using the hysteresis of the
+simulation, I.e., the difference between the forward and the backward
+transformations. Colored circles (green, orange and red) in front of
+each free-energy estimate suggests at a glance whether or not the
+different FEP
+calculations have properly converged. <br></span></span><br>
+      <br>
+      <br>
+      <br>
+      <span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">References<br>
+<br></span></span>
+      <ol start="1" style="list-style-type: decimal;font-family: Helvetica,Arial,sans-serif;">
+        <li><span style="font-family: Helvetica,Arial,sans-serif;">Pohorille, A.; Jarzynski, C.; Chipot, C. Good practices in free-energy calculations. <span style="font-style: italic;">J. Phys. Chem. B</span> <span style="font-weight: bold;">2010</span>, <span style="font-style: italic;">114</span>, 10235-10253.</span></li>
+        <li><span style="font-family: Helvetica,Arial,sans-serif;">
+Bennett, C. H. Efficient estimation of free energy differences from Monte Carlo data. <span style="font-style: italic;">J. Comp. Phys.</span> <span style="font-weight: bold;">1976</span>, <span style="font-style: italic;">22</span>, 245-268.</span></li>
+        <li><span style="font-family: Helvetica,Arial,sans-serif;">
+Chipot, C.; Pohorille, A. (Eds.) Free energy calculations. Theory
+and applications in chemistry and biology. Springer Verlag, <span style="font-weight: bold;">2007</span>.</span></li>
+        <li><span style="font-family: Helvetica,Arial,sans-serif;">Liu, P.; Dehez, F.; Cai, W.; Chipot, C. A toolkit for the analysis of free-energy perturbation calculations, <span style="font-style: italic;">J. Chem. Theor. Comput. </span><span style="font-weight: bold;">2012</span>, <span style="font-style: italic;">8</span>, 2606-2616.<br>
+          </span></li>
+      </ol>
+
+</div><span style="font-family: Helvetica,Arial,sans-serif;"><br>
+      <br>
+      <br>
+      </span>
+      <div style="text-align: justify;"><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;"></span></span><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;"></span></span><br>
+
+      <span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">Note</span>. On platforms running a Unix-like operating system, it is assumed that <span style="font-style: italic;">XMGrace</span> and <span style="font-style: italic;">ImageMagick</span> (display) are installed for visualization purposes. On Windows platforms, use is made of the <span style="font-style: italic;">Multiplot</span> plotting program.</span><br>
+
+      <span style="font-family: Helvetica,Arial,sans-serif;"></span>
+      <span style="font-family: Helvetica,Arial,sans-serif;">
+      </span><span style="font-family: Helvetica,Arial,sans-serif;"></span><span style="font-family: Helvetica,Arial,sans-serif;"><br>
+      </span><br>
+      <br>
+      <br>
+      <span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">Contributors</span></span><span style="font-family: Helvetica,Arial,sans-serif;">. Chris Chipot (chipot@illinois.edu) and </span><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;"></span>Vijayaraj Ramadoss (vijayaraj81@gmail.com)</span></span><span style="font-family: Helvetica,Arial,sans-serif;">.</span><span style="font-family: Helvetica,Arial,sans-serif;"><br>
+      </span></div>
+</td>
+      <td style="vertical-align: top;"><img style="width: 300px; height: 204px;" alt="" src="Figure1.png"><br>
+      <div style="text-align: left;">
+      <small><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">Figure 1</span>. AlaScan main graphical user interface.</span></small><br>
+      </div>
+<br>
+      <img style="width: 243px; height: 500px;" alt="" src="Figure2.png"><br>
+      <div style="text-align: left;">
+      <small><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">Figure 2</span>. Selection of residues that will undergo alanine mutation.</span></small><br>
+      </div>
+<br>
+      <img style="width: 300px; height: 420px;" alt="" src="Figure3.png"><br>
+      <div style="text-align: right;">
+      <div style="text-align: left;">
+      <small><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">Figure 3</span>. Assisted preparation of the FEP calculations for in-silico alanine scanning.</span></small><br>
+      </div>
+
+      <small><span style="font-family: Helvetica,Arial,sans-serif;"></span></small></div>
+      <small><span style="font-family: Helvetica,Arial,sans-serif;"><br>
+      <img style="width: 300px; height: 456px;" alt="error" src="Figure4.png"><br>
+      </span></small>
+      <div style="text-align: left;">
+      <small><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">Figure 4</span>. Free-energy changes upon alanine mutation and assessment of the convergence.</span></small><br>
+
+      </div>
+</td>
+    </tr>
+  </tbody>
+</table>
+<big style="color: rgb(153, 153, 153);"><span style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;"><br>
+<br>
+<br>
+<br>
+<br>
+</span></big><span style="font-family: Helvetica,Arial,sans-serif;"><br>
+</span><br>
+<br>
+<span style="font-family: Helvetica,Arial,sans-serif;"></span><br>
+<span style="font-family: Helvetica,Arial,sans-serif;"></span></div>
+
+<!--#include virtual="/Research/vmd/include/footer-vmd.shtml"-->
+

@@ -1,0 +1,16 @@
+Source: wxmacmolplt
+Section: science
+Priority: optional
+Maintainer: Brett Bode <MMP.Guy@gmail.com>
+Build-Depends: debhelper (>= 5), autotools-dev, libwxgtk3.0-dev (>= 3.0.0), wx3.0-headers (>= 3.0.0), libpng12-dev, libgl1-mesa-dev | libgl-dev, libglu1-mesa-dev | libglu-dev
+Standards-Version: 3.7.2
+
+Package: wxmacmolplt
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: The MacMolPlt molecular visualization program
+ MacMolPlt is designed to display the input and output of
+ the GAMESS quantum chemistry package. It produces animations
+ and/or publication quality output from a variety of input file
+ formats.
+

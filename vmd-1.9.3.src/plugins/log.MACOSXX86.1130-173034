@@ -1,0 +1,940 @@
+Building Molecule File Reader plugins
+src/periodic_table.h:160: warning: 'get_pte_idx_from_string' defined but not used
+src/readpdb.h:188: warning: 'get_pdb_header' defined but not used
+src/readpdb.h:208: warning: 'get_pdb_conect' defined but not used
+src/readpdb.h:352: warning: 'write_raw_pdb_record' defined but not used
+src/vmddir.h:145: warning: 'vmd_file_is_executable' defined but not used
+src/periodic_table.h:96: warning: 'get_pte_label' defined but not used
+src/periodic_table.h:134: warning: 'get_pte_idx' defined but not used
+src/babelplugin.c:319: warning: 'openbabel11type_from_name' defined but not used
+src/qmplugin.h:712: warning: 'symmetry_expand' defined but not used
+src/qmplugin.h:836: warning: 'eatline' defined but not used
+src/qmplugin.h:846: warning: 'eatwhitelines' defined but not used
+src/qmplugin.h:895: warning: 'iswhiteline' defined but not used
+src/qmplugin.h:901: warning: 'strtoupper' defined but not used
+src/qmplugin.h:962: warning: 'goto_keyline' defined but not used
+src/qmplugin.h:1007: warning: 'have_keyline' defined but not used
+src/qmplugin.h:1077: warning: 'thisline' defined but not used
+src/qmplugin.h:1097: warning: 'whereami' defined but not used
+src/qmplugin.h:437: warning: 'init_qmdata' defined but not used
+src/qmplugin.h:471: warning: 'add_wavefunction' defined but not used
+src/qmplugin.h:490: warning: 'replace_wavefunction' defined but not used
+src/qmplugin.h:507: warning: 'del_wavefunction' defined but not used
+src/qmplugin.h:541: warning: 'angular_momentum_expon' defined but not used
+src/qmplugin.h:585: warning: 'print_matrix4' defined but not used
+src/qmplugin.h:1028: warning: 'fpexpftoc' defined but not used
+src/ccp4plugin.C: In function 'int read_ccp4_data(void*, int, float*, float*)':
+src/ccp4plugin.C:490: warning: comparison between signed and unsigned integer expressions
+src/ccp4plugin.C:520: warning: comparison between signed and unsigned integer expressions
+src/ccp4plugin.C:551: warning: comparison between signed and unsigned integer expressions
+src/ccp4plugin.C:583: warning: comparison between signed and unsigned integer expressions
+src/ccp4plugin.C:618: warning: comparison between signed and unsigned integer expressions
+src/ccp4plugin.C:650: warning: comparison between signed and unsigned integer expressions
+src/ccp4plugin.C: In function 'void* open_ccp4_read(const char*, const char*, int*)':
+src/ccp4plugin.C:84: warning: 'dataOffset' may be used uninitialized in this function
+src/endianswap.h: At global scope:
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/cpmdplugin.c:85: warning: 'read_cpmd_structure' defined but not used
+src/periodic_table.h:133: warning: 'int get_pte_idx(const char*)' defined but not used
+src/periodic_table.h:160: warning: 'int get_pte_idx_from_string(const char*)' defined but not used
+In file included from src/dcdplugin.c:46:
+src/fastio.h: In function 'fio_fread':
+src/fastio.h:435: warning: format '%ld' expects type 'long int', but argument 2 has type 'fio_size_t'
+src/fastio.h:435: warning: format '%ld' expects type 'long int', but argument 3 has type 'fio_size_t'
+src/fastio.h: In function 'fio_fwrite':
+src/fastio.h:561: warning: format '%ld' expects type 'long int', but argument 2 has type 'fio_size_t'
+src/fastio.h:561: warning: format '%ld' expects type 'long int', but argument 3 has type 'fio_size_t'
+src/fastio.h:561: warning: format '%ld' expects type 'long int', but argument 4 has type 'fio_size_t'
+src/dcdplugin.c: At top level:
+src/fastio.h:459: warning: 'fio_readv' defined but not used
+src/fastio.h:605: warning: 'fio_read_int32' defined but not used
+src/fastio.h:609: warning: 'fio_write_str' defined but not used
+src/endianswap.h:32: warning: 'swap2_unaligned' defined but not used
+src/endianswap.h:96: warning: 'swap2_aligned' defined but not used
+src/dlpolyplugin.c: In function 'open_dlpoly_config_read':
+src/dlpolyplugin.c:111: warning: 'dlpolyversion' may be used uninitialized in this function
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:110: warning: 'void swap4_aligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/fortread.h:36: warning: 'int fort_eat_recmark(FILE*, int)' defined but not used
+src/fortread.h:56: warning: 'int fort_get_endian_reclen(int, int, int, int*, int*)' defined but not used
+src/fortread.h:133: warning: 'void strnwscpy(char*, const char*, int)' defined but not used
+src/qmplugin.h:895: warning: 'iswhiteline' defined but not used
+src/qmplugin.h:901: warning: 'strtoupper' defined but not used
+src/qmplugin.h:1077: warning: 'thisline' defined but not used
+src/qmplugin.h:1097: warning: 'whereami' defined but not used
+src/qmplugin.h:585: warning: 'print_matrix4' defined but not used
+src/qmplugin.h:1028: warning: 'fpexpftoc' defined but not used
+src/periodic_table.h:96: warning: 'get_pte_label' defined but not used
+src/periodic_table.h:103: warning: 'get_pte_mass' defined but not used
+src/periodic_table.h:110: warning: 'get_pte_vdw_radius' defined but not used
+src/periodic_table.h:134: warning: 'get_pte_idx' defined but not used
+src/gamessplugin.c:997: warning: 'print_input_data' defined but not used
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/fortread.h:36: warning: 'int fort_eat_recmark(FILE*, int)' defined but not used
+src/fortread.h:56: warning: 'int fort_get_endian_reclen(int, int, int, int*, int*)' defined but not used
+src/fortread.h:133: warning: 'void strnwscpy(char*, const char*, int)' defined but not used
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+In file included from src/jsplugin.c:75:
+src/fastio.h: In function 'fio_fread':
+src/fastio.h:435: warning: format '%ld' expects type 'long int', but argument 2 has type 'fio_size_t'
+src/fastio.h:435: warning: format '%ld' expects type 'long int', but argument 3 has type 'fio_size_t'
+src/fastio.h: In function 'fio_fwrite':
+src/fastio.h:561: warning: format '%ld' expects type 'long int', but argument 2 has type 'fio_size_t'
+src/fastio.h:561: warning: format '%ld' expects type 'long int', but argument 3 has type 'fio_size_t'
+src/fastio.h:561: warning: format '%ld' expects type 'long int', but argument 4 has type 'fio_size_t'
+src/jsplugin.c: In function 'js_blockio_check_and_set':
+src/jsplugin.c:223: warning: no return statement in function returning non-void
+src/jsplugin.c:223: warning: control reaches end of non-void function
+src/jsplugin.c: At top level:
+src/fastio.h:459: warning: 'fio_readv' defined but not used
+src/hash.c:183: warning: 'hash_delete' defined but not used
+src/hash.c:280: warning: 'hash_stats' defined but not used
+src/endianswap.h:32: warning: 'swap2_unaligned' defined but not used
+src/endianswap.h:46: warning: 'swap4_unaligned' defined but not used
+src/endianswap.h:65: warning: 'swap8_unaligned' defined but not used
+src/periodic_table.h:96: warning: 'get_pte_label' defined but not used
+src/periodic_table.h:160: warning: 'get_pte_idx_from_string' defined but not used
+src/hash.c:183: warning: 'hash_delete' defined but not used
+src/hash.c:223: warning: 'hash_entries' defined but not used
+src/hash.c:280: warning: 'hash_stats' defined but not used
+src/inthash.c:182: warning: 'inthash_delete' defined but not used
+src/inthash.c:277: warning: 'inthash_stats' defined but not used
+src/hash.c:183: warning: 'int hash_delete(hash_t*, const char*)' defined but not used
+src/hash.c:223: warning: 'int hash_entries(hash_t*)' defined but not used
+src/hash.c:280: warning: 'char* hash_stats(hash_t*)' defined but not used
+src/moldenplugin.c: In function 'read_wave_coeffs':
+src/moldenplugin.c:1278: warning: format '%s' expects type 'char *', but argument 3 has type 'char (*)[9u]'
+src/moldenplugin.c: At top level:
+src/periodic_table.h:96: warning: 'get_pte_label' defined but not used
+src/periodic_table.h:103: warning: 'get_pte_mass' defined but not used
+src/periodic_table.h:110: warning: 'get_pte_vdw_radius' defined but not used
+src/periodic_table.h:134: warning: 'get_pte_idx' defined but not used
+src/qmplugin.h:712: warning: 'symmetry_expand' defined but not used
+src/qmplugin.h:1007: warning: 'have_keyline' defined but not used
+src/qmplugin.h:1077: warning: 'thisline' defined but not used
+src/qmplugin.h:1097: warning: 'whereami' defined but not used
+src/qmplugin.h:490: warning: 'replace_wavefunction' defined but not used
+src/qmplugin.h:507: warning: 'del_wavefunction' defined but not used
+src/qmplugin.h:585: warning: 'print_matrix4' defined but not used
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+src/periodic_table.h:134: warning: 'get_pte_idx' defined but not used
+src/pdbxplugin.C: In function 'int getUniqueResID(char*, int)':
+src/pdbxplugin.C:439: warning: unused variable 'i'
+src/pdbxplugin.C: In function 'int parseStructureFaster(molfile_atom_t*, int*, pdbxParser*)':
+src/pdbxplugin.C:480: warning: unused variable 'j'
+src/pdbxplugin.C:499: warning: unused variable 'oldChain'
+src/pdbxplugin.C: In function 'bool readAngleBonds(molfile_atom_t*, pdbxParser*)':
+src/pdbxplugin.C:799: warning: unused variable 'bondTable'
+src/pdbxplugin.C:803: warning: unused variable 'j'
+src/pdbxplugin.C:807: warning: unused variable 'modelNum'
+src/pdbxplugin.C:818: warning: unused variable 'atom'
+src/pdbxplugin.C:880: warning: unused variable 'test'
+src/pdbxplugin.C: In function 'bool readRMSDBonds(molfile_atom_t*, pdbxParser*)':
+src/pdbxplugin.C:980: warning: unused variable 'bondTable'
+src/pdbxplugin.C:984: warning: unused variable 'j'
+src/pdbxplugin.C:987: warning: unused variable 'modelNum'
+src/pdbxplugin.C:998: warning: unused variable 'atom'
+src/pdbxplugin.C: In function 'void* open_file_write(const char*, const char*, int)':
+src/pdbxplugin.C:1405: warning: unused variable 'fd'
+src/periodic_table.h: At global scope:
+src/periodic_table.h:95: warning: 'const char* get_pte_label(int)' defined but not used
+src/periodic_table.h:133: warning: 'int get_pte_idx(const char*)' defined but not used
+src/inthash.c:182: warning: 'int inthash_delete(inthash_t*, int)' defined but not used
+src/inthash.c:222: warning: 'int inthash_entries(inthash_t*)' defined but not used
+src/inthash.c:277: warning: 'char* inthash_stats(inthash_t*)' defined but not used
+src/pdbxplugin.C:309: warning: 'float stringToFloat(char*)' defined but not used
+src/pltplugin.C: In function 'int read_plt_data(void*, int, float*, float*)':
+src/pltplugin.C:138: warning: comparison between signed and unsigned integer expressions
+src/endianswap.h: At global scope:
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/ply.c: In function 'PlyFile* open_for_writing_ply(char*, int, char**, int)':
+src/ply.c:191: warning: unused variable 'i'
+src/ply.c:193: warning: unused variable 'elem'
+src/ply.c: In function 'void element_count_ply(PlyFile*, char*, int)':
+src/ply.c:336: warning: unused variable 'i'
+src/ply.c:338: warning: unused variable 'prop'
+src/ply.c: In function 'void put_element_ply(PlyFile*, void*)':
+src/ply.c:462: warning: unused variable 'i'
+src/ply.c: In function 'int equal_strings(char*, char*)':
+src/ply.c:1307: warning: unused variable 'i'
+src/ply.c: In function 'void ascii_get_element(PlyFile*, char*)':
+src/ply.c:1413: warning: unused variable 'i'
+src/ply.c:1419: warning: unused variable 'fp'
+src/ply.c: In function 'void binary_get_element(PlyFile*, char*)':
+src/ply.c:1548: warning: unused variable 'i'
+src/ply.c: In function 'char** get_words(FILE*, int*, char**)':
+src/ply.c:1700: warning: unused variable 'i'
+src/ply.c:1700: warning: unused variable 'j'
+src/ply.c: In function 'void add_property(PlyFile*, char**, int)':
+src/ply.c:2313: warning: unused variable 'prop_type'
+src/ply.c:2314: warning: unused variable 'count_type'
+src/ply.c: In function 'void describe_element_ply(PlyFile*, char*, int)':
+src/ply.c:2762: warning: unused variable 'i'
+src/ply.c:2764: warning: unused variable 'prop'
+src/ply.c: At global scope:
+src/ply.c:2930: warning: missing braces around initializer
+src/ply.c:2930: warning: missing braces around initializer
+src/ply.c:2930: warning: missing braces around initializer
+src/ply.c:2930: warning: missing braces around initializer
+src/ply.c:2930: warning: missing braces around initializer
+src/ply.c:2930: warning: missing braces around initializer
+src/ply.c: In function 'void start_props_ply(PlyFile*, PlyPropRules*)':
+src/ply.c:3046: warning: unused variable 'i'
+src/ply.c:3047: warning: unused variable 'count'
+src/ply.c:3048: warning: unused variable 'elem'
+src/ply.c: In function 'void binary_get_element(PlyFile*, char*)':
+src/ply.c:1562: warning: 'other_data' may be used uninitialized in this function
+src/ply.c:1553: warning: 'item' may be used uninitialized in this function
+src/ply.c: In function 'void ascii_get_element(PlyFile*, char*)':
+src/ply.c:1430: warning: 'other_data' may be used uninitialized in this function
+src/ply.c:1420: warning: 'item' may be used uninitialized in this function
+src/endianswap.h: At global scope:
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+src/endianswap.h:110: warning: 'void swap4_aligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/endianswap.h:32: warning: 'swap2_unaligned' defined but not used
+src/endianswap.h:46: warning: 'swap4_unaligned' defined but not used
+src/endianswap.h:65: warning: 'swap8_unaligned' defined but not used
+src/endianswap.h:96: warning: 'swap2_aligned' defined but not used
+src/endianswap.h:124: warning: 'swap8_aligned' defined but not used
+src/fortread.h:36: warning: 'fort_eat_recmark' defined but not used
+src/fortread.h:56: warning: 'fort_get_endian_reclen' defined but not used
+src/fortread.h:103: warning: 'fortread_4' defined but not used
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/uhbdplugin.C: In function 'int read_uhbd_data(void*, int, float*, float*)':
+src/uhbdplugin.C:249: warning: comparison between signed and unsigned integer expressions
+src/endianswap.h: At global scope:
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/vaspplugin.h:112: warning: 'vasp_timestep_unitcell' defined but not used
+src/periodic_table.h:160: warning: 'get_pte_idx_from_string' defined but not used
+src/vaspplugin.h:112: warning: 'vasp_timestep_unitcell' defined but not used
+src/periodic_table.h:160: warning: 'get_pte_idx_from_string' defined but not used
+src/periodic_table.h:160: warning: 'get_pte_idx_from_string' defined but not used
+src/periodic_table.h:160: warning: 'get_pte_idx_from_string' defined but not used
+src/periodic_table.h:160: warning: 'get_pte_idx_from_string' defined but not used
+../include/vmdconio.h:56: warning: 'int vmdcon_printf(int, const char*, ...)' defined but not used
+src/periodic_table.h:160: warning: 'int get_pte_idx_from_string(const char*)' defined but not used
+src/periodic_table.h:160: warning: 'get_pte_idx_from_string' defined but not used
+src/vmddir.h:145: warning: 'int vmd_file_is_executable(const char*)' defined but not used
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+src/endianswap.h:110: warning: 'void swap4_aligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/maeffplugin.cxx: In function 'int<unnamed>::write_structure(void*, int, const molfile_atom_t*)':
+src/maeffplugin.cxx:1881: warning: unused variable 'last_ctnumber'
+src/readpdb.h:39: warning: 'read_pdb_record' defined but not used
+src/readpdb.h:352: warning: 'write_raw_pdb_record' defined but not used
+src/periodic_table.h:96: warning: 'get_pte_label' defined but not used
+src/periodic_table.h:134: warning: 'get_pte_idx' defined but not used
+src/periodic_table.h:96: warning: 'get_pte_label' defined but not used
+src/periodic_table.h:160: warning: 'get_pte_idx_from_string' defined but not used
+src/dmsplugin.cxx:476: warning: 'int read_fictitious_bonds(void*, int*, int**, int**)' defined but not used
+src/dmsplugin.cxx:617: warning: 'int read_timestep2(void*, ssize_t, molfile_timestep_t*)' defined but not used
+src/periodic_table.h:160: warning: 'get_pte_idx_from_string' defined but not used
+src/readpdb.h:188: warning: 'get_pdb_header' defined but not used
+src/readpdb.h:208: warning: 'get_pdb_conect' defined but not used
+src/readpdb.h:352: warning: 'write_raw_pdb_record' defined but not used
+src/vmddir.h:145: warning: 'vmd_file_is_executable' defined but not used
+src/periodic_table.h:96: warning: 'get_pte_label' defined but not used
+src/periodic_table.h:134: warning: 'get_pte_idx' defined but not used
+src/babelplugin.c:319: warning: 'openbabel11type_from_name' defined but not used
+src/qmplugin.h:712: warning: 'symmetry_expand' defined but not used
+src/qmplugin.h:836: warning: 'eatline' defined but not used
+src/qmplugin.h:846: warning: 'eatwhitelines' defined but not used
+src/qmplugin.h:895: warning: 'iswhiteline' defined but not used
+src/qmplugin.h:901: warning: 'strtoupper' defined but not used
+src/qmplugin.h:962: warning: 'goto_keyline' defined but not used
+src/qmplugin.h:1007: warning: 'have_keyline' defined but not used
+src/qmplugin.h:1077: warning: 'thisline' defined but not used
+src/qmplugin.h:1097: warning: 'whereami' defined but not used
+src/qmplugin.h:437: warning: 'init_qmdata' defined but not used
+src/qmplugin.h:471: warning: 'add_wavefunction' defined but not used
+src/qmplugin.h:490: warning: 'replace_wavefunction' defined but not used
+src/qmplugin.h:507: warning: 'del_wavefunction' defined but not used
+src/qmplugin.h:541: warning: 'angular_momentum_expon' defined but not used
+src/qmplugin.h:585: warning: 'print_matrix4' defined but not used
+src/qmplugin.h:1028: warning: 'fpexpftoc' defined but not used
+src/ccp4plugin.C: In function 'int read_ccp4_data(void*, int, float*, float*)':
+src/ccp4plugin.C:490: warning: comparison between signed and unsigned integer expressions
+src/ccp4plugin.C:520: warning: comparison between signed and unsigned integer expressions
+src/ccp4plugin.C:551: warning: comparison between signed and unsigned integer expressions
+src/ccp4plugin.C:583: warning: comparison between signed and unsigned integer expressions
+src/ccp4plugin.C:618: warning: comparison between signed and unsigned integer expressions
+src/ccp4plugin.C:650: warning: comparison between signed and unsigned integer expressions
+src/ccp4plugin.C: In function 'void* open_ccp4_read(const char*, const char*, int*)':
+src/ccp4plugin.C:84: warning: 'dataOffset' may be used uninitialized in this function
+src/endianswap.h: At global scope:
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/cpmdplugin.c:85: warning: 'read_cpmd_structure' defined but not used
+src/periodic_table.h:133: warning: 'int get_pte_idx(const char*)' defined but not used
+src/periodic_table.h:160: warning: 'int get_pte_idx_from_string(const char*)' defined but not used
+In file included from src/dcdplugin.c:46:
+src/fastio.h: In function 'fio_fread':
+src/fastio.h:435: warning: format '%ld' expects type 'long int', but argument 2 has type 'fio_size_t'
+src/fastio.h:435: warning: format '%ld' expects type 'long int', but argument 3 has type 'fio_size_t'
+src/fastio.h: In function 'fio_fwrite':
+src/fastio.h:561: warning: format '%ld' expects type 'long int', but argument 2 has type 'fio_size_t'
+src/fastio.h:561: warning: format '%ld' expects type 'long int', but argument 3 has type 'fio_size_t'
+src/fastio.h:561: warning: format '%ld' expects type 'long int', but argument 4 has type 'fio_size_t'
+src/dcdplugin.c: At top level:
+src/fastio.h:459: warning: 'fio_readv' defined but not used
+src/fastio.h:605: warning: 'fio_read_int32' defined but not used
+src/fastio.h:609: warning: 'fio_write_str' defined but not used
+src/endianswap.h:32: warning: 'swap2_unaligned' defined but not used
+src/endianswap.h:96: warning: 'swap2_aligned' defined but not used
+src/dlpolyplugin.c: In function 'open_dlpoly_config_read':
+src/dlpolyplugin.c:111: warning: 'dlpolyversion' may be used uninitialized in this function
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:110: warning: 'void swap4_aligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/fortread.h:36: warning: 'int fort_eat_recmark(FILE*, int)' defined but not used
+src/fortread.h:56: warning: 'int fort_get_endian_reclen(int, int, int, int*, int*)' defined but not used
+src/fortread.h:133: warning: 'void strnwscpy(char*, const char*, int)' defined but not used
+src/qmplugin.h:895: warning: 'iswhiteline' defined but not used
+src/qmplugin.h:901: warning: 'strtoupper' defined but not used
+src/qmplugin.h:1077: warning: 'thisline' defined but not used
+src/qmplugin.h:1097: warning: 'whereami' defined but not used
+src/qmplugin.h:585: warning: 'print_matrix4' defined but not used
+src/qmplugin.h:1028: warning: 'fpexpftoc' defined but not used
+src/periodic_table.h:96: warning: 'get_pte_label' defined but not used
+src/periodic_table.h:103: warning: 'get_pte_mass' defined but not used
+src/periodic_table.h:110: warning: 'get_pte_vdw_radius' defined but not used
+src/periodic_table.h:134: warning: 'get_pte_idx' defined but not used
+src/gamessplugin.c:997: warning: 'print_input_data' defined but not used
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/fortread.h:36: warning: 'int fort_eat_recmark(FILE*, int)' defined but not used
+src/fortread.h:56: warning: 'int fort_get_endian_reclen(int, int, int, int*, int*)' defined but not used
+src/fortread.h:133: warning: 'void strnwscpy(char*, const char*, int)' defined but not used
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+In file included from src/jsplugin.c:75:
+src/fastio.h: In function 'fio_fread':
+src/fastio.h:435: warning: format '%ld' expects type 'long int', but argument 2 has type 'fio_size_t'
+src/fastio.h:435: warning: format '%ld' expects type 'long int', but argument 3 has type 'fio_size_t'
+src/fastio.h: In function 'fio_fwrite':
+src/fastio.h:561: warning: format '%ld' expects type 'long int', but argument 2 has type 'fio_size_t'
+src/fastio.h:561: warning: format '%ld' expects type 'long int', but argument 3 has type 'fio_size_t'
+src/fastio.h:561: warning: format '%ld' expects type 'long int', but argument 4 has type 'fio_size_t'
+src/jsplugin.c: In function 'js_blockio_check_and_set':
+src/jsplugin.c:223: warning: no return statement in function returning non-void
+src/jsplugin.c:223: warning: control reaches end of non-void function
+src/jsplugin.c: At top level:
+src/fastio.h:459: warning: 'fio_readv' defined but not used
+src/hash.c:183: warning: 'hash_delete' defined but not used
+src/hash.c:280: warning: 'hash_stats' defined but not used
+src/endianswap.h:32: warning: 'swap2_unaligned' defined but not used
+src/endianswap.h:46: warning: 'swap4_unaligned' defined but not used
+src/endianswap.h:65: warning: 'swap8_unaligned' defined but not used
+src/periodic_table.h:96: warning: 'get_pte_label' defined but not used
+src/periodic_table.h:160: warning: 'get_pte_idx_from_string' defined but not used
+src/hash.c:183: warning: 'hash_delete' defined but not used
+src/hash.c:223: warning: 'hash_entries' defined but not used
+src/hash.c:280: warning: 'hash_stats' defined but not used
+src/inthash.c:182: warning: 'inthash_delete' defined but not used
+src/inthash.c:277: warning: 'inthash_stats' defined but not used
+src/hash.c:183: warning: 'int hash_delete(hash_t*, const char*)' defined but not used
+src/hash.c:223: warning: 'int hash_entries(hash_t*)' defined but not used
+src/hash.c:280: warning: 'char* hash_stats(hash_t*)' defined but not used
+src/moldenplugin.c: In function 'read_wave_coeffs':
+src/moldenplugin.c:1278: warning: format '%s' expects type 'char *', but argument 3 has type 'char (*)[9u]'
+src/moldenplugin.c: At top level:
+src/periodic_table.h:96: warning: 'get_pte_label' defined but not used
+src/periodic_table.h:103: warning: 'get_pte_mass' defined but not used
+src/periodic_table.h:110: warning: 'get_pte_vdw_radius' defined but not used
+src/periodic_table.h:134: warning: 'get_pte_idx' defined but not used
+src/qmplugin.h:712: warning: 'symmetry_expand' defined but not used
+src/qmplugin.h:1007: warning: 'have_keyline' defined but not used
+src/qmplugin.h:1077: warning: 'thisline' defined but not used
+src/qmplugin.h:1097: warning: 'whereami' defined but not used
+src/qmplugin.h:490: warning: 'replace_wavefunction' defined but not used
+src/qmplugin.h:507: warning: 'del_wavefunction' defined but not used
+src/qmplugin.h:585: warning: 'print_matrix4' defined but not used
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+src/periodic_table.h:134: warning: 'get_pte_idx' defined but not used
+src/pdbxplugin.C: In function 'int getUniqueResID(char*, int)':
+src/pdbxplugin.C:439: warning: unused variable 'i'
+src/pdbxplugin.C: In function 'int parseStructureFaster(molfile_atom_t*, int*, pdbxParser*)':
+src/pdbxplugin.C:480: warning: unused variable 'j'
+src/pdbxplugin.C:499: warning: unused variable 'oldChain'
+src/pdbxplugin.C: In function 'bool readAngleBonds(molfile_atom_t*, pdbxParser*)':
+src/pdbxplugin.C:799: warning: unused variable 'bondTable'
+src/pdbxplugin.C:803: warning: unused variable 'j'
+src/pdbxplugin.C:807: warning: unused variable 'modelNum'
+src/pdbxplugin.C:818: warning: unused variable 'atom'
+src/pdbxplugin.C:880: warning: unused variable 'test'
+src/pdbxplugin.C: In function 'bool readRMSDBonds(molfile_atom_t*, pdbxParser*)':
+src/pdbxplugin.C:980: warning: unused variable 'bondTable'
+src/pdbxplugin.C:984: warning: unused variable 'j'
+src/pdbxplugin.C:987: warning: unused variable 'modelNum'
+src/pdbxplugin.C:998: warning: unused variable 'atom'
+src/pdbxplugin.C: In function 'void* open_file_write(const char*, const char*, int)':
+src/pdbxplugin.C:1405: warning: unused variable 'fd'
+src/periodic_table.h: At global scope:
+src/periodic_table.h:95: warning: 'const char* get_pte_label(int)' defined but not used
+src/periodic_table.h:133: warning: 'int get_pte_idx(const char*)' defined but not used
+src/inthash.c:182: warning: 'int inthash_delete(inthash_t*, int)' defined but not used
+src/inthash.c:222: warning: 'int inthash_entries(inthash_t*)' defined but not used
+src/inthash.c:277: warning: 'char* inthash_stats(inthash_t*)' defined but not used
+src/pdbxplugin.C:309: warning: 'float stringToFloat(char*)' defined but not used
+src/pltplugin.C: In function 'int read_plt_data(void*, int, float*, float*)':
+src/pltplugin.C:138: warning: comparison between signed and unsigned integer expressions
+src/endianswap.h: At global scope:
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/ply.c: In function 'PlyFile* open_for_writing_ply(char*, int, char**, int)':
+src/ply.c:191: warning: unused variable 'i'
+src/ply.c:193: warning: unused variable 'elem'
+src/ply.c: In function 'void element_count_ply(PlyFile*, char*, int)':
+src/ply.c:336: warning: unused variable 'i'
+src/ply.c:338: warning: unused variable 'prop'
+src/ply.c: In function 'void put_element_ply(PlyFile*, void*)':
+src/ply.c:462: warning: unused variable 'i'
+src/ply.c: In function 'int equal_strings(char*, char*)':
+src/ply.c:1307: warning: unused variable 'i'
+src/ply.c: In function 'void ascii_get_element(PlyFile*, char*)':
+src/ply.c:1413: warning: unused variable 'i'
+src/ply.c:1419: warning: unused variable 'fp'
+src/ply.c: In function 'void binary_get_element(PlyFile*, char*)':
+src/ply.c:1548: warning: unused variable 'i'
+src/ply.c: In function 'char** get_words(FILE*, int*, char**)':
+src/ply.c:1700: warning: unused variable 'i'
+src/ply.c:1700: warning: unused variable 'j'
+src/ply.c: In function 'void add_property(PlyFile*, char**, int)':
+src/ply.c:2313: warning: unused variable 'prop_type'
+src/ply.c:2314: warning: unused variable 'count_type'
+src/ply.c: In function 'void describe_element_ply(PlyFile*, char*, int)':
+src/ply.c:2762: warning: unused variable 'i'
+src/ply.c:2764: warning: unused variable 'prop'
+src/ply.c: At global scope:
+src/ply.c:2930: warning: missing braces around initializer
+src/ply.c:2930: warning: missing braces around initializer
+src/ply.c:2930: warning: missing braces around initializer
+src/ply.c:2930: warning: missing braces around initializer
+src/ply.c:2930: warning: missing braces around initializer
+src/ply.c:2930: warning: missing braces around initializer
+src/ply.c: In function 'void start_props_ply(PlyFile*, PlyPropRules*)':
+src/ply.c:3046: warning: unused variable 'i'
+src/ply.c:3047: warning: unused variable 'count'
+src/ply.c:3048: warning: unused variable 'elem'
+src/ply.c: In function 'void binary_get_element(PlyFile*, char*)':
+src/ply.c:1562: warning: 'other_data' may be used uninitialized in this function
+src/ply.c:1553: warning: 'item' may be used uninitialized in this function
+src/ply.c: In function 'void ascii_get_element(PlyFile*, char*)':
+src/ply.c:1430: warning: 'other_data' may be used uninitialized in this function
+src/ply.c:1420: warning: 'item' may be used uninitialized in this function
+src/endianswap.h: At global scope:
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+src/endianswap.h:110: warning: 'void swap4_aligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/endianswap.h:32: warning: 'swap2_unaligned' defined but not used
+src/endianswap.h:46: warning: 'swap4_unaligned' defined but not used
+src/endianswap.h:65: warning: 'swap8_unaligned' defined but not used
+src/endianswap.h:96: warning: 'swap2_aligned' defined but not used
+src/endianswap.h:124: warning: 'swap8_aligned' defined but not used
+src/fortread.h:36: warning: 'fort_eat_recmark' defined but not used
+src/fortread.h:56: warning: 'fort_get_endian_reclen' defined but not used
+src/fortread.h:103: warning: 'fortread_4' defined but not used
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:46: warning: 'void swap4_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/uhbdplugin.C: In function 'int read_uhbd_data(void*, int, float*, float*)':
+src/uhbdplugin.C:249: warning: comparison between signed and unsigned integer expressions
+src/endianswap.h: At global scope:
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:65: warning: 'void swap8_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/vaspplugin.h:112: warning: 'vasp_timestep_unitcell' defined but not used
+src/periodic_table.h:160: warning: 'get_pte_idx_from_string' defined but not used
+src/vaspplugin.h:112: warning: 'vasp_timestep_unitcell' defined but not used
+src/periodic_table.h:160: warning: 'get_pte_idx_from_string' defined but not used
+src/periodic_table.h:160: warning: 'get_pte_idx_from_string' defined but not used
+src/periodic_table.h:160: warning: 'get_pte_idx_from_string' defined but not used
+src/periodic_table.h:160: warning: 'get_pte_idx_from_string' defined but not used
+../include/vmdconio.h:56: warning: 'int vmdcon_printf(int, const char*, ...)' defined but not used
+src/periodic_table.h:160: warning: 'int get_pte_idx_from_string(const char*)' defined but not used
+src/periodic_table.h:160: warning: 'get_pte_idx_from_string' defined but not used
+src/vmddir.h:145: warning: 'int vmd_file_is_executable(const char*)' defined but not used
+src/endianswap.h:32: warning: 'void swap2_unaligned(void*, long int)' defined but not used
+src/endianswap.h:96: warning: 'void swap2_aligned(void*, long int)' defined but not used
+src/endianswap.h:110: warning: 'void swap4_aligned(void*, long int)' defined but not used
+src/endianswap.h:124: warning: 'void swap8_aligned(void*, long int)' defined but not used
+src/maeffplugin.cxx: In function 'int<unnamed>::write_structure(void*, int, const molfile_atom_t*)':
+src/maeffplugin.cxx:1881: warning: unused variable 'last_ctnumber'
+src/readpdb.h:39: warning: 'read_pdb_record' defined but not used
+src/readpdb.h:352: warning: 'write_raw_pdb_record' defined but not used
+src/periodic_table.h:96: warning: 'get_pte_label' defined but not used
+src/periodic_table.h:134: warning: 'get_pte_idx' defined but not used
+../molfile_plugin/src/periodic_table.h:102: warning: 'float get_pte_mass(int)' defined but not used
+../molfile_plugin/src/periodic_table.h:109: warning: 'float get_pte_vdw_radius(int)' defined but not used
+../molfile_plugin/src/periodic_table.h:133: warning: 'int get_pte_idx(const char*)' defined but not used
+../molfile_plugin/src/periodic_table.h:160: warning: 'int get_pte_idx_from_string(const char*)' defined but not used
+../molfile_plugin/src/periodic_table.h:109: warning: 'float get_pte_vdw_radius(int)' defined but not used
+../molfile_plugin/src/periodic_table.h:160: warning: 'int get_pte_idx_from_string(const char*)' defined but not used
+src/psfcheck_wrap.C:200: warning: 'swig_type_info* SWIG_Tcl_TypeDynamicCast(swig_type_info*, void**)' defined but not used
+src/psfcheck_wrap.C:212: warning: 'const char* SWIG_Tcl_TypeName(const swig_type_info*)' defined but not used
+src/psfcheck_wrap.C:218: warning: 'swig_type_info* SWIG_Tcl_TypeQuery(const char*)' defined but not used
+src/psfcheck_wrap.C:505: warning: 'char* SWIG_Tcl_PointerTypeFromString(char*)' defined but not used
+src/psfcheck_wrap.C:522: warning: 'int SWIG_Tcl_ConvertPacked(Tcl_Interp*, Tcl_Obj*, void*, int, swig_type_info*, int)' defined but not used
+src/psfcheck_wrap.C:921: warning: 'int SWIG_Tcl_ObjectConstructor(void*, Tcl_Interp*, int, Tcl_Obj* const*)' defined but not used
+src/psfcheck_wrap.C:1000: warning: 'Tcl_Obj* SWIG_Tcl_NewInstanceObj(Tcl_Interp*, void*, swig_type_info*, int)' defined but not used
+src/pdb_file_extract.c: In function 'pdb_file_extract_coordinates':
+src/pdb_file_extract.c:70: warning: unused variable 'static_assert_int_is_32_bits'
+src/pdb_file_extract.c:66: warning: 'numatoms' may be used uninitialized in this function
+src/psf_file_extract.c: In function 'psf_file_extract':
+src/psf_file_extract.c:570: warning: unused variable 'static_assert_int_is_32_bits'
+src/psf_file_extract.c:643: warning: unused variable 'static_assert_int_is_32_bits'
+src/topo_mol.c: In function 'topo_mol_patch':
+src/topo_mol.c:1696: warning: 'oldatoms' may be used uninitialized in this function
+src/topo_mol.c: At top level:
+src/topo_mol.c:903: warning: 'topo_mol_add_exclusion' defined but not used
+src/topo_mol.c:931: warning: 'topo_mol_del_exclusion' defined but not used
+src/topo_mol_output.c: In function 'topo_mol_write_namdbin':
+src/topo_mol_output.c:83: warning: unused variable 'resid'
+src/topo_mol_output.c:83: warning: unused variable 'atomid'
+src/topo_mol_output.c:82: warning: unused variable 'static_assert_int_is_32_bits'
+src/tcl_psfgen.c: In function 'tcl_topology':
+src/tcl_psfgen.c:551: warning: unused variable 'name'
+src/sgsmooth.C: In constructor 'float_mat::float_mat(size_t, size_t, double)':
+src/sgsmooth.C:128: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:135: warning: format '%d' expects type 'int', but argument 3 has type 'long unsigned int'
+src/sgsmooth.C:135: warning: format '%d' expects type 'int', but argument 4 has type 'long unsigned int'
+src/sgsmooth.C: In function 'void permute(float_mat&, int_vect&)':
+src/sgsmooth.C:172: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:177: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:181: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C: In function 'int partial_pivot(float_mat&, size_t, size_t, float_vect&, int_vect&, double)':
+src/sgsmooth.C:216: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:232: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C: In function 'void lu_backsubst(float_mat&, float_mat&, bool)':
+src/sgsmooth.C:254: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:259: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C: In function 'void lu_forwsubst(float_mat&, float_mat&, bool)':
+src/sgsmooth.C:276: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:278: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:283: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C: In function 'int lu_factorize(float_mat&, int_vect&, double)':
+src/sgsmooth.C:311: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:313: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:326: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:328: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C: In function 'float_mat lin_solve(const float_mat&, const float_mat&, double)':
+src/sgsmooth.C:352: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C: In function 'float_mat transpose(const float_mat&)':
+src/sgsmooth.C:387: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:388: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C: In function 'float_mat operator*(const float_mat&, const float_mat&)':
+src/sgsmooth.C:406: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:407: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:409: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C: In function 'float_vect sg_coeff(const float_vect&, size_t)':
+src/sgsmooth.C:429: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:430: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:437: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:439: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C: In function 'float_vect sg_smooth(const float_vect&, int, int)':
+src/sgsmooth.C:457: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:487: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:518: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C: In function 'float_vect lsqr_fprime(const float_vect&, int)':
+src/sgsmooth.C:545: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C: In function 'float_vect sg_derivative(const float_vect&, int, int, double)':
+src/sgsmooth.C:567: warning: comparison between signed and unsigned integer expressions
+src/sgsmooth.C:600: warning: comparison between signed and unsigned integer expressions
+./mgpot_cubic.c: In function 'mgpot_longrng_cubic':
+./mgpot_cubic.c:48: warning: unused variable 'bench_latcut_gpu'
+src/analyze.c: In function 'bp_analyze':
+src/analyze.c:117: warning: format '%4d' expects type 'int', but argument 2 has type 'long int'
+src/fpair.c: In function 'all_pairs':
+src/fpair.c:139: warning: format '%d' expects type 'int', but argument 3 has type 'long int'
+src/fpair.c:139: warning: format '%d' expects type 'int', but argument 4 has type 'long int'
+src/fpair.c:198: warning: format '%5d' expects type 'int', but argument 5 has type 'long int'
+src/fpair.c:198: warning: format '%5d' expects type 'int', but argument 8 has type 'long int'
+src/fpair.c:223: warning: format '%5d' expects type 'int', but argument 5 has type 'long int'
+src/fpair.c:223: warning: format '%5d' expects type 'int', but argument 8 has type 'long int'
+src/fpair.c:251: warning: format '%5d' expects type 'int', but argument 5 has type 'long int'
+src/fpair.c:251: warning: format '%5d' expects type 'int', but argument 8 has type 'long int'
+src/fpair.c:293: warning: format '%5d' expects type 'int', but argument 5 has type 'long int'
+src/fpair.c:293: warning: format '%5d' expects type 'int', but argument 8 has type 'long int'
+src/fpair.c:308: warning: format '%d' expects type 'int', but argument 2 has type 'long int'
+src/fpair.c:338: warning: format '%d' expects type 'int', but argument 3 has type 'long int'
+src/fpair.c:338: warning: format '%d' expects type 'int', but argument 4 has type 'long int'
+src/fpair.c:351: warning: format '%5d' expects type 'int', but argument 5 has type 'long int'
+src/fpair.c:351: warning: format '%5d' expects type 'int', but argument 8 has type 'long int'
+src/fpair.c:409: warning: format '%5d' expects type 'int', but argument 5 has type 'long int'
+src/fpair.c:409: warning: format '%5d' expects type 'int', but argument 8 has type 'long int'
+src/fpair.c:431: warning: format '%5d' expects type 'int', but argument 5 has type 'long int'
+src/fpair.c:431: warning: format '%5d' expects type 'int', but argument 8 has type 'long int'
+src/fpair.c:454: warning: format '%5d' expects type 'int', but argument 5 has type 'long int'
+src/fpair.c:454: warning: format '%5d' expects type 'int', but argument 8 has type 'long int'
+src/fpair.c: In function 'best_pair':
+src/fpair.c:1062: warning: unused variable 'criteria'
+src/fpair.c: In function 'write_best_pairs':
+src/fpair.c:1332: warning: format '%d' expects type 'int', but argument 6 has type 'long int'
+src/fpair.c: In function 'single_BB_Hbond':
+src/fpair.c:2203: warning: format '%5d' expects type 'int', but argument 2 has type 'long int'
+src/fpair.c:2203: warning: format '%5d' expects type 'int', but argument 3 has type 'long int'
+src/fpair.c: In function 'ring_center':
+src/fpair.c:667: warning: 'natm' may be used uninitialized in this function
+src/fpair.c: In function 'syn_or_anti':
+src/fpair.c:2226: warning: 'chi_angle' may be used uninitialized in this function
+src/fpair.c: In function 'single_BB_Hbond':
+src/fpair.c:2113: warning: 'dist' may be used uninitialized in this function
+src/fpair_sub.c: In function 'number_of_atoms':
+src/fpair_sub.c:197: warning: suggest parentheses around && within ||
+src/fpair_sub.c: In function 'read_pdb':
+src/fpair_sub.c:231: warning: suggest parentheses around && within ||
+src/fpair_sub.c: In function 'rot_2_lsplane':
+src/fpair_sub.c:2378: warning: unused variable 'inum'
+src/fpair_sub.c: In function 'rot_mol':
+src/fpair_sub.c:2455: warning: unused variable 'inum'
+src/fpair_sub.c: In function 'ref_idx':
+src/fpair_sub.c:70: warning: 'ii' may be used uninitialized in this function
+src/fpair_sub.c: In function 'identify_uncommon':
+src/fpair_sub.c:651: warning: 'c' may be used uninitialized in this function
+src/fpair_sub.c: In function 'base_info':
+src/fpair_sub.c:1977: warning: 'j' may be used uninitialized in this function
+src/multiple.c: In function 'write_multiplets':
+src/multiple.c:101: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/multiple.c:101: warning: format '%d' expects type 'int', but argument 4 has type 'long int'
+src/multiple.c:19: warning: 'npair' may be used uninitialized in this function
+src/pair_type.c: In function 'LW_pair_type':
+src/pair_type.c:21: warning: unused variable 'k'
+src/pair_type.c: In function 'get_pair_type':
+src/pair_type.c:120: warning: unused variable 'k'
+src/pair_type.c: In function 'NC_vector':
+src/pair_type.c:414: warning: 'natm' may be used uninitialized in this function
+src/pattern.c: In function 'motif':
+src/pattern.c:55: warning: format '%d' expects type 'int', but argument 2 has type 'long int'
+src/pattern.c:78: warning: format '%d' expects type 'int', but argument 2 has type 'long int'
+src/pattern.c: In function 'pattern_search':
+src/pattern.c:278: warning: unused variable 'yes'
+src/pattern.c: In function 'reorder_patt':
+src/pattern.c:551: warning: format '%d' expects type 'int', but argument 3 has type 'long int'
+src/pattern.c:562: warning: format '%d' expects type 'int', but argument 3 has type 'long int'
+src/pattern.c:470: warning: unused variable 'yes'
+src/pattern.c: In function 'further_classify':
+src/pattern.c:712: warning: unused variable 'nns'
+src/pattern.c:708: warning: unused variable 'yes'
+src/pattern.c: In function 'user_type_patt':
+src/pattern.c:820: warning: format '%4d' expects type 'int', but argument 4 has type 'long int'
+src/pattern.c:821: warning: format '%4d' expects type 'int', but argument 2 has type 'long int'
+src/pattern.c:821: warning: format '%4d' expects type 'int', but argument 4 has type 'long int'
+src/pattern.c:920: warning: format '%d' expects type 'int', but argument 3 has type 'long int'
+src/pattern.c: In function 'write_infor':
+src/pattern.c:932: warning: format '%d' expects type 'int', but argument 3 has type 'long int'
+src/pattern.c: In function 'cycling':
+src/pattern.c:965: warning: unused variable 'i'
+src/pattern.c: In function 'nline':
+src/pattern.c:240: warning: 'nl' may be used uninitialized in this function
+src/pattern.c: In function 'get_str':
+src/pattern.c:207: warning: 'nl' may be used uninitialized in this function
+src/pattern.c: In function 'check_patt':
+src/pattern.c:997: warning: 'nm' may be used uninitialized in this function
+src/ps-xy.c: In function 'process_2d_fig':
+src/ps-xy.c:307: warning: format '%4d' expects type 'int', but argument 2 has type 'long int'
+src/ps-xy.c:307: warning: format '%3d' expects type 'int', but argument 3 has type 'long int'
+src/ps-xy.c:35: warning: unused variable 'alfa'
+src/ps-xy.c: In function 'rot_2D_to_Yaxis':
+src/ps-xy.c:443: warning: unused variable 'atmnum'
+src/ps-xy.c:443: warning: unused variable 'j'
+src/ps-xy.c: In function 'xy4ps':
+src/ps-xy.c:492: warning: unused variable 'frame_box'
+src/ps-xy.c:488: warning: unused variable 'format'
+src/ps-xy-sub.c: In function 'head_to_tail':
+src/ps-xy-sub.c:59: warning: suggest parentheses around && within ||
+src/ps-xy-sub.c: In function 'rest_bases':
+src/ps-xy-sub.c:93: warning: 'ntest' may be used uninitialized in this function
+src/ps-xy-sub.c: In function 'rest_pairs':
+src/ps-xy-sub.c:120: warning: 'ntest' may be used uninitialized in this function
+src/ps-xy-sub.c: In function 'helix_head':
+src/ps-xy-sub.c:157: warning: 'n2' may be used uninitialized in this function
+src/ps-xy-sub.c:157: warning: 'n1' may be used uninitialized in this function
+src/ps-xy-sub.c: In function 'helix_tail':
+src/ps-xy-sub.c:197: warning: 'n2' may be used uninitialized in this function
+src/ps-xy-sub.c:197: warning: 'n1' may be used uninitialized in this function
+src/ps-xy-sub.c: In function 'xy_base':
+src/ps-xy-sub.c:933: warning: 'y0' may be used uninitialized in this function
+src/ps-xy-sub.c:933: warning: 'x0' may be used uninitialized in this function
+src/rnaview.c: In function 'process_single_file':
+src/rnaview.c:135: warning: format '%d' expects type 'int', but argument 3 has type 'long int'
+src/rnaview.c: In function 'process_multiple_file':
+src/rnaview.c:252: warning: format '%d' expects type 'int', but argument 2 has type 'long int'
+src/rnaview.c:253: warning: format '%d' expects type 'int', but argument 3 has type 'long int'
+src/rnaview.c:254: warning: format '%d' expects type 'int', but argument 3 has type 'long int'
+src/rnaview.c: In function 'extract_nmr_coord':
+src/rnaview.c:448: warning: format '%d' expects type 'int', but argument 2 has type 'long int'
+src/rnaview.c:476: warning: format '%d' expects type 'int', but argument 3 has type 'long int'
+src/rnaview.c:420: warning: unused variable 'i'
+src/rnaview.c: In function 'rna':
+src/rnaview.c:706: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/rnaview.c:706: warning: format '%4d' expects type 'int', but argument 4 has type 'long int'
+src/rnaview.c:587: warning: unused variable 'prot_out'
+src/rnaview.c:583: warning: unused variable 'nprot_atom'
+src/rnaview.c:579: warning: unused variable 'str'
+src/rnaview.c: In function 'work_horse':
+src/rnaview.c:833: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/rnaview.c:833: warning: format '%4d' expects type 'int', but argument 4 has type 'long int'
+src/rnaview.c:835: warning: format '%4d' expects type 'int', but argument 2 has type 'long int'
+src/rnaview.c:835: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/rnaview.c: In function 'write_tmp_pdb':
+src/rnaview.c:1013: warning: format '%5d' expects type 'int', but argument 4 has type 'long int'
+src/rnaview.c:1013: warning: format '%4d' expects type 'int', but argument 8 has type 'long int'
+src/rnaview.c: In function 'print_sorted_pair':
+src/rnaview.c:1145: warning: suggest parentheses around && within ||
+src/rnaview.c:1151: warning: suggest parentheses around && within ||
+src/rnaview.c:1157: warning: suggest parentheses around && within ||
+src/rnaview.c:1162: warning: suggest parentheses around && within ||
+src/rnaview.c: In function 'process_multiple_file':
+src/rnaview.c:174: warning: 'resolution' may be used uninitialized in this function
+src/rnaxml-new.c: In function 'write_base_pair_int':
+src/rnaxml-new.c:252: warning: format '%d' expects type 'int', but argument 4 has type 'long int'
+src/rnaxml-new.c:260: warning: format '%d' expects type 'int', but argument 4 has type 'long int'
+src/rnaxml-new.c: In function 'xml_molecule':
+src/rnaxml-new.c:351: warning: format '%d' expects type 'int', but argument 4 has type 'long int'
+src/rnaxml-new.c:355: warning: format '%d' expects type 'int', but argument 4 has type 'long int'
+src/rnaxml-new.c:357: warning: format '%d' expects type 'int', but argument 4 has type 'long int'
+src/rnaxml-new.c:358: warning: format '%d' expects type 'int', but argument 4 has type 'long int'
+src/rnaxml-new.c:363: warning: format '%d' expects type 'int', but argument 4 has type 'long int'
+src/rnaxml-new.c:367: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/rnaxml-new.c: In function 'write_helix_mol':
+src/rnaxml-new.c:558: warning: format '%d' expects type 'int', but argument 4 has type 'long int'
+src/rnaxml-new.c:565: warning: format '%d' expects type 'int', but argument 4 has type 'long int'
+src/rnaxml-new.c:526: warning: 'helix_right' may be used uninitialized in this function
+src/rnaxml-new.c:526: warning: 'helix_left' may be used uninitialized in this function
+src/statistics.c: In function 'print_edge_stat':
+src/statistics.c:62: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:62: warning: format '%4d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:62: warning: format '%4d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c:64: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:64: warning: format '%4d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:64: warning: format '%4d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c:66: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:66: warning: format '%4d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:66: warning: format '%4d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c:68: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:68: warning: format '%4d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:68: warning: format '%4d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c:70: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:70: warning: format '%4d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:70: warning: format '%4d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c:72: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:72: warning: format '%4d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:72: warning: format '%4d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c:74: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:74: warning: format '%4d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:74: warning: format '%4d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c:79: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:79: warning: format '%4d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:79: warning: format '%4d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c:83: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:83: warning: format '%4d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:83: warning: format '%4d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c:92: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:92: warning: format '%4d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:92: warning: format '%4d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c:94: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:94: warning: format '%4d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:94: warning: format '%4d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c:97: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:97: warning: format '%4d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:97: warning: format '%4d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c:99: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:99: warning: format '%4d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:99: warning: format '%4d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c:105: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:105: warning: format '%4d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:105: warning: format '%4d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c:111: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:111: warning: format '%4d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:111: warning: format '%4d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c: In function 'print_statistic':
+src/statistics.c:143: warning: format '%d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:146: warning: format '%5d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:151: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:158: warning: format '%4d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:183: warning: format '%5d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:190: warning: format '%5d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:198: warning: format '%5d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:228: warning: format '%5d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:235: warning: format '%5d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:250: warning: format '%5d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c: In function 'write_12_family_table':
+src/statistics.c:438: warning: format '%5d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:438: warning: format '%5d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:438: warning: format '%5d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c:438: warning: format '%5d' expects type 'int', but argument 9 has type 'long int'
+src/statistics.c:440: warning: format '%5d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:440: warning: format '%5d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:440: warning: format '%5d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c:440: warning: format '%5d' expects type 'int', but argument 9 has type 'long int'
+src/statistics.c:442: warning: format '%5d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:442: warning: format '%5d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:442: warning: format '%5d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c:442: warning: format '%5d' expects type 'int', but argument 9 has type 'long int'
+src/statistics.c:444: warning: format '%5d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:444: warning: format '%5d' expects type 'int', but argument 5 has type 'long int'
+src/statistics.c:444: warning: format '%5d' expects type 'int', but argument 7 has type 'long int'
+src/statistics.c:444: warning: format '%5d' expects type 'int', but argument 9 has type 'long int'
+src/statistics.c: In function 'pair_type_statistics':
+src/statistics.c:801: warning: format '%9d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:805: warning: format '%9d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:809: warning: format '%9d' expects type 'int', but argument 3 has type 'long int'
+src/statistics.c:809: warning: format '%9d' expects type 'int', but argument 4 has type 'long int'
+src/statistics.c: In function 'write_single_Hbond_stat':
+src/statistics.c:984: warning: format '%d' expects type 'int *', but argument 3 has type 'long int *'
+src/statistics.c:984: warning: format '%d' expects type 'int *', but argument 4 has type 'long int *'
+src/vrml.c: In function 'output_appearance':
+src/vrml.c:596: warning: unused variable 'COLOR_BLACK'
+src/vrml.c: In function 'draw_interact':
+src/vrml.c:119: warning: 'tr' may be used uninitialized in this function
+src/vrml.c: At top level:
+src/vrml.h:11: warning: 'vrml_def' declared 'static' but never defined
+src/vrml.h:18: warning: 'vrml_invalid_def' declared 'static' but never defined
+src/xml2ps.c: In function 'xml2ps':
+src/xml2ps.c:153: warning: format '%d' expects type 'int', but argument 2 has type 'long int'
+src/xml2ps.c:153: warning: format '%d' expects type 'int', but argument 3 has type 'long int'
+src/xml2ps.c:153: warning: format '%d' expects type 'int', but argument 4 has type 'long int'
+src/xml2ps.c:185: warning: format '%d' expects type 'int', but argument 2 has type 'long int'
+src/xml2ps.c:186: warning: format '%d' expects type 'int', but argument 2 has type 'long int'
+src/xml2ps.c:187: warning: format '%d' expects type 'int', but argument 2 has type 'long int'
+src/xml2ps.c:52: warning: unused variable 'key'
+src/xml2ps.c:47: warning: unused variable 'parfile'
+src/xml2ps.c: In function 'read_O3prime_P_xyz':
+src/xml2ps.c:312: warning: unused variable 'model_id'
+src/xml2ps.c: In function 'read_xy_coord':
+src/xml2ps.c:849: warning: format '%d' expects type 'int', but argument 2 has type 'long int'
+src/xml2ps.c:849: warning: format '%d' expects type 'int', but argument 3 has type 'long int'
+src/xml2ps.c: In function 'read_sugar_syn':
+src/xml2ps.c:888: warning: unused variable 'nposit'
+src/xml2ps.c:888: warning: unused variable 'nxy'
+src/xml2ps.c: In function 'get_sequence':
+src/xml2ps.c:1025: warning: format '%d' expects type 'int', but argument 2 has type 'long int'
+src/xml2ps.c:1025: warning: format '%d' expects type 'int', but argument 3 has type 'long int'
+src/xml2ps.c: In function 'label_seq_number':
+src/xml2ps.c:1617: warning: format '%d' expects type 'int', but argument 5 has type 'long int'
+src/xml2ps.c:1621: warning: format '%d' expects type 'int', but argument 5 has type 'long int'
+src/xml2ps.c: In function 'label_seq':
+src/xml2ps.c:1654: warning: format '%d' expects type 'int', but argument 5 has type 'long int'
+src/xml2ps.c:1658: warning: format '%d' expects type 'int', but argument 5 has type 'long int'
+src/xml2ps.c:1662: warning: format '%d' expects type 'int', but argument 5 has type 'long int'
+src/xml2ps.c:1666: warning: format '%d' expects type 'int', but argument 5 has type 'long int'
+src/xml2ps.c:1674: warning: format '%d' expects type 'int', but argument 5 has type 'long int'
+src/xml2ps.c:1678: warning: format '%d' expects type 'int', but argument 5 has type 'long int'
+src/xml2ps.c:1682: warning: format '%d' expects type 'int', but argument 5 has type 'long int'
+src/xml2ps.c:1686: warning: format '%d' expects type 'int', but argument 5 has type 'long int'
+src/xml2ps.c: In function 'ps_head':
+src/xml2ps.c:2270: warning: implicit declaration of function 'get_BDIR'
+src/xml2ps.c: In function 'get_xyz_coord':
+src/xml2ps.c:395: warning: 'm' may be used uninitialized in this function
+src/xml2ps.c: In function 'get_xy_position':
+src/xml2ps.c:1327: warning: 'm' may be used uninitialized in this function
+src/xml2ps.c: In function 'read_bs_pair':
+src/xml2ps.c:1109: warning: 'n' may be used uninitialized in this function
+src/xml2ps.c: In function 'num_of_pair':
+src/xml2ps.c:1191: warning: 'nlt' may be used uninitialized in this function
+src/xml2ps.c: In function 'read_pair_type':
+src/xml2ps.c:450: warning: 'position_new' may be used uninitialized in this function
+src/xml2ps.c: In function 'LW_shapes':
+src/xml2ps.c:1746: warning: 'fill' may be used uninitialized in this function
+src/ops.h:28: warning: 'class Operation' has virtual functions but non-virtual destructor
+src/ops.h:28: warning: 'class Operation' has virtual functions but non-virtual destructor
+src/ops.h:28: warning: 'class Operation' has virtual functions but non-virtual destructor
+src/ops.h:28: warning: 'class Operation' has virtual functions but non-virtual destructor
+src/ops.h:28: warning: 'class Operation' has virtual functions but non-virtual destructor
+src/ops.h:28: warning: 'class Operation' has virtual functions but non-virtual destructor
+src/ops.C:38: warning: 'class RegularOps' has virtual functions but non-virtual destructor
+src/ops.C:46: warning: 'class PMFOps' has virtual functions but non-virtual destructor
+src/ops.h:28: warning: 'class Operation' has virtual functions but non-virtual destructor
+src/ops.h:28: warning: 'class Operation' has virtual functions but non-virtual destructor
+src/ops.h:28: warning: 'class Operation' has virtual functions but non-virtual destructor
+src/ccprobcalc.c: In function 'ccprobcalc':
+src/ccprobcalc.c:52: warning: unused variable 'uval'
+src/ccprobcalc.c:51: warning: unused variable 'll'
+src/ccprobcalc.c:51: warning: unused variable 'end'
+src/ccprobcalc.c:51: warning: unused variable 'start'
+src/ccprobcalc.c:50: warning: unused variable 'k'
+src/ccprobcalc.c:52: warning: 'lstrt' may be used uninitialized in this function
+src/display_align.c: In function 'display_align':
+src/display_align.c:50: warning: unused variable 'k'
+src/display_align.c:50: warning: unused variable 'j'
+src/scan.c: In function 'scan':
+src/scan.c:87: warning: 'ddomainall.ncoords' may be used uninitialized in this function

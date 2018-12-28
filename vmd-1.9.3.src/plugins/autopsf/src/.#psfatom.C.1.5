@@ -1,0 +1,63 @@
+#include <string.h>
+#include <stdio.h>
+#include "psfatom.h"
+
+PsfAtom::PsfAtom(char* myname, char* myres) {
+//	strncpy(atomname,myname,strlen(myname));
+//	strncpy(resname,myres,strlen(myres));
+	strncpy(atomname,myname,9);
+	strncpy(resname,myres,9);
+	atomname[strlen(myname)]='\0';
+	resname[strlen(myres)]='\0';
+	
+
+	next=NULL;
+//	fprintf(stdout,"New atom created: %s %s \n",atomname,resname);
+}
+
+PsfAtom::~PsfAtom() {
+	if (next != NULL) {
+		delete next;
+	}
+}
+
+bool PsfAtom::equals(PsfAtom compatom) {
+	return (strcmp(compatom.name(),atomname) == 0);
+}
+
+void PsfAtom::setnext(PsfAtom* nextatom) {
+	next=nextatom;
+}
+
+bool PsfAtom::search(PsfAtom* lookatom) {
+	if (atomname == NULL) {
+		printf("XXX atomname == NULL\n");
+	}
+//	fprintf(stdout,"Comparing %s with %s \n",lookatom->name(),atomname);
+	if (strcmp(lookatom->name(),atomname) == 0) {
+		//fprintf(stdout,"  Same! \n");
+		return true;
+	} else {
+		//fprintf(stdout,"  Different! \n");
+		if (next == NULL) {
+			return false;
+		} else {
+			return next->search(lookatom);
+		}
+	}
+}
+
+char* PsfAtom::name() {
+	return atomname;
+}
+
+char* PsfAtom::res() {
+	return resname;
+}
+
+void PsfAtom::print(FILE* outfile) {
+	fprintf(outfile, "ATOM %-4s XXX     0.00\n",atomname);
+	if (next != NULL) {
+		next->print(outfile);
+	}
+}

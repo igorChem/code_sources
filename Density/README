@@ -1,0 +1,9 @@
+ Notes on program DENSITY
+
+1.  DENSITY has been modified to allow polymers, layer systems, and
+    solids to be run.
+
+2.  The pictures in the Manual can be generated using the files in
+    density_examples.
+
+James J. P. Stewart.

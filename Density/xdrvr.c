@@ -1,0 +1,317 @@
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
+#include <X11/Xos.h>
+
+#include <stdio.h>
+
+#include "density_icon_bitmap"
+
+#define MAX_COLORS  16
+#define SMALL 1
+#define OK    0
+
+static Display *display;
+static int screen;
+static int colors[MAX_COLORS];
+
+struct { int itype;
+	 int iscrn;
+	 int koroff; } device_;
+
+struct { int imaxr;
+	 int imaxc;
+	 float pixrow;
+	 float pixcol;
+	 int pixel;
+	 int lcount;
+	 int ingraf;
+	 int ixl;
+	 int ixr;
+	 int iyt;
+	 int iyb;
+	 int ncolor;} term_;
+	 
+
+xwin_(x, y, ind)
+
+float *x, *y;
+
+int *ind;
+
+{
+  static Window win; 			/* X stuff - some	*/
+  static GC gc;				/* static to save value */
+  XSizeHints size_hints;		/* between calls from   */
+  XIconSize *size_list;			/* xwin.f		*/
+  XEvent report;
+  XGCValues values;
+  XWindowAttributes win_att;
+  Pixmap icon_pixmap;
+  Region region;
+
+  static int xlx, yly ;			/* more statics for     */
+  static int start_xlx, start_yly;	/* line drawing		*/
+  static int width, height;		/* window size		*/
+  static int maxpix, ipage;
+
+  unsigned int wx = 1, wy = 3;	        /* window location	*/
+  unsigned int border_width = 0;	/* no border 		*/
+
+  unsigned int display_width, display_height;
+  unsigned int icon_width, icon_height;       
+  unsigned long foreground_pixel;
+
+  char *window_name  = "Program DENSITY for use with MOPAC (DENSITY is Public Domain)";
+  char *icon_name    = "";
+  char *display_name = NULL;
+
+  int color_select;
+  int window_size = 0;
+
+  if ( *ind == 0 ) 			/* close the window	*/
+  {
+    XFreeGC(display, gc);
+    XCloseDisplay(display);
+    return(0);
+  } 
+
+  else if ( *ind == 1 )			/* open Xwindow		*/
+  {
+
+    if (( display = XOpenDisplay(display_name)) == NULL )
+    {
+      fprintf( stderr, "X-Draw: cannot connect to X server %s\n",
+               XDisplayName(display_name));
+      exit(-1);
+    }
+
+    width  = 850;		/* window size	*/
+    height = 850;
+
+    screen         = DefaultScreen(display);
+    display_width  = DisplayWidth(display, screen);
+    display_height = DisplayHeight(display, screen);
+
+    win = XCreateSimpleWindow(display,
+                              RootWindow(display,screen),
+                              wx,
+                              wy,
+                              width,
+                              height,
+                              border_width,
+                              WhitePixel(display,screen),
+                              BlackPixel(display,screen));
+
+    icon_pixmap = XCreateBitmapFromData(display,
+                                        win,
+                                        density_icon_bitmap_bits,
+                                        density_icon_bitmap_width,
+                                        density_icon_bitmap_height);
+
+    size_hints.flags 	  = PPosition | PSize | PMinSize;
+    size_hints.x 	  = wx;
+    size_hints.y 	  = wy;
+    size_hints.width 	  = width;
+    size_hints.height 	  = height;
+    size_hints.min_width  = width;
+    size_hints.min_height = height;
+
+    XSetStandardProperties(display,
+                           win,
+                           window_name,
+                           icon_name, 
+                           icon_pixmap,
+                           0, 0,
+                           &size_hints);
+
+    XSelectInput(display,
+                 win,
+                 (StructureNotifyMask|ExposureMask)); 
+
+    region = XCreateRegion();
+
+    values.foreground = WhitePixel(display,screen);
+    values.background = BlackPixel(display,screen);
+
+    gc = XCreateGC(display,
+                   win,
+                   (GCForeground|GCBackground),
+                   &values);
+
+    def_colors();			/* define colors	*/
+
+    XMapWindow(display, win);
+
+/* use event to display window! since event loop is in the FORTRAN code
+   we have to fudge the X to do anything */
+                                        
+    XCheckTypedWindowEvent(display,
+                           win,
+                           ExposureMask,
+                           &report) ;
+
+
+    term_.pixrow  = height / 26;
+    term_.pixcol  = width  / 58;
+    maxpix        = 26.0 * term_.pixrow;
+    term_.pixel   = maxpix;
+    device_.iscrn = 28;
+    term_.ncolor  = MAX_COLORS;
+    term_.ixl	  = 0;
+    term_.ixr     = width;
+    term_.iyt     = 0;
+    term_.iyb     = height;
+    term_.imaxc   = 80;
+    term_.imaxr   = 19;
+
+    return(0) ;
+  } 
+
+  else if ( *ind == 2 )			/* move pen to x,y	*/
+  {
+    start_xlx = *x * term_.pixel;
+    start_yly = (1.0 - *y) * term_.pixel;
+    return(0);
+  }
+
+  else if ( *ind == 3 )			/* draw to x,y		*/
+  {
+    xlx = *x * term_.pixel;
+    yly = (1.0 - *y) * term_.pixel;
+    XDrawLine(display,
+              win,
+              gc,
+              xlx,
+              yly,
+              start_xlx,
+              start_yly);
+
+    start_xlx = xlx;
+    start_yly = yly;
+
+    XCheckTypedWindowEvent(display,
+                           win,
+                           ExposureMask,
+                           &report);
+
+    return(0);
+  }
+
+  else if ( *ind == 4 )			/* do nothing		*/
+  {
+    return(0);
+  }
+
+  else if ( *ind == 5 )			/* do nothing		*/
+  {
+    return(0);
+  }
+
+  else if ( *ind == 6 )			/* clear screen		*/
+  {
+
+    XGetWindowAttributes(display, win, &win_att);
+       ipage = 100;
+    if ( (win_att.width  != width ) ||
+         (win_att.height != height) )
+    {
+	 width  = win_att.width;
+         height = win_att.height;
+         maxpix       = (height / 19.23) * term_.pixrow;
+	 term_.pixel  = maxpix; 
+	 term_.ixr    = width;
+	 term_.iyb    = height;
+	 term_.imaxc  = width / 8.62;
+	 term_.imaxr  = height / 19.23;   
+
+    }                      
+    XClearArea(display,
+               win,
+               0,0,0,0,0);
+
+    return(0);
+  }
+
+  else if ( *ind == 8 )			/* not used 		*/
+  {
+     term_.ingraf = 0;
+     return(0);
+  }
+
+  else if ( *ind == 9 )			/* not used		*/
+  {
+     term_.ingraf = 0;
+     return(0);
+  }
+
+  else if ( *ind == 10 )		/* not used		*/
+  {
+    return(0);
+  }
+
+  else if ( *ind == 99 )		/* change pen color	*/
+  {
+    color_select     = *x; 
+    foreground_pixel = colors[color_select];
+
+    XSetForeground(display,
+		   gc,
+  		   foreground_pixel);
+    return(0);
+  }
+
+  else					/* big trouble		*/ 
+  {
+    fprintf(stderr,"ERROR IN C_XWIN. IND= %d", *ind);
+    return(0);
+  }
+    exit(-1);				/* better not get here!	*/
+}
+
+def_colors()
+{
+  int depth;
+  Visual *visual;
+  XColor exact_def;
+  Colormap cmap;
+  int ncolors = MAX_COLORS;
+  int i;
+
+  static char *name[] =				/* colors here	*/
+	{"Black", "Red", "Yellow", "Green", "Blue", "Cyan", "Gold", 
+         "Navy Blue", "Grey", "Magenta", "Lime Green", "Wheat",
+         "Orange", "Violet", "Khaki", "White"};
+
+  depth  = DisplayPlanes(display, screen);
+  cmap   = DefaultColormap(display, screen);
+  
+  if ( depth == 1 || device_.itype == 16 ) 		/* mono screen	*/
+  {
+    for ( i = 0; i < MAX_COLORS; i++ )
+    {
+       colors[i] = WhitePixel(display, screen);
+    }
+  }
+
+  else
+  {
+    for (i = 0; i < MAX_COLORS; i++ )
+    {
+
+      if ( !XParseColor(display, cmap, name[i], &exact_def) )
+      {
+        fprintf( stderr, "Xwin: color %s not in database\n", name[i]);
+        exit(-1);
+      }
+
+      if ( !XAllocColor(display, cmap, &exact_def) )
+      {
+        fprintf(stderr,"Xwin: all colorcells allocated, read/write\n");
+        exit(-1);
+      }
+      
+      colors[i] = exact_def.pixel;
+    }
+
+  }
+}     

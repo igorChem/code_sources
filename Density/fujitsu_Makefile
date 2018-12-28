@@ -1,0 +1,137 @@
+#
+# Makefile for DENSITY
+#
+# The following variables will be set when the Makefile is invoked with
+# a specific machine type.  The variables correspond to:
+# EXE     => The name of the executable that will be generated
+# FC      => The name of the Fortran compiler
+# CC      => The name of the C compiler
+# FFLAGS  => A list of Fortran compiler options
+# CFLAGS  => A list of C compiler options
+# LDFLAGS => A list of link or load options
+# EXTRAS  => 'Special' routines used on this machine
+#
+EXE	= 
+FC	= 
+CC	= 
+FFLAGS	=
+CFLAGS	=
+LDFLAGS	=
+MAKE	= make
+EXTRAS	=
+#
+# If "make fujitsu" is invoked, the flags are set to the
+# following:
+#
+FUJEXE		= ../density.exe
+FUJFC		= frt
+FUJCC		= cc
+FUJFFLAGS	= -Ob -Ab -Se
+FUJCFLAGS	= -DSYSV
+FUJLDFLAGS	= -J -lX11 -lsocket -lnsl
+FUJEXTRAS	= sleep.o
+#
+# If "make sparc" is invoked, the flags are set to the
+# following:
+#
+SPARCEXE	= ../density.exe
+SPARCFC		= f77
+SPARCCC		= cc
+SPARCFFLAGS	= -O
+SPARCCFLAGS	= -I/usr/openwin/share/include
+SPARCLDFLAGS	= -L/usr/local/lib/X11R5 -lX11
+#
+#
+# This variable is set to the list of "include" files which is just SIZES.
+#
+INCLUDES	= SIZES
+#
+# OBJS is the list of all object files that need to be linked into the
+# executable.  If a new source file is added, then the corresponding
+# object file name must be added to the list below.
+#
+OBJS	= \
+cntour.o \
+datin.o \
+densit.o \
+draw.o \
+euler.o \
+getnam.o \
+matout.o \
+maxmin.o \
+plotgr.o \
+reada.o \
+readin.o \
+upcase.o \
+xdrvr.o \
+$(EXTRAS)
+#
+# If the user has not specified a machine type on which to compile DENSITY
+# then the next section prompts the user for the machine type.
+#
+all: 
+	@echo " "
+	@echo "                      Makefile for DENSITY."
+	@echo " "
+	@echo "    To generate an executable, type 'make' followed by the machine type."
+	@echo " "
+	@echo "    make fujitsu   [ Fujitsu UXP/M ]"
+	@echo "    make sparc     [ Sun Sparcstation ]"
+	@echo " "
+#
+# The default method of how to make object files from Fortran and C files.
+#
+.f.o:
+	$(FC) -c $(FFLAGS) $<
+.c.o:
+	$(CC) -c $(CFLAGS) $<
+#
+# The machine specific invocations of the Makefile come next.
+#
+# For Fujitsu UXP/M
+fujitsu:
+	@echo "Compiling for Fujitsu..."
+	@$(MAKE) FC='$(FUJFC)' FFLAGS='$(FUJFFLAGS)' CC='$(FUJCC)' \
+		 CFLAGS='$(FUJCFLAGS)' LDFLAGS='$(FUJLDFLAGS)' \
+		 EXE='$(FUJEXE)' EXTRAS='$(FUJEXTRAS)' linkit
+#
+# For Sun Sparcstation 2 - version 4.1.3 of OS
+sparc:
+	@echo "Compiling for SPARC..."
+	@$(MAKE) FC='$(SPARCFC)' FFLAGS='$(SPARCFFLAGS)' CC='$(SPARCCC)' \
+		 CFLAGS='$(SPARCCFLAGS)' LDFLAGS='$(SPARCLDFLAGS)' \
+		 EXE='$(SPARCEXE)' linkit
+#
+# The link section which is invoked by the machine specific sections.
+#
+linkit: $(OBJS)
+	@echo " "
+	@echo "Linking $(EXE)..."
+	$(FC) -o $(EXE) $(OBJS) $(LDFLAGS) 
+	@echo " "
+	@ls -l $(EXE)
+#
+# This removes all object files when "make clean" is entered by the user.
+#
+clean:
+	/bin/rm -f *.o
+#
+# Next comes all of the source file names and their dependencies (if any)
+# and specific compile options (if any).  If no specific compile options
+# are listed, then the default specified above is used.  If a new source file
+# is added to DENSITY, then an entry should be included below.
+#
+cntour.o:	cntour.f
+datin.o:	datin.f $(INCLUDES)
+densit.o:	densit.f $(INCLUDES)
+draw.o:		draw.f
+euler.o:	euler.f
+getnam.o:	getnam.f
+matout.o:	matout.f $(INCLUDES)
+maxmin.o:	maxmin.f
+plotgr.o:	plotgr.f $(INCLUDES)
+reada.o:	reada.f
+readin.o:	readin.f $(INCLUDES)
+upcase.o:	upcase.f
+xdrvc.o:	xdrvr.c
+sleep.o:	sleep.c

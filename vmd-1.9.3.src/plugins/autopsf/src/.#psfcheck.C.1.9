@@ -1,0 +1,147 @@
+#include <string.h>
+#include <stdio.h>
+#include "psfatom.h"
+#include "psfres.h"
+#include "psfreslist.h"
+
+PsfRes* addTopRes(char* line, FILE* psfin, FILE* outpsf) {
+	//Make a new residue
+	char atomline[101];
+	char temp[20];
+	char resname[5];
+	sscanf(line, "%s %s", temp, resname);
+	PsfRes* currRes = new PsfRes(resname);
+	fgets(atomline,100,psfin);
+	while((strncmp(atomline, "ATOM", 4)==0) || (strncmp(atomline, "GROU", 4)==0)) {
+		fprintf(outpsf,"%s",atomline);
+		char temp[20];
+		char atomname[5];
+		sscanf(atomline, "%s %s", temp, atomname);
+		PsfAtom* currAtom=new PsfAtom(atomname,resname);
+		currRes->addatom(currAtom);
+		fgets(atomline,80,psfin);
+	}
+	fprintf(outpsf,"%s",atomline);
+	return currRes;
+}
+
+int parsetop(char* topin, FILE* outpsf, PsfResList* knownRes) {
+	char line[101];
+	PsfRes* currRes;
+	FILE* psfin;
+	psfin = fopen(topin, "r");
+
+	if (psfin == NULL) {
+		fputs("Warning: Couldn't open input file ", stderr);
+		fputs(topin, stderr);
+		fputs("\n",stderr);
+//		stderr << "Warning: Couldn't open input file " << topin << endl;
+		return 1;
+	}
+
+	while(fgets(line,100,psfin)) {
+		//Check if we've gotten to the residue part yet
+		if (strncmp(line, "RESI", 4) == 0) {
+			//If so, parse and add the residue
+			fprintf(outpsf,"%s",line);
+			currRes = addTopRes(line, psfin, outpsf);
+			knownRes->addres(currRes);
+		} else {
+		       	fprintf(outpsf,"%s",line);
+		}
+	}
+	fclose(psfin);
+	return 0;
+}
+
+
+
+int psfupdate(char* topin, char* inpdb, char* psfout) {
+/*This function will read through a psf and pdb, and then write a new top
+ * containing atoms labeled XXX for every atom that is not found in the top
+ * file */ 
+	//First, read in all of the known residue/atom combos
+	FILE* outpsf;
+	outpsf = fopen(psfout, "w");
+	if (outpsf == NULL) {
+		fputs("Warning: Couldn't open output file ", stderr);
+		fputs(psfout, stderr);
+		fputs("\n",stderr);
+//		stderr << "Warning: Couldn't open input file " << topin << endl;
+		return 1;
+	}
+	
+	PsfResList* knownRes = new PsfResList(); //Stores atoms found in psf
+
+	//Loops through the input tops and process each one
+	char topfiles[501];
+	strncpy(topfiles,topin,500);
+	topfiles[strlen(topin)]='\0';
+	char * currtop;
+	currtop=strtok(topfiles,"|");
+	while (currtop != NULL) {
+		if (parsetop(currtop, outpsf, knownRes) != 0) {
+			fputs("Failed in parsing topology file\n",stderr);
+			fputs("Bailing out from previous errors.\n",stderr);
+//			stderr << "Failed in parsing topology file" << endl;
+//			stderr << "Bailing out from previous errors." << endl;
+			return 1;
+		}
+		currtop=strtok(NULL,"|");
+	}
+
+	//Now that we have all of our residues, its time to go through the pdb
+	//On each atom line, we'll write a new residue and atom to the psf
+	//If we don't find it already
+	
+	char line[101];
+	PsfResList* unknownRes = new PsfResList(); //stores new atoms
+	FILE* pdbin;
+	pdbin = fopen(inpdb, "r");
+
+	if (pdbin == NULL) {
+		fputs("Warning: Couldn't open input pdb file ", stderr);
+		fputs(inpdb, stderr);
+		fputs("\n",stderr);
+//		stderr << "Warning: Couldn't open input file " << topin << endl;
+		return 1;
+	}
+
+	while(fgets(line,80,pdbin)) {
+		if ((strncmp(line, "ATOM", 4)==0) || (strncmp(line, "HETATM", 6)==0)) {
+			char temp[20];
+			int temp2;
+			char resname[20];
+			char atomname[20];
+			sscanf(line, "%s %i %s %s", temp, &temp2, atomname, resname);
+			PsfAtom* pdbatom=new PsfAtom(atomname, resname);
+			if (knownRes == NULL || unknownRes == NULL) {
+				printf("DOH, NULL (unk)known residue ptr!\n");
+			}
+			if (pdbatom == NULL) {
+				printf("DOH, NULL pdbatom ptr!\n");
+			}
+			if (!((knownRes->search(pdbatom)) || (unknownRes->search(pdbatom)))) {
+				//Create a new psfres and psfatom
+				//among the unknowns
+				PsfRes* currRes = unknownRes->lookForRes(pdbatom);
+				if (currRes == NULL) {
+					currRes = new PsfRes(pdbatom->res());
+					unknownRes->addres(currRes);
+				}
+				currRes->addatom(pdbatom);
+			}
+
+		}
+	}
+
+	fclose(pdbin);
+	//Now, we need to print new topology residues for each new atom
+	unknownRes->print(outpsf);
+	fprintf(outpsf,"%s \n","MASS 999   XXX   0.000000 XX ! Unknown type");
+	fflush(outpsf);
+	fclose(outpsf);
+	return 0;
+}
+
+	

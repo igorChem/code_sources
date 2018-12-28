@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=wxMacMolPlt
+GenericName=Molecular modelling program
+Comment=Plot 3-D molecular structures and normal modes
+Exec=wxmacmolplt
+Icon=wxmacmolplt
+Terminal=0
+Type=Application
+Categories=3DGraphics;Chemistry;DataVisualization;Graphics;Science;
