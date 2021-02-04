@@ -1,0 +1,203 @@
+/*
+ * Copyright (c) 2004-2020 The University of Notre Dame. All Rights Reserved.
+ *
+ * The University of Notre Dame grants you ("Licensee") a
+ * non-exclusive, royalty free, license to use, modify and
+ * redistribute this software in source and binary code form, provided
+ * that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the
+ *    distribution.
+ *
+ * This software is provided "AS IS," without a warranty of any
+ * kind. All express or implied conditions, representations and
+ * warranties, including any implied warranty of merchantability,
+ * fitness for a particular purpose or non-infringement, are hereby
+ * excluded.  The University of Notre Dame and its licensors shall not
+ * be liable for any damages suffered by licensee as a result of
+ * using, modifying or distributing the software or its
+ * derivatives. In no event will the University of Notre Dame or its
+ * licensors be liable for any lost revenue, profit or data, or for
+ * direct, indirect, special, consequential, incidental or punitive
+ * damages, however caused and regardless of the theory of liability,
+ * arising out of the use of or inability to use software, even if the
+ * University of Notre Dame has been advised of the possibility of
+ * such damages.
+ *
+ * SUPPORT OPEN SCIENCE!  If you use OpenMD or its source code in your
+ * research, please cite the appropriate papers when you publish your
+ * work.  Good starting points are:
+ *
+ * [1] Meineke, et al., J. Comp. Chem. 26, 252-271 (2005).
+ * [2] Fennell & Gezelter, J. Chem. Phys. 124, 234104 (2006).
+ * [3] Sun, Lin & Gezelter, J. Chem. Phys. 128, 234107 (2008).
+ * [4] Vardeman, Stocker & Gezelter, J. Chem. Theory Comput. 7, 834 (2011).
+ * [5] Kuang & Gezelter, Mol. Phys., 110, 691-701 (2012).
+ * [6] Lamichhane, Gezelter & Newman, J. Chem. Phys. 141, 134109 (2014).
+ * [7] Lamichhane, Newman & Gezelter, J. Chem. Phys. 141, 134110 (2014).
+ * [8] Bhattarai, Newman & Gezelter, Phys. Rev. B 99, 094106 (2019).
+ */
+
+#ifndef IO_GLOBALS_HPP
+#define IO_GLOBALS_HPP
+
+#include <iostream>
+
+#include <cstdlib>
+#include <vector>
+#include <string>
+#include <map>
+
+#include "types/Component.hpp"
+#include "types/ZconsStamp.hpp"
+#include "types/RestraintStamp.hpp"
+#include "types/MoleculeStamp.hpp"
+#include "flucq/FluctuatingChargeParameters.hpp"
+#include "rnemd/RNEMDParameters.hpp"
+#include "optimization/MinimizerParameters.hpp"
+#include "utils/ParameterManager.hpp"
+
+namespace OpenMD {
+  class Globals : public DataHolder {
+  public:
+    typedef std::pair<int, int> intPair;
+
+    Globals();
+    virtual ~Globals();
+
+    DeclareParameter(ForceField, std::string);
+    DeclareParameter(TargetTemp, RealType);
+    DeclareParameter(Ensemble, std::string);
+    DeclareParameter(Dt, RealType);
+    DeclareParameter(RunTime, RealType);
+    DeclareParameter(FinalConfig, std::string);
+    DeclareParameter(SampleTime, RealType);
+    DeclareParameter(ResetTime, RealType);
+    DeclareParameter(StatusTime, RealType);
+    DeclareParameter(CutoffRadius, RealType);
+    DeclareParameter(SwitchingRadius, RealType);
+    DeclareParameter(TempSet, bool);
+    DeclareParameter(ThermalTime, RealType);
+    DeclareParameter(UsePeriodicBoundaryConditions, bool);
+    DeclareParameter(TargetPressure, RealType);
+    DeclareParameter(UseAtomicVirial, bool);
+    DeclareParameter(UseLongRangeCorrections, bool);
+    DeclareParameter(TauThermostat, RealType);
+    DeclareParameter(TauBarostat, RealType);
+    DeclareParameter(ZconsTime, RealType);
+    DeclareParameter(ZconsTol, RealType);
+    DeclareParameter(ZconsForcePolicy, std::string);
+    DeclareParameter(Seed, unsigned long int);
+    DeclareParameter(UseInitalTime, bool);
+    DeclareParameter(UseIntialExtendedSystemState, bool);
+    DeclareParameter(OrthoBoxTolerance, RealType);
+    DeclareParameter(ZconsGap, RealType);
+    DeclareParameter(ZconsFixtime, RealType);
+    DeclareParameter(ZconsUsingSMD, bool);
+    DeclareParameter(UseThermodynamicIntegration, bool);
+    DeclareParameter(ThermodynamicIntegrationLambda, RealType);
+    DeclareParameter(ThermodynamicIntegrationK, RealType);
+    DeclareParameter(ForceFieldVariant, std::string);
+    DeclareParameter(ForceFieldFileName, std::string);
+    DeclareParameter(SurfaceTension, RealType);
+    DeclareParameter(PrintPressureTensor, bool);
+    DeclareParameter(PrintVirialTensor, bool);
+    DeclareParameter(PrintHeatFlux, bool);
+    DeclareParameter(TaggedAtomPair, intPair);
+    DeclareParameter(PrintTaggedPairDistance, bool);
+    DeclareParameter(ElectrostaticSummationMethod, std::string);
+    DeclareParameter(ElectrostaticScreeningMethod, std::string);
+    DeclareParameter(UseSurfaceTerm, bool);
+    DeclareParameter(UseSlabGeometry, bool);
+    DeclareParameter(DampingAlpha, RealType);
+    DeclareParameter(Dielectric, RealType);
+    DeclareParameter(CutoffMethod, std::string);
+    DeclareParameter(SwitchingFunctionType, std::string);
+    DeclareParameter(CompressDumpFile, bool);
+    DeclareParameter(OutputForceVector, bool);
+    DeclareParameter(OutputParticlePotential, bool);
+    DeclareParameter(OutputElectricField, bool);
+    DeclareParameter(OutputFluctuatingCharges, bool);
+    DeclareParameter(OutputSitePotential, bool);
+    DeclareParameter(OutputDensity, bool);
+    DeclareParameter(SkinThickness, RealType);
+    DeclareParameter(StatFileFormat, std::string);
+    DeclareParameter(StatFilePrecision, int);
+    DeclareParameter(HydroPropFile, std::string);
+    DeclareParameter(Viscosity, RealType);
+    DeclareParameter(BeadSize, RealType);
+    DeclareParameter(UseSphericalBoundaryConditions, bool);
+    DeclareParameter(FrozenBufferRadius, RealType);
+    DeclareParameter(LangevinBufferRadius, RealType);
+    DeclareParameter(AccumulateBoxDipole, bool);
+    DeclareParameter(AccumulateBoxQuadrupole, bool);
+    DeclareParameter(NeighborListNeighbors, int);
+    DeclareParameter(UseMultipleTemperatureMethod, bool);
+    DeclareParameter(MTM_Ce, RealType);
+    DeclareParameter(MTM_G, RealType);
+    DeclareParameter(MTM_Io, RealType);
+    DeclareParameter(MTM_Sigma, RealType);
+    DeclareParameter(MTM_R, RealType);
+    DeclareParameter(UseRestraints, bool);
+    DeclareParameter(Restraint_file, std::string);
+    DeclareParameter(HULL_Method, std::string);
+    DeclareParameter(Alpha, RealType);
+    DeclareAlterableParameter(MDfileVersion, int);
+    DeclareParameter(UniformField, std::vector<RealType> );
+    DeclareParameter(MagneticField,std::vector<RealType>)
+    DeclareParameter(UniformGradientStrength, RealType );
+    DeclareParameter(UniformGradientDirection1, std::vector<RealType> );
+    DeclareParameter(UniformGradientDirection2, std::vector<RealType> );
+
+    DeclareParameter(ElectricField, std::vector<RealType> );
+    DeclareParameter(ConstraintTime, RealType);
+
+    DeclareParameter(PotentialSelection, std::string);
+
+    DeclareParameter(PrivilegedAxis, std::string);
+
+  public:
+    bool addComponent(Component* comp);
+    bool addZConsStamp(ZConsStamp* zcons);
+    bool addRestraintStamp(RestraintStamp* rest);
+    bool addMoleculeStamp(MoleculeStamp* molStamp);
+    int getNComponents() {return components_.size();}
+    std::vector<Component*> getComponents() {return components_;}
+    Component* getComponentAt(int index) {return components_.at(index);}
+
+    int getNZconsStamps() {return zconstraints_.size();}
+    std::vector<ZConsStamp*> getZconsStamps() {return zconstraints_;}
+    ZConsStamp* getZconsStampAt(int index) {return zconstraints_.at(index);}
+
+    int getNRestraintStamps() {return restraints_.size();}
+    std::vector<RestraintStamp*> getRestraintStamps() {return restraints_;}
+    RestraintStamp* getRestraintStampAt(int index) {return restraints_.at(index);}
+
+    bool addFluctuatingChargeParameters(FluctuatingChargeParameters* flucqPars);
+    FluctuatingChargeParameters* getFluctuatingChargeParameters() {return flucQpars_;}
+
+    bool addRNEMDParameters(RNEMDParameters* rnemdPars);
+    RNEMDParameters* getRNEMDParameters() {return rnemdPars_;}
+
+    bool addMinimizerParameters(MinimizerParameters* miniPars);
+    MinimizerParameters* getMinimizerParameters() {return minimizerPars_;}
+
+    virtual void validate();
+  private:
+
+    std::vector<Component*> components_;
+    std::vector<ZConsStamp*> zconstraints_;
+    std::vector<RestraintStamp*> restraints_;
+    std::map<std::string, MoleculeStamp*> moleculeStamps_;
+    std::pair<int, int> taggedAtomPair_;
+    FluctuatingChargeParameters* flucQpars_;
+    RNEMDParameters* rnemdPars_;
+    MinimizerParameters* minimizerPars_;
+};
+}
+#endif

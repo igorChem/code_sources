@@ -1,0 +1,30 @@
+! This is the forcefield file for the Embedded Atom Method Force Field (EAM_FF).
+!
+! There is only a section for AtomTypes which defines mass and the name
+! of the file which contains the rho(r), phi(r) and F[rho] functions.
+
+begin Options
+      Name                  EAMVC
+      // energies in funcfl files are in eV. Convert to kcal/mol
+      MetallicEnergyUnitScaling     23.0605423
+end Options
+
+begin BaseAtomTypes
+Al	 26.98
+Au	196.97
+Ag	107.87
+Cu	 63.55
+Ni	 58.71
+Pd	106.40
+Pt	195.09
+end BaseAtomTypes
+
+begin EAMAtomTypes
+Al	funcfl	Al.VC.funcfl
+Au	funcfl	Au.VC.funcfl
+Ag	funcfl	Ag.VC.funcfl
+Cu	funcfl	Cu.VC.funcfl
+Ni	funcfl	Ni.VC.funcfl
+Pd	funcfl	Pd.VC.funcfl
+Pt	funcfl	Pt.VC.funcfl
+end EAMAtomTypes

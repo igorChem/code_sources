@@ -1,0 +1,390 @@
+#!@Python3_EXECUTABLE@
+"""OpenMD affine scaling transform
+
+Takes an OpenMD file and scales both the periodic box and the
+coordinates of all StuntDoubles in the system by the same amount.
+
+You can either specify a new volume scaling for isotropic scaling, or
+specify one (or more) of the coordinates for non-isotropic scaling.
+
+Usage: affineScale
+
+Options:
+  -h,  --help             show this help
+  -m,  --meta-data=...    use specified meta-data (.omd, .eor) file
+  -o,  --output-file=...  use specified output file
+  -x,  --newX=...         scale the system to a new x dimension
+  -y,  --newY=...         scale the system to a new y dimension
+  -z,  --newZ=...         scale the system to a new z dimension
+  -v,  --newV=...         scale the system to a new volume
+
+Example:
+  affineScale -m lipidSystem.omd -o scaledSystem.omd -v 77000.0
+
+"""
+
+__author__ = "Dan Gezelter (gezelter@nd.edu)"
+__copyright__ = "Copyright (c) 2004-2020 The University of Notre Dame. All Rights Reserved."
+__license__ = "OpenMD"
+
+import sys
+import getopt
+import string
+import math
+import random
+
+metaData = []
+frameData = []
+indices = []
+pvqj = []
+p = []
+wrap = []
+v = []
+q = []
+j = []
+siteData = []
+Hmat = []
+BoxInv = []
+siteFlag = [False]
+def usage():
+    print(__doc__)
+
+def readFile(mdFileName):
+    mdFile = open(mdFileName, 'r')        
+    # Find OpenMD version info first
+    line = mdFile.readline()
+    while True:
+        if '<OOPSE version=' in line or '<OpenMD version=' in line:
+            OpenMDversion = line
+            break
+        line = mdFile.readline()
+        
+        # Rewind file and find start of MetaData block
+        
+    mdFile.seek(0)
+    line = mdFile.readline()
+    print("Reading MetaData")
+    while True:
+        if '<MetaData>' in line:
+            while 2:
+                metaData.append(line)
+                line = mdFile.readline()
+                if '</MetaData>' in line:
+                    metaData.append(line)
+                    break
+            break
+        line = mdFile.readline()
+
+    line = mdFile.readline()
+    print("Reading Snapshot")
+    while True:
+        if '<Snapshot>' in line:
+            line = mdFile.readline()
+            while True:
+                print("Reading FrameData")
+                if '<FrameData>' in line:
+                    while 2:
+                        frameData.append(line)
+                        if 'Hmat:' in line:
+                            line = line.replace("{","").replace("}","").replace("Hmat:","")
+                            L = line.split(",")
+                            Hxx = float(L[0])
+                            Hxy = float(L[1])
+                            Hxz = float(L[2])
+                            Hyx = float(L[3])
+                            Hyy = float(L[4])
+                            Hyz = float(L[5])
+                            Hzx = float(L[6])
+                            Hzy = float(L[7])
+                            Hzz = float(L[8])
+                            Hmat.append([Hxx, Hxy, Hxz])
+                            Hmat.append([Hyx, Hyy, Hyz])
+                            Hmat.append([Hzx, Hzy, Hzz])
+                            BoxInv.append(1.0/Hxx)
+                            BoxInv.append(1.0/Hyy)
+                            BoxInv.append(1.0/Hzz)
+                        line = mdFile.readline()
+                        if '</FrameData>' in line:
+                            frameData.append(line)
+                            break
+                    break
+
+            line = mdFile.readline()
+            while True:
+                if '<StuntDoubles>' in line:
+                    line = mdFile.readline()
+                    while 2:
+                        L = line.split()
+                        myIndex = int(L[0])
+                        indices.append(myIndex)
+                        pvqj.append(L[1])
+                        i = 2
+                        if 'p' in L[1]:                              
+                            x = float(L[i])
+                            y = float(L[i+1])
+                            z = float(L[i+2])                            
+                            p.append([x, y, z])
+                            i = i+3
+                        else:
+                            p.append([0.0, 0.0, 0.0])
+                        if 'v' in L[1]:                              
+                            vx = float(L[i])                                
+                            vy = float(L[i+1])
+                            vz = float(L[i+2])
+                            v.append([vx, vy, vz])
+                            i = i+3
+                        else:
+                            v.append([0.0, 0.0, 0.0])
+                        if 'q' in L[1]:
+                            qw = float(L[i])
+                            qx = float(L[i+1])
+                            qy = float(L[i+2])
+                            qz = float(L[i+3])
+                            q.append([qw, qx, qy, qz])
+                            i = i+4
+                        else:
+                            q.append([0.0, 0.0, 0.0, 0.0])
+                        if 'j' in L[1]:
+                            jx = float(L[i])
+                            jy = float(L[i+1])
+                            jz = float(L[i+2])
+                            j.append([jx, jy, jz])
+                            i = i+3
+                        else:
+                            j.append([0.0, 0.0, 0.0])
+                        wrap.append([0, 0, 0])
+                                               
+                        line = mdFile.readline()
+                        if '</StuntDoubles>' in line:
+                            break
+                    break
+            line = mdFile.readline()
+            while True:
+                if '<SiteData>' in line:
+                    print("Reading SiteData")
+                    siteFlag[0] = True
+                    while True:
+                        line = mdFile.readline()
+                        siteData.append(line)
+                        if '</SiteData>' in line:
+                            break
+                    break
+                break
+                
+        line = mdFile.readline()
+        if not line: break
+    mdFile.close()
+
+def writeFile(outputFileName, repeatX, repeatY, repeatZ):
+    outputFile = open(outputFileName, 'w')
+
+    outputFile.write("<OpenMD version=2>\n");
+
+    print("Writing MetaData")
+    for metaline in metaData:
+        if 'nMol' in metaline:
+            metasplit = metaline.split()
+            nMol = float(metasplit[2].strip(';'))
+            newNmol = nMol * repeatX * repeatY * repeatZ
+            outputFile.write('  nMol = %10d;\n' % (newNmol))
+        else:
+            outputFile.write(metaline)
+
+    print("Writing Snapshot")
+    outputFile.write("  <Snapshot>\n")
+
+    print("Writing FrameData")
+    for frameline in frameData:
+        if 'Hmat:' in frameline:
+            myH = []
+            myH.append([repeatX * Hmat[0][0], repeatX * Hmat[0][1], repeatX * Hmat[0][2]])
+            myH.append([repeatY * Hmat[1][0], repeatY * Hmat[1][1], repeatY * Hmat[1][2]])
+            myH.append([repeatZ * Hmat[2][0], repeatZ * Hmat[2][1], repeatZ * Hmat[2][2]])
+            outputFile.write("        Hmat: {{ %.10g, %.10g, %.10g }, { %.10g, %.10g, %.10g }, { %.10g, %.10g, %.10g }}\n" % (myH[0][0], myH[0][1], myH[0][2], myH[1][0], myH[1][1], myH[1][2], myH[2][0], myH[2][1], myH[2][2]))
+        else:
+            outputFile.write(frameline)
+
+    print("Writing StuntDoubles")
+    outputFile.write("    <StuntDoubles>\n")
+
+    #print(repeatX, repeatY, repeatZ)
+
+    deco = sorted([ (index, i) for i, index in enumerate(indices) ])
+    whichSD = 0
+    for index in range(len(deco)):
+        (index, i) = deco[index]
+        for ii in range(repeatX):
+            for jj in range(repeatY):
+                for kk in range(repeatZ):                    
+                    myP = [] 
+                    myP.append(p[i][0] + ii*Hmat[0][0] + jj*Hmat[1][0] + kk*Hmat[2][0])
+                    myP.append(p[i][1] + ii*Hmat[0][1] + jj*Hmat[1][1] + kk*Hmat[2][1])
+                    myP.append(p[i][2] + ii*Hmat[0][2] + jj*Hmat[1][2] + kk*Hmat[2][2])
+                        
+                    if (pvqj[i] == 'p'):
+                        outputFile.write("%10d %7s %18.10g %18.10g %18.10g\n" % (whichSD, pvqj[i], myP[0], myP[1], myP[2]))
+                    elif (pvqj[i] == 'pv'):
+                        outputFile.write("%10d %7s %18.10g %18.10g %18.10g %13e %13e %13e\n" % (whichSD, pvqj[i], myP[0], myP[1], myP[2], v[i][0], v[i][1], v[i][2]))
+                    elif (pvqj[i] == 'pq'):
+                        outputFile.write("%10d %7s %18.10g %18.10g %18.10g %13e %13e %13e %13e\n" % (whichSD, pvqj[i], myP[0], myP[1], myP[2], q[i][0], q[i][1], q[i][2], q[i][3]))
+                    elif (pvqj[i] == 'pvqj'):
+                        outputFile.write("%10d %7s %18.10g %18.10g %18.10g %13e %13e %13e %13e %13e %13e %13e %13e %13e %13e\n" % (whichSD, pvqj[i], myP[0], myP[1], myP[2], v[i][0], v[i][1], v[i][2], q[i][0], q[i][1], q[i][2], q[i][3], j[i][0], j[i][1], j[i][2]))
+                    whichSD = whichSD + 1
+    outputFile.write("    </StuntDoubles>\n")
+    if (siteFlag[0]):
+        print("Writing SiteData")
+        outputFile.write("       <SiteData>\n")
+        for line in siteData:
+            outputFile.write(line)
+        outputFile.write("      </SiteData>\n")
+
+    print("Writing finished")
+    outputFile.write("  </Snapshot>\n")
+    outputFile.write("</OpenMD>\n")
+    outputFile.close()
+
+def roundMe(x):
+    if (x >= 0.0):
+        return math.floor(x + 0.5)
+    else:
+        return math.ceil(x - 0.5)
+
+def wrapVector(myVect):
+    scaled = [0.0, 0.0, 0.0]
+    wrappingNumber = [0, 0, 0]
+    for i in range(3):
+        scaled[i] = myVect[i] * BoxInv[i]
+        wrappingNumber[i] = roundMe(scaled[i])
+        scaled[i] = scaled[i] - wrappingNumber[i]
+        myVect[i] = scaled[i] * Hmat[i][i]
+    return myVect, wrappingNumber
+
+def dot(L1, L2):
+    myDot = 0.0
+    for i in range(len(L1)):
+        myDot = myDot + L1[i]*L2[i]
+    return myDot
+
+def normalize(L1):
+    L2 = []
+    myLength = math.sqrt(dot(L1, L1))
+    for i in range(len(L1)):
+        L2.append(L1[i] / myLength)
+    return L2
+
+def cross(L1, L2):
+    # don't call this with anything other than length 3 lists please
+    # or you'll be sorry
+    L3 = [0.0, 0.0, 0.0]
+    L3[0] = L1[1]*L2[2] - L1[2]*L2[1] 
+    L3[1] = L1[2]*L2[0] - L1[0]*L2[2]
+    L3[2] = L1[0]*L2[1] - L1[1]*L2[0]
+    return L3
+
+def mapToBox():
+    for i in range(len(indices)):
+        dpos = []
+        dpos.append(p[i][0])
+        dpos.append(p[i][1])
+        dpos.append(p[i][2])
+        p[i], wrap[i] = wrapVector(dpos)
+
+def scaleBox(scaleX, scaleY, scaleZ):
+    for i in range(3):
+        Hmat[0][i] = scaleX * Hmat[0][i]
+    for i in range(3):
+        Hmat[1][i] = scaleY * Hmat[1][i]
+    for i in range(3):
+        Hmat[2][i] = scaleZ * Hmat[2][i]
+    for i in range(3):            
+        BoxInv[i] = 1.0/Hmat[i][i]
+
+def scaleCoordinates(scaleX, scaleY, scaleZ):
+    for i in range(len(indices)):
+        p[i][0] = p[i][0]*scaleX + wrap[i][0] * Hmat[0][0]
+        p[i][1] = p[i][1]*scaleY + wrap[i][1] * Hmat[1][1]
+        p[i][2] = p[i][2]*scaleZ + wrap[i][2] * Hmat[2][2]
+
+def main(argv):
+    _haveMDFileName = 0
+    _haveOutputFileName = 0
+    try:                                
+        opts, args = getopt.getopt(argv, "hm:o:x:y:z:v:", ["help", "meta-data=", "output-file=", "newX=", "newY=", "newZ=", "newV="]) 
+    except getopt.GetoptError:           
+        usage()                          
+        sys.exit(2)                     
+    doV = 0
+    doX = 0
+    doY = 0
+    doZ = 0
+    for opt, arg in opts:                
+        if opt in ("-h", "--help"):      
+            usage()                     
+            sys.exit()                  
+        elif opt in ("-m", "--meta-data"): 
+            mdFileName = arg
+            _haveMDFileName = 1
+        elif opt in ("-o", "--output-file"): 
+            outputFileName = arg
+            _haveOutputFileName = 1
+        if opt in ("-x", "--newX"):
+            newX = float(arg)
+            doX = 1
+        elif opt in ("-y", "--newY"): 
+            newY = float(arg)
+            doY = 1
+        elif opt in ("-z", "--newZ"): 
+            newZ = float(arg)
+            doZ = 1
+        elif opt in ("-v", "--newV"):        
+            newV = float(arg)
+            doV = 1
+
+    if (_haveMDFileName != 1):
+        usage() 
+        print("No meta-data file was specified")
+        sys.exit()
+    if (_haveOutputFileName != 1):
+        usage()
+        print("No output file was specified")
+        sys.exit()
+
+    if not (doV or doX or doY or doZ):
+        usage()
+        print("no scaling options given.  Nothing to do!")
+        sys.exit()
+
+    if doV and (doX or doY or doZ):
+        usage()
+        print("-v is mutually exclusive with any of the -x, -y, and -z options")
+        sys.exit()
+
+    readFile(mdFileName)
+
+    scaleX = 1.0
+    scaleY = 1.0
+    scaleZ = 1.0    
+
+    if doX:
+        scaleX = newX / Hmat[0][0]
+    if doY:
+        scaleY = newY / Hmat[1][1]
+    if doZ:
+        scaleZ = newZ / Hmat[2][2]
+
+    if doV:
+        oldV = Hmat[0][0] * Hmat[1][1] * Hmat[2][2]
+        scaleX = pow(newV/oldV, 1.0/3.0)
+        scaleY = scaleX
+        scaleZ = scaleX
+
+    mapToBox()
+    scaleBox(scaleX, scaleY, scaleZ)
+    scaleCoordinates(scaleX, scaleY, scaleZ)
+    writeFile(outputFileName, 1, 1, 1)
+
+if __name__ == "__main__":
+    if len(sys.argv) == 1:
+        usage()
+        sys.exit()
+    main(sys.argv[1:])

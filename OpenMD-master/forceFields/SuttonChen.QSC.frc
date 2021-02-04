@@ -1,0 +1,37 @@
+// This is the force field file for the Sutton-Chen formulation of the Finnis-Sinclair metallic potential
+// Using the quantum corrections due to Kimura, Qi, Cagin and Goddard.
+// See: PHYSICAL REVIEW B 59 (5): 3468-3473 FEB 1 1999 
+
+begin Options
+      Name                   SCQSC
+      DistanceMixingRule     Arithmetic
+      EnergyMixingRule       Geometric
+      // energy units below are in eV. Convert to kcal/mol in OpenMD
+      MetallicEnergyUnitScaling      23.0605423
+end Options
+
+
+begin BaseAtomTypes
+//Name        mass(amu)
+Ni	58.710
+Cu	63.550
+Rh	102.90550
+Pd	106.42
+Ag	107.8682
+Ir	192.217
+Pt	195.09
+Au	196.97
+end BaseAtomTypes
+
+
+begin SCAtomTypes
+// Name  epsilon(eV)      c      m       n      alpha(angstroms)
+Ni	0.0073767	84.745	5.0	10.0	3.5157 
+Cu	0.0057921	84.843	5.0	10.0	3.6030
+Rh	0.0024612	305.499	5.0	13.0	3.7984
+Pd	0.0032864	148.205	6.0	12.0	3.8813
+Ag	0.0039450	96.524	6.0	11.0	4.0691
+Ir	0.0037674	224.815	6.0	13.0	3.8344	
+Pt	0.0097894	71.336	7.0	11.0	3.9163
+Au	0.0078052	53.581	8.0	11.0	4.0651
+end SCAtomTypes
